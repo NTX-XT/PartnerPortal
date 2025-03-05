@@ -1,0 +1,542 @@
+/* ============================================
+   Partner Portal Consolidated Styles
+   ============================================ */
+
+/* Common Variables */
+:root {
+  --primary-color: #FF6B00;
+  --secondary-color: #0066CC;
+  --light-gray: #f8f9fa;
+  --dark-gray: #555;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --transition-speed: 0.3s;
+}
+
+/* ============================================
+   Section Styling - Shared
+   ============================================ */
+.resource-section,
+.announcements-section {
+  padding: 1.5rem 0; /* Reduced from 3rem to 1.5rem */
+  background-color: var(--light-gray);
+}
+
+.section-heading {
+  margin-bottom: 1rem; /* Further reduced from 1.25rem to 1rem */
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.6rem; /* Added size reduction */
+}
+
+/* ============================================
+   Button Styling - Shared
+   ============================================ */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 0.4rem 1rem; /* Reduced from 0.5rem 1.25rem */
+  border-radius: 50px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color var(--transition-speed) ease;
+  font-size: 0.9rem; /* Added size reduction */
+}
+
+.btn-primary:hover {
+  background-color: #E56000;
+  border-color: #E56000;
+  color: white;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 0.4rem 1rem; /* Reduced from 0.5rem 1.25rem */
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: all var(--transition-speed) ease;
+  background-color: transparent;
+  font-size: 0.9rem; /* Added size reduction */
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* ============================================
+   Partner Resources Section Styling
+   ============================================ */
+.resource-card {
+  height: auto; /* Changed from 100% to auto */
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  overflow: hidden;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Reduced from 60px */
+  height: 50px; /* Reduced from 60px */
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  margin-bottom: 0.75rem; /* Reduced from 1rem */
+}
+
+.card-icon i {
+  font-size: 1.25rem; /* Reduced from 1.5rem */
+}
+
+.card-body {
+  padding: 1rem; /* Reduced from 1.25rem */
+}
+
+.card-title {
+  color: var(--secondary-color);
+  font-size: 1.1rem; /* Reduced from 1.25rem */
+  font-weight: 600;
+  margin-bottom: 0.5rem; /* Reduced from 0.75rem */
+}
+
+.card-text {
+  color: var(--dark-gray);
+  margin-bottom: 1rem; /* Reduced from 1.25rem */
+  font-size: 0.9rem; /* Added size reduction */
+  line-height: 1.4; /* Added tighter line height */
+}
+
+/* Video Card Styling */
+.video-card {
+  position: relative;
+}
+
+.video-thumbnail {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  max-height: 160px; /* Added height constraint */
+}
+
+.video-thumbnail img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.05);
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 107, 0, 0.8);
+  width: 50px; /* Reduced from 60px */
+  height: 50px; /* Reduced from 60px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px; /* Reduced from 24px */
+  z-index: 2;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.video-card:hover .play-icon {
+  background-color: var(--primary-color);
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px; /* Reduced from 3px 8px */
+  border-radius: 4px;
+  font-size: 0.7rem; /* Reduced from 0.8rem */
+}
+
+/* ============================================
+   Announcements Section Styling
+   ============================================ */
+.announcement-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  margin-bottom: 1.5rem; /* Reduced from 2rem to 1.5rem */
+}
+
+.announcement-card.featured {
+  border-left: 4px solid var(--primary-color);
+}
+
+.card-content {
+  padding: 0;
+}
+
+.announcement-image {
+  position: relative;
+  height: 100%;
+  min-height: 180px; /* Reduced from 200px */
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-badge {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.announcement-details {
+  padding: 1rem; /* Reduced from 1.25rem */
+}
+
+.announcement-title {
+  color: var(--secondary-color);
+  font-size: 1.3rem; /* Reduced from 1.5rem */
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.announcement-desc {
+  color: var(--dark-gray);
+  margin-bottom: 1rem; /* Reduced from 1.25rem */
+  font-size: 1rem; /* Reduced from 1.1rem */
+}
+
+.announcement-highlights {
+  margin-bottom: 1rem; /* Reduced from 1.25rem */
+}
+
+.announcement-highlights h4 {
+  font-size: 1.1rem; /* Reduced from 1.2rem */
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.highlights-group {
+  margin-bottom: 0.75rem;
+}
+
+.highlights-group h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.highlights-group h5 i {
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+.highlights-group p {
+  margin-bottom: 0.5rem;
+}
+
+.highlights-group ul {
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.announcement-speakers {
+  margin-bottom: 1rem; /* Reduced from 1.25rem */
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+}
+
+.announcement-speakers h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.speaker-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.speaker {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.speaker-name {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.speaker-title {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.announcement-footer {
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 1rem;
+}
+
+/* ============================================
+   Welcome Bar & Banner Styling
+   ============================================ */
+/* Platform Overview Banner */
+.platform-overview-banner {
+  background-color: var(--secondary-color);
+  padding: 8px 0 !important;
+  margin: 0;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+}
+
+.banner-text {
+  font-size: 1.1rem;
+}
+
+.banner-divider {
+  margin: 0 15px;
+}
+
+.banner-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.banner-link i {
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+.banner-link:hover {
+  color: #FFC107;
+  text-decoration: none;
+}
+
+/* Welcome Bar */
+.welcome-bar {
+  padding: 1.25rem 0 !important;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.welcome-message {
+  display: flex;
+  align-items: center;
+}
+
+.welcome-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-right: 15px;
+}
+
+.welcome-message h3 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.welcome-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+/* ============================================
+   Custom Spacing Overrides
+   ============================================ */
+/* Home section overrides */
+body [home] section {
+  padding-top: 1.5rem !important; /* Reduced from 2rem */
+  padding-bottom: 1.5rem !important; /* Reduced from 2rem */
+}
+
+/* Utility class for reduced padding */
+.reduced-padding {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+  margin: 0 !important;
+}
+
+/* User greeting section */
+.user-greeting-section {
+  padding: 0.75rem 0 !important; /* Reduced from 1rem */
+  margin: 0 !important;
+}
+
+/* Partner resources section title spacing */
+.partner-resources-title {
+  margin-top: 0.75rem !important; /* Reduced from 1rem */
+  margin-bottom: 0.75rem !important; /* Reduced from 1rem */
+}
+
+/* Latest announcements section */
+.latest-announcements-section {
+  padding-top: 0.75rem !important; /* Reduced from 1rem */
+  margin-top: 0 !important;
+}
+
+/* Row spacing in grids */
+.row.g-4 {
+  --bs-gutter-x: 0.75rem !important; /* Reduced horizontal gap from default */
+  --bs-gutter-y: 0.75rem !important; /* Reduced from 1rem */
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+@media (max-width: 767px) {
+  /* Announcements responsive styles */
+  .announcement-image {
+    min-height: 180px; /* Reduced from 200px */
+    margin-bottom: 0.75rem; /* Reduced from 1rem */
+  }
+  
+  .speaker-list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .announcement-footer {
+    flex-direction: column;
+  }
+  
+  .announcement-footer .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Welcome bar responsive styles */
+  .banner-content {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .banner-divider {
+    display: none;
+  }
+  
+  .welcome-message {
+    justify-content: center;
+    margin-bottom: 0.75rem; /* Reduced from 1rem */
+  }
+  
+  .welcome-actions {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .welcome-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Banner styling for the partner portal */
+.main-banner {
+  background-color: var(--secondary-color);
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 15rem;
+}
+
+.banner-accent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 107, 0, 0.05);
+  transform: skewX(-15deg) translateX(20%);
+  z-index: 1;
+}
+
+.main-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-header {
+  color: white;
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
+}
+
+.banner-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .main-banner {
+    min-height: auto;
+    padding: 1.5rem 0;
+  }
+  
+  .banner-header {
+    font-size: 1.8rem;
+  }
+  
+  .banner-text {
+    font-size: 1.1rem;
+  }
+}
