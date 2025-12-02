@@ -1,0 +1,14 @@
+/**
+ * Top Navigation Bar Styles - Background Color Only
+ * Version: 5.2.0 - MINIMAL APPROACH
+ * 
+ * ONLY changes background color - lets Bootstrap handle everything else
+ */
+
+
+/* Ensure the background applies to all navbar variants */
+.top-bar {
+  background-color: #8439A6 !important;
+}
+
+/* No other styling - let Bootstrap and existing CSS handle layout, fonts, sizing */

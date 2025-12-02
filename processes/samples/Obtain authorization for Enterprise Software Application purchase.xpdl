@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="PK-2755" Name="Obtain authorization for Enterprise Software Application purchase" xmlns="http://www.wfmc.org/2009/XPDL2.2">
+  <PackageHeader>
+    <XPDLVersion>2.2</XPDLVersion>
+    <Vendor>Promapp Solutions Ltd</Vendor>
+    <Created>2025-11-12T23:47:04.9486860Z</Created>
+  </PackageHeader>
+  <ConformanceClass BPMNModelPortabilityConformance="STANDARD" />
+  <Pages>
+    <Page Name="Obtain authorization for Enterprise Software Application purchase" Id="PG-1" Height="1360" Width="1640" />
+  </Pages>
+  <Pools>
+    <Pool Id="PL-2755" Name="Obtain authorization for Enterprise Software Application purchase" Process="P-2755" BoundaryVisible="true">
+      <Lanes>
+        <Lane Orientation="HORIZONTAL" Id="L-1" Name="Business Analyst, Functional Manager" ParentLane="PL-2755">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1490">
+              <Coordinates XCoordinate="100" YCoordinate="50" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-2" Name="Functional Manager" ParentLane="PL-2755">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1490">
+              <Coordinates XCoordinate="100" YCoordinate="190" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-3" Name="NON DISPLAY" ParentLane="PL-2755">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1490">
+              <Coordinates XCoordinate="100" YCoordinate="330" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-4" Name="Director, Business Applications, Sales Operations, Security and Compliance Team" ParentLane="PL-2755">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1490">
+              <Coordinates XCoordinate="100" YCoordinate="470" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-5" Name="UNASSIGNED" ParentLane="PL-2755">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1490">
+              <Coordinates XCoordinate="100" YCoordinate="610" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-6" Name="Legal" ParentLane="PL-2755">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1490">
+              <Coordinates XCoordinate="100" YCoordinate="750" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-7" Name="Finance Team" ParentLane="PL-2755">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1490">
+              <Coordinates XCoordinate="100" YCoordinate="890" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-8" Name="Director, Business Applications, Finance Team, Legal, Sales Operations, Security and Compliance Team" ParentLane="PL-2755">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1490">
+              <Coordinates XCoordinate="100" YCoordinate="1030" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-9" Name="Director, Business Applications, Finance Team, Functional Manager, Legal, Sales Operations, Security &amp; Compliance Manager" ParentLane="PL-2755">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1490">
+              <Coordinates XCoordinate="100" YCoordinate="1170" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+      </Lanes>
+      <NodeGraphicsInfos>
+        <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="1260" Width="1540">
+          <Coordinates XCoordinate="50" YCoordinate="50" />
+        </NodeGraphicsInfo>
+      </NodeGraphicsInfos>
+    </Pool>
+  </Pools>
+  <Associations>
+    <Association Id="DOC-303796" Source="DOC-303796" Target="PP-265879" />
+    <Association Id="DOC-303807" Source="DOC-303807" Target="PP-303781" />
+    <Association Id="DOC-303775" Source="DOC-303775" Target="PP-265882" />
+    <Association Id="DOC-271985" Source="DOC-271985" Target="PP-265889" />
+    <Association Id="DOC-303778" Source="DOC-303778" Target="PP-265891" />
+    <Association Id="DOC-303798" Source="DOC-303798" Target="PP-303792" />
+  </Associations>
+  <Artifacts>
+    <Artifact Id="DOC-303796" Name="BCA form (Start form)" ArtifactType="Annotation" TextAnnotation="BCA form (Start form)" />
+    <Artifact Id="DOC-303807" Name="BCA confirmation email.png" ArtifactType="Annotation" TextAnnotation="BCA confirmation email.png" />
+    <Artifact Id="DOC-303775" Name="BCA Review form example.png" ArtifactType="Annotation" TextAnnotation="BCA Review form example.png" />
+    <Artifact Id="DOC-271985" Name="Delegation of Authority Schedule 2019.xlsx" ArtifactType="Annotation" TextAnnotation="Delegation of Authority Schedule 2019.xlsx" />
+    <Artifact Id="DOC-303778" Name="BCA review - request to sign example.png" ArtifactType="Annotation" TextAnnotation="BCA review - request to sign example.png" />
+    <Artifact Id="DOC-303798" Name="BCA completed doc email example.png" ArtifactType="Annotation" TextAnnotation="BCA completed doc email example.png" />
+  </Artifacts>
+  <WorkflowProcesses>
+    <WorkflowProcess Id="P-2755" Name="Obtain authorization for Enterprise Software Application purchase" DefaultStartActivityId="IN-430">
+      <ProcessHeader />
+      <Activities>
+        <Activity Id="IN-430" Name="Business Requirements">
+          <Event>
+            <StartEvent Trigger="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="210" YCoordinate="100" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-271205" Name="1.0 Undertake requirements analysis and confirm budget availability">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="80" Width="120">
+              <Coordinates XCoordinate="350" YCoordinate="80" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-266628" Name="2.0 Perform vendor analysis and selection">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="80" Width="120">
+              <Coordinates XCoordinate="530" YCoordinate="80" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-265879" Name="3.0 Submit business case for chosen vendor">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="80" Width="120">
+              <Coordinates XCoordinate="530" YCoordinate="220" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-266630" Name="0.0 Check Vendor's export compliance - &lt;To Be Automated&gt;">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="80" Width="120">
+              <Coordinates XCoordinate="530" YCoordinate="360" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-303781" Name="4.0 Receive confirmation email and Slack notification">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="80" Width="120">
+              <Coordinates XCoordinate="710" YCoordinate="220" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-265882" Name="5.0 If required, undertake IT/Security and Sales Ops review">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-4" Height="80" Width="120">
+              <Coordinates XCoordinate="710" YCoordinate="500" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-303783-D" Name="Was the request declined by either Sales Ops, IT or Security?">
+          <Route />
+          <TransitionRestrictions>
+            <TransitionRestriction>
+              <Split Type="Exclusive">
+                <TransitionRefs>
+                  <TransitionRef Id="T-8" />
+                  <TransitionRef Id="T-10" />
+                </TransitionRefs>
+              </Split>
+            </TransitionRestriction>
+          </TransitionRestrictions>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-5" Height="40" Width="40">
+              <Coordinates XCoordinate="930" YCoordinate="660" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-303783" Name="6.0 Receive notification of rejection">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="80" Width="120">
+              <Coordinates XCoordinate="890" YCoordinate="220" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="END-PP-303783" Name="End Receive notification of rejection">
+          <Event>
+            <EndEvent Result="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="40" Width="40">
+              <Coordinates XCoordinate="1110" YCoordinate="240" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-266303" Name="0.0 Initiate Enterprise Software Steering Committee Approval if required &lt;To Be Applicable once the committee is set up&gt;">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="80" Width="120">
+              <Coordinates XCoordinate="1070" YCoordinate="360" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-265890" Name="7.0 Undertake Legal review of business case">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-6" Height="80" Width="120">
+              <Coordinates XCoordinate="1070" YCoordinate="780" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-303787" Name="8.0 Receive notification of Legal approval">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="80" Width="120">
+              <Coordinates XCoordinate="1250" YCoordinate="220" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-265889" Name="9.0 Undertake Finance review of Business Case">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-7" Height="80" Width="120">
+              <Coordinates XCoordinate="1250" YCoordinate="920" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-265891" Name="10.0 Sign completed BCA document">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-8" Height="80" Width="120">
+              <Coordinates XCoordinate="1250" YCoordinate="1060" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-303792" Name="11.0 Receive notification of finalized approval">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-9" Height="80" Width="120">
+              <Coordinates XCoordinate="1250" YCoordinate="1200" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="END-1" Name="End">
+          <Event>
+            <EndEvent Result="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-9" Height="40" Width="40">
+              <Coordinates XCoordinate="1470" YCoordinate="1220" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+      </Activities>
+      <Transitions>
+        <Transition Id="T-1" From="IN-430" To="PP-271205">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="250" YCoordinate="120" />
+              <Coordinates XCoordinate="350" YCoordinate="120" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-2" From="PP-271205" To="PP-266628">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="470" YCoordinate="120" />
+              <Coordinates XCoordinate="530" YCoordinate="120" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-3" From="PP-266628" To="PP-265879">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="590" YCoordinate="160" />
+              <Coordinates XCoordinate="590" YCoordinate="220" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-4" From="PP-265879" To="PP-266630">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="590" YCoordinate="300" />
+              <Coordinates XCoordinate="590" YCoordinate="360" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-5" From="PP-266630" To="PP-303781">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="650" YCoordinate="400" />
+              <Coordinates XCoordinate="680" YCoordinate="400" />
+              <Coordinates XCoordinate="680" YCoordinate="260" />
+              <Coordinates XCoordinate="710" YCoordinate="260" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-6" From="PP-303781" To="PP-265882">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="770" YCoordinate="300" />
+              <Coordinates XCoordinate="770" YCoordinate="500" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-7" From="PP-265882" To="PP-303783-D">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="830" YCoordinate="540" />
+              <Coordinates XCoordinate="860" YCoordinate="540" />
+              <Coordinates XCoordinate="860" YCoordinate="680" />
+              <Coordinates XCoordinate="930" YCoordinate="680" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-8" From="PP-303783-D" To="PP-303783" Name="Yes">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="950" YCoordinate="660" />
+              <Coordinates XCoordinate="950" YCoordinate="300" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-9" From="PP-303783" To="END-PP-303783">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1010" YCoordinate="260" />
+              <Coordinates XCoordinate="1110" YCoordinate="260" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-10" From="PP-303783-D" To="PP-266303" Name="No">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="970" YCoordinate="680" />
+              <Coordinates XCoordinate="1040" YCoordinate="680" />
+              <Coordinates XCoordinate="1040" YCoordinate="400" />
+              <Coordinates XCoordinate="1070" YCoordinate="400" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-11" From="PP-266303" To="PP-265890">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1130" YCoordinate="440" />
+              <Coordinates XCoordinate="1130" YCoordinate="780" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-12" From="PP-265890" To="PP-303787">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1190" YCoordinate="820" />
+              <Coordinates XCoordinate="1220" YCoordinate="820" />
+              <Coordinates XCoordinate="1220" YCoordinate="260" />
+              <Coordinates XCoordinate="1250" YCoordinate="260" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-13" From="PP-303787" To="PP-265889">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1310" YCoordinate="300" />
+              <Coordinates XCoordinate="1310" YCoordinate="920" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-14" From="PP-265889" To="PP-265891">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1310" YCoordinate="1000" />
+              <Coordinates XCoordinate="1310" YCoordinate="1060" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-15" From="PP-265891" To="PP-303792">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1310" YCoordinate="1140" />
+              <Coordinates XCoordinate="1310" YCoordinate="1200" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-16" From="PP-303792" To="END-1">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1370" YCoordinate="1240" />
+              <Coordinates XCoordinate="1470" YCoordinate="1240" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+    </WorkflowProcess>
+  </WorkflowProcesses>
+</Package>

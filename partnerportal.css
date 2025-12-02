@@ -1,0 +1,2865 @@
+/**
+ * Partner Portal Base Styles - WHITE THEME VERSION
+ * Version: 2.0.0
+ * 
+ * This file contains base styles and shared components for the partner portal.
+ * Load this file first, before component-specific CSS files.
+ */
+
+/* Import fonts (centralized here to avoid duplicate requests) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+/* Ensure the background applies to all navbar variants */
+    
+[top-bar].top-bar {
+background: #8439A6;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: #8439A6 !important;
+    }
+[top-nav] .navbar-brand {
+  max-width: 15rem !important;
+}
+/* ============================================
+   CSS Variables - Global Design System
+   ============================================ */
+:root {
+  /* Colors - Aligned with Nintex Corporate (nintex.com) */
+  --primary-color: #FF6B00;
+  --primary-hover: #E56000;
+  --secondary-color: #0066CC;
+  --secondary-hover: #0055AA;
+  --text-dark: #333;
+  --text-medium: #555;
+  --text-light: #777;
+  --light-gray: #f8f9fa;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --text-white: rgba(255, 255, 255, 0.9);
+  
+  /* Nintex Corporate Form Colors */
+  --focus-blue: #2a34a8;           /* Corporate focus/hover state */
+  --error-color: #f53619;          /* Form validation errors */
+  --deep-navy: #1a1f4e;            /* Deep navy for text/borders */
+  --pink-300: #ed2891;             /* Nintex pink for CTAs */
+  --pink-400: #d91f7f;             /* Darker pink for active states */
+  
+  /* Animation Colors */
+  --anim-light-orange: #ff9f7b;
+  --anim-orange: #FF6D00;
+  --anim-blue: #2A348A;
+  --anim-purple: #8439A6;
+  --anim-deep-purple: #3D0456;
+  --anim-ivory: #FFF9F4;
+  --anim-pink: #ed2891;
+  --anim-wave-color-1: rgba(0, 102, 204, 0.4);  /* Nintex blue with opacity */
+  --anim-wave-color-2: rgba(255, 107, 0, 0.3);  /* Nintex orange with opacity */
+  --anim-wave-color-3: rgba(132, 57, 166, 0.3); /* Purple with opacity */
+  
+  /* UI State Colors */
+  --color-success: #28A745;        /* Green - success, training */
+  --color-warning: #F59E0B;        /* Amber - warnings, attention */
+  --color-danger: #DC3545;         /* Red - errors, critical */
+  --color-info: #17A2B8;           /* Cyan - information */
+  --color-salesforce: #00A1E0;     /* Salesforce brand blue */
+  
+  /* ============================================
+   SPACING SCALE - Based on 8px grid system
+   ============================================ */
+
+/* Base spacing values - multiples of 8px for consistency */
+--spacing-xs: 0.5rem;    /* 8px - Minimal spacing */
+--spacing-sm: 1rem;      /* 16px - Small spacing */
+--spacing-md: 1.5rem;    /* 24px - Medium spacing */
+--spacing-lg: 2rem;      /* 32px - Large spacing */
+--spacing-xl: 3rem;      /* 48px - Extra large spacing */
+--spacing-xxl: 4rem;     /* 64px - Double extra large */
+--spacing-xxxl: 6rem;    /* 96px - Section spacing */
+
+/* Micro spacing for fine-tuned adjustments */
+--spacing-2xs: 0.25rem;  /* 4px - Micro spacing */
+--spacing-3xs: 0.125rem; /* 2px - Hairline spacing */
+
+
+/* ============================================
+   TYPOGRAPHY SCALE - Modular scale (1.25 ratio)
+   ============================================ */
+
+/* Body text sizes */
+--font-xs: 0.75rem;      /* 12px - Fine print, captions */
+--font-sm: 0.875rem;     /* 14px - Small text, labels, descriptions */
+--font-base: 1rem;       /* 16px - Body text (standard) */
+--font-md: 1.0625rem;    /* 17px - Slightly emphasized body */
+
+/* Heading sizes - Compact hierarchy for portal UI */
+--font-lg: 1.125rem;     /* 18px - H5, small headings, card titles */
+--font-xl: 1.25rem;      /* 20px - H4, subheadings */
+--font-xxl: 1.5rem;      /* 24px - H3, section headings */
+--font-xxxl: 1.875rem;   /* 30px - H2, major headings */
+--font-display: 2.25rem; /* 36px - H1, hero text */
+--font-hero: 3rem;       /* 48px - Extra large displays */
+
+/* Alternative naming for semantic use */
+--font-caption: var(--font-xs);
+--font-label: var(--font-sm);
+--font-body: var(--font-base);
+--font-lead: var(--font-md);
+--font-h5: var(--font-lg);
+--font-h4: var(--font-xl);
+--font-h3: var(--font-xxl);
+--font-h2: var(--font-xxxl);
+--font-h1: var(--font-display);
+
+
+/* ============================================
+   LINE HEIGHT SCALE - For optimal readability
+   ============================================ */
+
+--line-height-tight: 1.2;    /* Headings */
+--line-height-snug: 1.375;   /* Subheadings */
+--line-height-normal: 1.5;   /* Body text */
+--line-height-relaxed: 1.625; /* Long-form content */
+--line-height-loose: 2;      /* Spacious text */
+
+
+/* ============================================
+   FONT WEIGHTS - Standard scale
+   ============================================ */
+
+--font-weight-light: 300;
+--font-weight-normal: 400;
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
+--font-weight-extrabold: 800;
+
+  /* Other */
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --transition-speed: 0.3s;
+  
+  /* Glass effect variables */
+  --glass-bg-opacity: 0.85;
+  --glass-blur: 8px;
+  --glass-border-opacity: 0.2;
+  --glass-hover-opacity: 0.92;
+
+  /* Fixed navbar offset - adjust if navbar height changes */
+  --navbar-height: 130px; /* Combined height of top-bar + navigation bar */
+
+  /* ============================================
+   CONTAINER WIDTH SCALE - Desktop optimized (2025 best practices)
+   Based on: https://webhelpagency.com/blog/website-dimensions/
+   ============================================ */
+  --container-sm: 750px;      /* Tablet portrait */
+  --container-md: 970px;      /* Small desktop */
+  --container-lg: 1280px;     /* Standard desktop (1920x1080) */
+  --container-xl: 1400px;     /* Large desktop (1440p+) */
+  --container-xxl: 1600px;    /* Ultra-wide (4K displays) */
+}
+
+/* PAM container styling moved to dedicated pam-styles.css */
+/* Removed duplicate PAM layout rules */
+
+/* ============================================
+   ICON COLOR UTILITY CLASSES
+   Use these instead of inline style="color: #xxx"
+   ============================================ */
+
+/* Primary color icon (Nintex Orange) */
+.icon-primary {
+  color: var(--primary-color) !important;
+}
+
+/* Secondary color icon (Nintex Blue) */
+.icon-secondary {
+  color: var(--secondary-color) !important;
+}
+
+/* Success/Green icon */
+.icon-success {
+  color: var(--color-success) !important;
+}
+
+/* Warning/Amber icon */
+.icon-warning {
+  color: var(--color-warning) !important;
+}
+
+/* Danger/Red icon */
+.icon-danger {
+  color: var(--color-danger) !important;
+}
+
+/* Info/Cyan icon */
+.icon-info {
+  color: var(--color-info) !important;
+}
+
+/* Purple icon (Process Manager, special features) */
+.icon-purple {
+  color: var(--anim-purple) !important;
+}
+
+/* Salesforce brand icon */
+.icon-salesforce {
+  color: var(--color-salesforce) !important;
+}
+
+/* Dark/neutral icon */
+.icon-dark {
+  color: var(--text-dark) !important;
+}
+
+/* ============================================
+   Base Elements & Utility Classes
+   ============================================ */
+/* Font family will be applied individually to specific components that need it */
+/* No global font application to prevent navbar positioning issues */
+
+.section {
+  /* padding: var(--spacing-lg) 0; */
+  background-color: var(--light-gray);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segue UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.section-heading {
+  margin-bottom: var(--spacing-md);
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-align: center;
+  font-size: var(--font-lg);
+}
+
+/* Base Button Styling */
+.btn {
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  font-size: var(--font-base); /* Changed from font-xl to font-base for better proportion */
+  text-align: center;
+  transition: all var(--transition-speed) ease;
+}
+
+/* But allow navbar buttons to use Bootstrap defaults */
+.navbar .btn,
+.top-bar .btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Modified button styles for white background */
+.btn-light {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+
+.btn-light:hover {
+  background-color: var(--secondary-hover);
+  border-color: var(--secondary-hover);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.btn-outline-light {
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  background-color: transparent;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(0, 102, 204, 0.1);
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Card Base Styling */
+.card-base {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: all var(--transition-speed) ease;
+}
+
+.card-base:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Glass Effect Utility Class */
+.glass-effect {
+  background-color: rgba(255, 255, 255, var(--glass-bg-opacity));
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  transition: background-color var(--transition-speed) ease;
+}
+
+.glass-effect:hover {
+  background-color: rgba(255, 255, 255, var(--glass-hover-opacity));
+}
+
+/* ============================================
+   Main Banner Styling - MODIFIED FOR WHITE THEME
+   ============================================ */
+.main-banner {
+  padding: var(--spacing-md) 0; /* Reduced from 1.75rem to spacing-md (24px) */
+  position: relative;
+  overflow: hidden;
+  min-height: 10rem; /* Slightly reduced min-height */
+  z-index: 4;
+  /* background-color: white; */
+}
+
+/* Increase z-index for main content */
+.main-banner .container-fluid {
+  position: relative;
+  z-index: 4; /* Increase to a higher value than background elements */
+  width: 100%;
+  max-width: 1280px; /* Optimized for modern desktop screens */
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 0 !important;
+}
+
+/* Ensure row content is on top */
+.main-banner .row {
+  position: relative;
+  z-index: 4; /* Even higher to ensure it's on top */
+}
+
+.banner-accent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 107, 0, 0.03);
+  transform: skewX(-15deg) translateX(20%);
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.main-banner .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Banner welcome and text - MODIFIED FOR WHITE BACKGROUND */
+.banner-welcome {
+  color: var(--text-dark);
+}
+
+.banner-welcome .welcome-message {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.banner-welcome .welcome-icon {
+  font-size: var(--font-xxxl); /* Use CSS variable instead of hardcoded 2rem */
+  color: var(--secondary-color);
+  margin-right: var(--spacing-sm); /* Use CSS variable instead of hardcoded 15px */
+  opacity: 0.9;
+}
+
+.banner-welcome h3 {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: var(--font-lg);
+}
+
+.banner-header {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: var(--font-xxl); /* Changed from font-xxxl to font-xxl for better balance */
+  margin: var(--spacing-xs) 0;
+  text-transform: capitalize;
+}
+
+.banner-text {
+  color: var(--text-medium);
+  font-size: var(--font-md); /* Changed from font-xl to font-md for better proportion */
+  margin-bottom: 0;
+}
+
+/* Banner actions and links - MODIFIED FOR WHITE BACKGROUND */
+.banner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+  align-items: flex-end;
+}
+
+.action-buttons .btn {
+  padding: var(--spacing-xs) 1.25rem;
+  min-width: 200px;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+}
+
+.quick-link {
+  color: var(--text-medium);
+  text-decoration: none;
+  font-size: var(--font-base); /* Changed from font-md to font-base for consistency */
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.quick-link i {
+  margin-right: var(--spacing-xs);
+  font-size: var(--font-md);
+  color: var(--primary-color);
+}
+
+.quick-link:hover {
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+/* ============================================
+   Enhanced Banner Background Extension - MODIFIED FOR WHITE THEME
+   ============================================ */
+.main-banner-with-carousel,
+.main-banner-with-animation,
+.background-blue {
+  position: relative;
+  padding-top: calc(var(--navbar-height) - 20px); /* Reduced spacing below navbar */
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  overflow: hidden !important; /* Critical: Contain the waves within this element */
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent; /* Changed from white to allow animations to show through */
+}
+
+/* Banner adjustments within the extended container */
+.main-banner-with-carousel .main-banner,
+.main-banner-with-animation .main-banner {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  position: relative;
+  min-height: auto;
+}
+
+/* Keep container content above the overlay */
+.main-banner-with-carousel .container,
+.main-banner-with-animation .container {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 1280px; /* Optimized for modern desktop screens */
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 0 !important;
+}
+
+/* ============================================
+   Animation Background Adjustments for White Theme
+   ============================================ */
+.nintex-background-animation svg path {
+  stroke: var(--light-gray);
+}
+
+.nintex-background-animation .nintex-orbs-animation:nth-child(1) .nintex-orbs-animation__orb:nth-of-type(1) {
+  --orb-rgb: 239, 239, 239;
+  --orb-alpha: 0.8;
+}
+
+.nintex-background-animation .nintex-orbs-animation:nth-child(1) .nintex-orbs-animation__orb:nth-of-type(2) {
+  --orb-rgb: 245, 245, 245;
+  --orb-alpha: 0.6;
+}
+
+.nintex-background-animation .nintex-orbs-animation:nth-child(1) .nintex-orbs-animation__orb:nth-of-type(3) {
+  --orb-rgb: 250, 250, 250;
+  --orb-alpha: 0.7;
+}
+
+.nintex-lines-animation svg {
+  opacity: 0.4;
+}
+
+.nintex-background-gradient.blue {
+  background: white;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.6) 53%,
+    rgba(255, 255, 255, 0.2) 100%
+  ) !important;
+}
+
+
+
+/* ============================================
+   Partner Resources Section Styling
+   ============================================ */
+.resource-section,
+.announcements-section {
+  padding: var(--spacing-md) 0; /* Reduced from spacing-lg to spacing-md */
+  background-color: var(--light-gray);
+}
+
+/* Make all resource cards the same size with thumbnails */
+.resource-card {
+  height: 300px; 
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, var(--glass-bg-opacity));
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  overflow: hidden;
+  box-sizing: border-box;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+  background-color: rgba(255, 255, 255, var(--glass-hover-opacity));
+}
+
+/* Create a card-header for icon cards */
+.card-header {
+  height: 140px; 
+  background-color: rgba(245, 247, 250, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Style for icons in the header */
+.card-header .card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0; 
+}
+
+.card-header .card-icon i {
+  font-size: var(--font-xxl) !important;
+  color: white;
+}
+
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-icon i {
+  font-size: var(--font-xl) !important;
+}
+
+/* Make card-body take remaining space */
+.card-body {
+  padding: var(--spacing-sm); /* Reduced from 1rem to spacing-sm (16px) */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Style the title uniformly */
+.card-title {
+  color: var(--secondary-color);
+  font-size: var(--font-lg); /* Already using correct variable */
+  font-weight: var(--font-weight-semibold); /* Use CSS variable for weight */
+  margin-bottom: var(--spacing-2xs); /* Reduced from 0.5rem to spacing-2xs (4px) */
+}
+
+/* Style description text */
+.card-text {
+  color: var(--text-medium);
+  font-size: var(--font-base);
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: var(--spacing-xs); /* Reduced from 1rem to spacing-xs (8px) */
+}
+
+/* Push button to bottom */
+.resource-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Set fixed button width */
+.resource-card .btn-outline-primary,
+.resource-card .btn-primary {
+  min-width: 120px;
+  text-align: center;
+}
+
+/* Helper class for thumbnail images */
+.thumbnail-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* Custom thumbnail background colors */
+.bg-upgrade {
+  background-color: #F5F7FA;
+  background-image: url('https://ntxtemplatestorage.blob.core.windows.net/partner/upgrade-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-workflow {
+  background-color: #F0F7FF;
+  background-image: url('https://ntxtemplatestorage.blob.core.windows.net/partner/workflow-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-webinar {
+  background-color: #FFF9F0;
+  background-image: url('https://ntxtemplatestorage.blob.core.windows.net/partner/webinar-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ============================================
+   Video Card Styling
+   ============================================ */
+.video-card {
+  position: relative;
+}
+
+/* Style for video thumbnails */
+.video-thumbnail {
+  height: 140px;
+  max-height: 140px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.05);
+}
+
+/* Video icon positioning */
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 107, 0, 0.8);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--font-xl) !important;
+  z-index: 2;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.video-card:hover .play-icon {
+  background-color: var(--primary-color);
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: var(--font-sm);
+}
+
+/* ============================================
+   Announcements Section Styling
+   ============================================ */
+.announcement-card {
+  background-color: rgba(255, 255, 255, var(--glass-bg-opacity));
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  box-sizing: border-box;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+}
+
+.announcement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-hover);
+  background-color: rgba(255, 255, 255, var(--glass-hover-opacity));
+}
+
+.announcement-card.featured {
+  border-left: 4px solid var(--primary-color);
+}
+
+.card-content {
+  padding: 0;
+}
+
+.announcement-image {
+  position: relative;
+  height: 100%;
+  min-height: 180px;
+  background-color: rgba(240, 240, 240, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.announcement-card:hover .announcement-image img {
+  transform: scale(1.03);
+}
+
+.event-badge {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: var(--font-sm);
+  letter-spacing: 1px;
+}
+
+.announcement-details {
+  padding: var(--spacing-sm); /* Reduced from spacing-md to spacing-sm */
+}
+
+.announcement-title {
+  color: var(--secondary-color);
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight-semibold); /* Use CSS variable */
+  margin-bottom: var(--spacing-sm);
+  transition: color 0.3s ease;
+}
+
+.announcement-card:hover .announcement-title {
+  color: var(--primary-color);
+}
+
+.announcement-desc {
+  color: var(--text-medium);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-base); /* Changed from font-md to font-base for consistency */
+}
+
+/* Highlights, speakers and footer */
+.announcement-highlights,
+.announcement-speakers {
+  margin-bottom: var(--spacing-md);
+}
+
+.announcement-speakers {
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid rgba(238, 238, 238, 0.5);
+}
+
+.highlights-group {
+  margin-bottom: var(--spacing-sm);
+}
+
+.highlights-group h5,
+.announcement-highlights h4,
+.announcement-speakers h4 {
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.highlights-group h5 {
+  font-size: var(--font-base); /* Changed from font-md to font-base */
+  color: var(--secondary-color);
+  font-weight: var(--font-weight-semibold);
+}
+
+.announcement-highlights h4,
+.announcement-speakers h4 {
+  font-size: var(--font-md);
+  color: #333;
+}
+
+.highlights-group h5 i {
+  margin-right: var(--spacing-xs);
+  color: var(--primary-color);
+}
+
+.speaker-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.speaker {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.speaker-name {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.speaker-title {
+  font-size: var(--font-sm);
+  color: var(--text-light); /* Use CSS variable instead of hardcoded color */
+}
+
+.announcement-footer {
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid rgba(238, 238, 238, 0.5);
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* ============================================
+   Partner Manager Banner Styles - MODIFIED FOR WHITE THEME
+   ============================================ */
+.your-partner-team {
+  font-size: var(--font-lg) !important;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.your-nintex-partner-manager {
+  font-size: var(--font-xl) !important;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.partner-manager-name {
+  color: var(--text-dark);
+  font-weight: var(--font-weight-medium); /* Use CSS variable */
+  font-size: var(--font-md); /* Use CSS variable instead of hardcoded 1.1rem */
+}
+
+.partner-manager-email {
+  display: block;
+  color: var(--text-medium);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.partner-manager-email:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* ============================================
+   Custom Spacing Overrides
+   ============================================ */
+/* Home section overrides */
+body [home] section {
+  padding-bottom: var(--spacing-lg) !important;
+}
+
+/* Utility class for reduced padding */
+.reduced-padding {
+  padding-top: var(--spacing-md) !important;
+  padding-bottom: var(--spacing-md) !important;
+  margin: 0 !important;
+}
+
+/* User greeting section */
+.user-greeting-section {
+  padding: var(--spacing-sm) 0 !important;
+  margin: 0 !important;
+}
+
+/* Partner resources section title spacing */
+.partner-resources-title {
+  margin-top: var(--spacing-sm) !important;
+  margin-bottom: var(--spacing-sm) !important;
+}
+
+/* Latest announcements section */
+.latest-announcements-section {
+  padding-top: var(--spacing-sm) !important;
+  margin-top: 0 !important;
+}
+
+/* Row spacing in grids */
+.row.g-4 {
+  --bs-gutter-x: var(--spacing-sm) !important;
+  --bs-gutter-y: var(--spacing-sm) !important;
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+@media (max-width: 991px) {
+  .banner-actions {
+    margin-top: var(--spacing-lg);
+    align-items: flex-start;
+  }
+  
+  .action-buttons {
+    align-items: flex-start;
+  }
+  
+  .action-buttons .btn {
+    width: 100%;
+  }
+  
+  .quick-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Main banner responsive styles */
+  .main-banner {
+    min-height: auto;
+    padding: var(--spacing-sm) 0; /* Reduced from spacing-lg to spacing-sm for mobile */
+  }
+  
+  .banner-header {
+    font-size: var(--font-xl); /* Use CSS variable instead of font-lg */
+  }
+  
+  .banner-welcome .welcome-icon {
+    font-size: var(--font-xxl); /* Use CSS variable instead of hardcoded 1.75rem */
+  }
+  
+  .banner-welcome h3 {
+    font-size: var(--font-md); /* Use CSS variable instead of hardcoded 1.2rem */
+  }
+  
+  .quick-links {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-md);
+  }
+  
+  /* Announcements responsive styles */
+  .announcement-image {
+    min-height: 180px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .speaker-list {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .announcement-footer,
+  .welcome-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .announcement-footer .btn,
+  .welcome-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .welcome-message {
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  /* Resource cards on mobile */
+  .resource-card {
+    height: auto;
+    min-height: 250px;
+  }
+  
+  /* Adjust animation visibility on mobile */
+  .nintex-orbs-animation__orb {
+    opacity: 0.5 !important;
+  }
+  
+  .nintex-lines-animation svg path {
+    stroke-width: 6px !important;
+  }
+}
+
+
+
+/* Bootstrap 3.x container system - gentle override for content areas only */
+main .container,
+section .container,
+.content .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Let navbar containers and other Bootstrap components use default styling */
+.navbar .container {
+  /* Bootstrap will handle this */
+}
+
+/* ============================================
+   Desktop-Optimized Container Breakpoints (2025)
+   Maximizes screen real estate for desktop users
+   ============================================ */
+@media (min-width: 768px) {
+  .container { width: var(--container-sm) !important; }
+}
+
+@media (min-width: 992px) {
+  .container { width: var(--container-md) !important; }
+}
+
+@media (min-width: 1200px) {
+  .container { width: 95% !important; max-width: var(--container-lg) !important; }
+}
+
+@media (min-width: 1440px) {
+  .container { width: 92% !important; max-width: var(--container-xl) !important; }
+}
+
+@media (min-width: 1920px) {
+  .container { width: 88% !important; max-width: var(--container-xxl) !important; }
+}
+
+/* Bootstrap 3.x column system - float-based layout */
+[class*="col-"] {
+  position: relative !important;
+  min-height: 1px !important;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+}
+
+@media (min-width: 992px) {
+  .col-md-3 {
+    float: left !important;
+    width: 25% !important;
+  }
+  
+  .col-md-4 {
+    float: left !important;
+    width: 33.333333% !important;
+  }
+  
+  .col-md-8 {
+    float: left !important;
+    width: 66.666667% !important;
+  }
+}
+
+/* Ensure proper clearfix for Bootstrap 3.x */
+.row:before,
+.row:after {
+  display: table !important;
+  content: " " !important;
+}
+
+.row:after {
+  clear: both !important;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+  body {
+    font-size: 12pt;
+    background: white;
+    color: black;
+  }
+  
+  .main-banner,
+  .main-banner-with-carousel,
+  .card-base,
+  .resource-card,
+  .announcement-card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 80%;
+    color: #555;
+  }
+  
+  /* Avoid page breaks inside critical content */
+  h1, h2, h3, 
+  .announcement-title,
+  .card-title {
+    page-break-after: avoid;
+  }
+  
+  .announcement-details,
+  .card-body {
+    page-break-before: avoid;
+  }
+  
+  /* Hide animations when printing */
+  .nintex-background-animation,
+  .nintex-orbs-animation,
+  .nintex-lines-animation {
+    display: none !important;
+  }
+}
+/**
+ * 4-Across Resource Cards Layout Update
+ * To be added to the end of partnerportal.css
+ */
+
+/**
+ * 4-Across Resource Cards Layout Update
+ * To be added to the end of partnerportal.css
+ */
+
+/* ============================================
+   4-Across Resource Cards Layout Modifications
+   ============================================ */
+
+/* Adjust spacing for 4-column layout */
+.resource-section .row {
+  --bs-gutter-x: 0.75rem !important;
+  --bs-gutter-y: 0.75rem !important;
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+}
+
+/* Adjust column padding for tighter spacing */
+.resource-section .col-md-3 {
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  margin-bottom: var(--bs-gutter-y);
+}
+
+/* Make resource cards shorter and more compact */
+.resource-section .resource-card {
+  height: 280px; /* Increased slightly to accommodate larger text */
+  margin-bottom: 0;
+}
+
+/* Reduce card header height and center content */
+.resource-section .card-header {
+  height: 100px; /* Adjusted for better proportions */
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Make thumbnail images shorter */
+.resource-section .thumbnail-image, 
+.resource-section .video-thumbnail {
+  height: 100px; /* Adjusted to match header height */
+}
+
+/* Compact card body spacing */
+.resource-section .card-body {
+  padding: var(--spacing-xs); /* Reduced from 0.75rem to spacing-xs (8px) */
+}
+
+/* Adjust title size and positioning */
+.resource-section .card-title {
+  font-size: var(--font-lg); /* Increased from font-md to font-lg */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Style for icon in header */
+.resource-section .card-header .card-icon {
+  margin-bottom: 0.5rem;
+}
+
+/* Increase text size and adjust spacing */
+.resource-section .card-text {
+  font-size: var(--font-base); /* Increased from font-sm to font-base */
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Make buttons smaller */
+.resource-section .resource-card .btn {
+  padding: 0.25rem 0.75rem;
+  font-size: var(--font-sm);
+  min-width: 100px; /* Reduced from 120px */
+}
+
+/* Adjust video card elements for the shorter cards */
+.resource-section .play-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.resource-section .video-duration {
+  bottom: 5px;
+  right: 5px;
+  padding: 1px 4px;
+  font-size: calc(var(--font-sm) - 0.1rem);
+}
+
+/* Add hover effect */
+.resource-section .resource-card:hover {
+  transform: translateY(-3px); /* Smaller raise effect */
+}
+
+/* Add a custom background for the latest product update feed */
+.bg-updates {
+  background-color: #F5F7FA;
+  background-image: url('https://ntxtemplatestorage.blob.core.windows.net/partner/updates-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Media queries for responsive behavior */
+@media (max-width: 991px) {
+  .resource-section .resource-card {
+    height: 260px; /* Slightly taller on medium screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .resource-section .col-md-3 {
+    margin-bottom: 1rem; /* More space between stacked cards */
+  }
+  
+  .resource-section .resource-card {
+    height: auto; /* Auto height on mobile */
+    min-height: 220px; /* Minimum height */
+  }
+  
+  .resource-section .card-title {
+    font-size: var(--font-md);
+  }
+  
+  .resource-section .card-text {
+    font-size: var(--font-sm);
+  }
+}
+/* Add spacing between button icons and text */
+.btn i {
+  margin-right: 8px;
+}
+/* ============================================
+   Custom Modal Styling (no Bootstrap dependency)
+   ============================================ */
+   .custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .custom-modal.show {
+    opacity: 1;
+  }
+  
+  .custom-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+  
+  .custom-modal-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+  }
+  
+  .custom-modal-content {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+  }
+  
+  .custom-modal-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 107, 0, 0.2);
+  }
+  
+  .custom-modal-title {
+    margin: 0;
+    font-weight: 600;
+    font-size: var(--font-xl) !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .custom-modal-close {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+  }
+  
+  .custom-modal-close:hover {
+    transform: scale(1.1);
+  }
+  
+  .custom-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .custom-modal.video-modal {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.custom-modal.video-modal .custom-modal-container {
+    max-width: 80vw;        /* CHANGED: from 90vw to 80vw (smaller width) */
+    max-height: 80vh;       /* CHANGED: from 90vh to 80vh (smaller height) */
+    width: 80vw;            /* ADDED: explicit width */
+    height: auto;           /* ADDED: auto height to prevent cutoff */
+    background-color: #000;
+    padding: 0;
+    margin: auto;           /* ADDED: center the modal */
+    position: relative;     /* ADDED: for proper positioning */
+}
+
+.custom-modal.video-modal .custom-modal-content {
+    background-color: #000;
+    border-radius: 8px;
+}
+
+.custom-modal.video-modal .custom-modal-header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 1000;
+}
+
+.custom-modal.video-modal .custom-modal-close {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.custom-modal.video-modal .custom-modal-close:hover {
+    background: rgba(255, 107, 0, 0.8);
+}
+
+.custom-modal.video-modal .custom-modal-body {
+    padding: 0;
+    position: relative;
+    background-color: #000;
+}
+
+/* Video container with 16:9 aspect ratio */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 45%;    /* CHANGED: from 56.25% to 45% (16:10 ratio instead of 16:9) */
+    background-color: #000;
+    max-height: 70vh;       /* ADDED: prevent container from being too tall */
+    overflow: hidden;       /* ADDED: hide any overflow */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Video loading state */
+.video-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .custom-modal.video-modal .custom-modal-container {
+        width: 95vw;
+        height: auto;
+        margin: 20px auto;
+    }
+}
+  /* Loading indicator */
+  .loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 107, 0, 0.2);
+    border-radius: 50%;
+    border-top-color: #FF6B00;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 15px;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Retry button */
+  .retry-button {
+    background-color: #FF6B00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-family: inherit;
+  }
+  
+  .retry-button:hover {
+    background-color: #E56000;
+    transform: translateY(-2px);
+  }
+  
+  .small-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .small-text a {
+    color: #0066CC;
+    text-decoration: none;
+  }
+  
+  .small-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style Marketo form to match Nintex branding */
+  #marketoFormContainer {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  /* Marketo form fixes */
+  .mktoForm {
+    width: 100% !important;
+    font-family: inherit !important;
+  }
+  
+  .mktoForm .mktoLabel {
+    width: auto !important;
+    font-weight: 500 !important;
+    color: #333 !important;
+  }
+  
+  .mktoForm .mktoFormRow {
+    margin-bottom: 15px !important;
+  }
+  
+  .mktoForm input[type=text],
+  .mktoForm input[type=email],
+  .mktoForm select {
+    width: 100% !important;
+    padding: 8px 10px !important;
+    font-size: 16px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    font-family: inherit !important;
+  }
+  
+  .mktoForm input[type=text]:focus,
+  .mktoForm input[type=email]:focus,
+  .mktoForm select:focus {
+    border-color: #FF6B00 !important;
+    outline: none !important;
+  }
+  
+  .mktoForm .mktoButton {
+    background-color: #FF6B00 !important;
+    border: none !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    font-weight: 500 !important;
+    border-radius: 4px !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    font-family: inherit !important;
+    box-shadow: 0 2px 4px rgba(255, 107, 0, 0.2) !important;
+  }
+  
+  .mktoForm .mktoButton:hover {
+    background-color: #E56000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3) !important;
+  }
+  
+  /* Fix for adjusting MktoForms2 element width */
+  .mktoFieldWrap {
+    width: 100% !important;
+  }
+  
+  .mktoOffset {
+    display: none !important;
+  }
+  
+  /* Alert message styling */
+  .alert-success {
+    background-color: #DCFCE7;
+    color: #166534;
+    border: 1px solid #A7F3D0;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .alert-error {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FECACA;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  /* Some fixes for mobile view */
+  @media (max-width: 768px) {
+    .custom-modal-container {
+      width: 90%;
+    }
+    
+    .mktoForm {
+      padding: 0 !important;
+    }
+    
+    .mktoForm .mktoFormRow {
+      clear: both !important;
+    }
+    
+    .mktoForm .mktoFieldWrap {
+      float: none !important;
+      width: 100% !important;
+    }
+    
+    .mktoForm .mktoLabel {
+      display: block !important;
+      float: none !important;
+      width: 100% !important;
+      margin-bottom: 5px !important;
+    }
+    
+    .mktoForm .mktoField {
+      width: 100% !important;
+    }
+    
+    .mktoButtonRow {
+      width: 100% !important;
+      text-align: center !important;
+    }
+  }
+  .custom-modal-header {
+    background-color: #FF6B00;
+    color: white;
+    /* other styles */
+  }
+
+/* Critical fixes for the modal */
+.custom-modal-header {
+  background-color: #FF6B00 !important;
+  color: white !important;
+}
+
+.custom-modal-close {
+  color: white !important;
+}
+
+.loading-indicator {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 30px 20px !important;
+  text-align: center !important;
+}
+
+.spinner {
+  width: 40px !important;
+  height: 40px !important;
+  border: 4px solid rgba(255, 107, 0, 0.2) !important;
+  border-radius: 50% !important;
+  border-top-color: #FF6B00 !important;
+  animation: spin 1s ease-in-out infinite !important;
+  margin-bottom: 15px !important;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+/* ============================================
+   Standalone Featured Event Card Styling
+   Add this to the end of partnerportal.css
+   ============================================ */
+
+/* Events showcase section */
+.events-showcase-section {
+  padding: var(--spacing-md) 0; /* Reduced from spacing-lg to spacing-md */
+  background-color: var(--light-gray);
+}
+
+.events-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.section-title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.view-all-link {
+  color: var(--text-medium);
+  text-decoration: none;
+  font-size: var(--font-md);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.view-all-link:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.view-all-link i {
+  margin-left: var(--spacing-xs);
+  font-size: var(--font-sm);
+}
+
+/* Standalone featured event card */
+.featured-event-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  min-height: 200px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.featured-event-card.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.featured-event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Event tag container */
+.event-tag-container {
+  flex: 0 0 140px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.event-tag {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  padding: 0 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}
+
+.event-date-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: rgba(0, 102, 204, 0.08);
+  color: var(--secondary-color);
+}
+
+.event-date-main {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.event-time {
+  font-size: 0.75rem;
+  color: #666;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.date-badge {
+  margin-top: 10px;
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 50px;
+}
+
+.date-badge .month {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.date-badge .day {
+  font-size: var(--font-lg); /* Use CSS variable instead of hardcoded 1.2rem */
+  font-weight: var(--font-weight-bold); /* Use CSS variable */
+  color: var(--text-dark);
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Event content area */
+.event-content {
+  flex: 1;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-content-wrapper {
+  flex: 1;
+}
+
+.event-title {
+  font-size: var(--font-xl); /* Use CSS variable instead of hardcoded 1.5rem */
+  font-weight: var(--font-weight-bold); /* Use CSS variable */
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm); /* Use CSS variable instead of hardcoded 15px */
+  line-height: var(--line-height-tight);
+}
+
+.event-description {
+  font-size: var(--font-md); /* Use CSS variable instead of hardcoded 1.2rem */
+  line-height: var(--line-height-normal);
+  color: var(--text-medium);
+  margin-bottom: var(--spacing-md); /* Use CSS variable instead of hardcoded 20px */
+}
+
+.event-description strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* Event footer with CTA */
+.event-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.event-meta-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.event-meta-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.event-meta-info i {
+  color: var(--primary-color);
+}
+
+.event-cta-btn {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #ff8533 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 3px 8px rgba(255, 107, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.event-cta-btn:hover {
+  background: linear-gradient(135deg, #e55a00 0%, #e55a00 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 0, 0.35);
+  text-decoration: none;
+  color: white;
+}
+
+/* Tag color variations */
+.tag-service { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+.tag-update { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.tag-announcement { background: linear-gradient(135deg, #10b981, #059669); }
+.tag-maintenance { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.tag-feature { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+/* Loading and error states */
+.featured-event-loading,
+.featured-event-error {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  padding: 40px;
+  text-align: center;
+}
+
+.featured-event-loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 107, 0, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+.featured-event-error {
+  color: var(--text-medium);
+}
+
+.featured-event-error i {
+  font-size: 2rem;
+  color: #dc3545;
+  margin-bottom: 15px;
+}
+
+.featured-event-error h4 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.featured-event-error p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .events-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .featured-event-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .event-tag-container {
+    flex: none;
+    flex-direction: row;
+    height: auto;
+  }
+  
+  .event-tag {
+    flex: 1;
+    height: 50px;
+  }
+  
+  .event-date-info {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .event-content {
+    padding: var(--spacing-sm); /* Reduced from spacing-md to spacing-sm for mobile */
+  }
+  
+  .event-title {
+    font-size: var(--font-xl); /* Use CSS variable instead of hardcoded 1.3rem */
+  }
+  
+  .event-footer {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .event-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-tag-container {
+    flex-direction: column;
+  }
+  
+  .event-tag,
+  .event-date-info {
+    flex: none;
+  }
+  
+  .event-content {
+    padding: 15px;
+  }
+  
+  .event-title {
+    font-size: var(--font-lg); /* Use CSS variable instead of hardcoded 1.2rem */
+  }
+  
+  .event-description {
+    font-size: var(--font-base); /* Use CSS variable instead of hardcoded 1.2rem */
+  }
+  
+  .event-meta-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+/* Ensure featured card shows immediately */
+.featured-event-card {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  animation: slideInFromBottom 0.6s ease-out;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/* ============================================
+   GLOBAL FONT SIZE OVERRIDES & CONSISTENCY
+   Final font sizing rules to ensure readability
+   ============================================ */
+
+/* Base HTML and body settings */
+html {
+  font-size: 16px !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  background-color: white !important; /* Base white background */
+}
+
+/* Banner white background via pseudo-element - sits BEHIND animations */
+.main-banner-with-carousel::before,
+.main-banner-with-animation::before,
+.background-blue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 0; /* Behind animations (z-index: 1) */
+  pointer-events: none;
+}
+
+/* Ensure banner content sits above the ::before pseudo-element */
+.background-blue > *,
+.main-banner-with-carousel > *,
+.main-banner-with-animation > * {
+  position: relative;
+  z-index: 4;
+}
+
+/* Page header bar - simplified banner for use with full-page animations */
+.page-header-bar {
+  position: relative;
+  padding-top: var(--navbar-height, 130px);
+  padding-bottom: var(--spacing-md);
+}
+
+.page-header-bar .main-banner {
+  position: relative;
+  z-index: 4;
+}
+
+.page-header-bar .container-fluid {
+  position: relative;
+  z-index: 4;
+}
+
+/* Apply font to main content containers only - avoid navbar inheritance */
+/* PAM and Carousel containers excluded - handled by dedicated CSS files */
+.container:not(.navbar .container),
+.content,
+main,
+.main-content,
+.main-banner {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segue UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Carousel styling handled by dedicated carousel.css file */
+/* Only apply font to non-carousel event content */
+.event-content:not(.carousel-slide .event-content),
+.event-title:not(.carousel-slide .event-title),
+.event-description:not(.carousel-slide .event-description) {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segue UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Let body inherit naturally, only set defaults without !important */
+body {
+  font-size: var(--font-base);
+  line-height: 1.5;
+  /* No font family on body - applied to specific containers above */
+  /* padding-top: 50px !important; */ /* Removed - let navbar script handle this dynamically */
+}
+
+/* Text elements using CSS variables - EXCLUDE NAVBAR AND TOPBAR COMPLETELY */
+p:not(.navbar p):not(.top-bar p):not(.dropdown-menu p):not(.navbar * p):not(.top-bar * p) {
+  font-size: var(--font-base);
+  line-height: 1.6;
+}
+
+/* Headings using CSS variables - EXCLUDE NAVBAR AND TOPBAR COMPLETELY */
+h1:not(.navbar h1):not(.top-bar h1):not(.dropdown-menu h1):not(.navbar * h1):not(.top-bar * h1) {
+  font-size: var(--font-xxl-plus);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h2:not(.navbar h2):not(.top-bar h2):not(.dropdown-menu h2):not(.navbar * h2):not(.top-bar * h2) {
+  font-size: var(--font-xl-plus);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h3:not(.navbar h3):not(.top-bar h3):not(.dropdown-menu h3):not(.navbar * h3):not(.top-bar * h3) {
+  font-size: var(--font-xl);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h4:not(.navbar h4):not(.top-bar h4):not(.dropdown-menu h4):not(.navbar * h4):not(.top-bar * h4) {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h5:not(.navbar h5):not(.top-bar h5):not(.dropdown-menu h5):not(.navbar * h5):not(.top-bar * h5) {
+  font-size: var(--font-md);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h6:not(.navbar h6):not(.top-bar h6):not(.dropdown-menu h6):not(.navbar * h6):not(.top-bar * h6) {
+  font-size: var(--font-base);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Lists using CSS variables - EXCLUDE NAVBAR AND TOPBAR COMPLETELY */
+ul:not(.navbar ul):not(.top-bar ul):not(.dropdown-menu ul):not(.navbar * ul):not(.top-bar * ul) li,
+ol:not(.navbar ol):not(.top-bar ol):not(.dropdown-menu ol):not(.navbar * ol):not(.top-bar * ol) li {
+  font-size: var(--font-base);
+  line-height: 1.7;
+}
+
+/* Video description fix */
+.video-description,
+[class*="video-description"],
+span.video-description,
+.p-video-description {
+  font-size: var(--font-base);
+  color: var(--text-medium);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Card components */
+.card,
+.card-title,
+.resource-title,
+.announcement-title,
+.event-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segue UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-title,
+.resource-title,
+.announcement-title,
+.event-title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.card-text,
+.card-description,
+.resource-desc,
+.announcement-desc,
+.event-description {
+  font-size: var(--font-sm);
+  line-height: 1.5;
+}
+
+.card-body {
+  font-size: var(--font-base);
+}
+
+/* Banner and header sections */
+.banner-header {
+  font-size: var(--font-xxl);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.banner-text {
+  font-size: var(--font-base);
+  line-height: 1.5;
+}
+
+.banner-welcome {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segue UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.banner-welcome h3 {
+  font-size: var(--font-lg);
+  font-weight: 500;
+}
+
+.section-heading,
+.section-title,
+.panel-title,
+.resources-title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Buttons and interactive elements - Only for content area buttons, EXCLUDE TOPBAR */
+.content .btn:not(.top-bar .btn),
+main button:not(.navbar button):not(.top-bar button):not(.dropdown-toggle),
+section [type="button"]:not(.navbar [type="button"]):not(.top-bar [type="button"]),
+section [type="submit"]:not(.navbar [type="submit"]):not(.top-bar [type="submit"]) {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  line-height: 1.5;
+}
+
+/* News and announcement cards */
+.news-date {
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+
+.news-title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+}
+
+.news-summary {
+  font-size: var(--font-base);
+  line-height: 1.6;
+}
+
+/* Resource items */
+.resource-item,
+.resource-row {
+  font-size: var(--font-base);
+}
+
+.remember-title {
+  font-size: var(--font-lg-plus);
+  font-weight: 600;
+}
+
+.remember-text {
+  font-size: var(--font-md);
+  line-height: 1.6;
+}
+
+/* Footer */
+footer[site-footer],
+footer[site-footer] p,
+footer[site-footer] li,
+footer[site-footer] a {
+  font-size: var(--font-sm) !important;
+}
+
+footer[site-footer] h4 {
+  font-size: var(--font-md) !important;
+  font-weight: 600 !important;
+}
+
+/* ============================================
+   FORMS - Aligned with Nintex Corporate Style
+   Based on: nintex.com/wp-content/themes/nintex/assets/build/components/form/style-frontend.css
+   ============================================ */
+
+/* Labels - Corporate style: uppercase, bold, letter-spaced */
+/* Highly specific selectors - ONLY targets actual form field labels */
+/* Excludes: tables, filters, search, navigation, tabs, buttons */
+form:not(.search-form):not(.filter-form) label:not(th):not(.btn),
+.form-group label,
+.mktoForm label,
+.mktoFieldWrap label,
+fieldset:not(.filter-fieldset) label {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  line-height: 18px !important;
+  text-transform: uppercase !important;
+  color: var(--text-dark) !important;
+  padding-left: 17px !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+}
+
+/* Reset styles for table headers - should NOT look like form labels */
+table th,
+table thead th,
+.table th,
+.table thead th,
+th[class],
+.datatable th,
+[class*="grid"] th {
+  font-size: var(--font-sm) !important;
+  font-weight: 600 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  padding: 12px 8px !important;
+  color: var(--text-dark) !important;
+  background-color: var(--light-gray) !important;
+  border-bottom: 2px solid var(--border-color) !important;
+}
+
+/* Filter tabs/pills - preserve original styling */
+.nav-tabs,
+.nav-pills,
+.filter-tabs,
+.btn-group .btn,
+[class*="filter"] .btn,
+[class*="tab"] {
+  font-size: var(--font-sm) !important;
+  font-weight: 500 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+/* Protect section titles from form label styles */
+h2.resources-title,
+h2.panel-title,
+.pricing-resources .resources-title,
+.pricing-news-panel .panel-title {
+  display: flex !important;
+  font-size: var(--font-xl) !important;
+  font-weight: 600 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  color: var(--secondary-color) !important;
+  padding-left: 15px !important;
+  background: linear-gradient(to right, rgba(230, 240, 255, 0.5), rgba(255, 255, 255, 0.3)) !important;
+  padding: 8px 8px 8px 15px !important;
+  border-radius: 4px 4px 0 0 !important;
+  margin: -8px -8px var(--spacing-md) -8px !important;
+  min-height: 40px !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.5) !important;
+}
+
+/* Required field asterisk styling */
+.required,
+label .required,
+.form-label .required,
+span[style*="color: #dc3545"],
+span[style*="color:#dc3545"] {
+  color: var(--deep-navy, #1a1f4e) !important;
+  margin-left: 2px !important;
+  order: 2 !important;
+}
+
+/* Form group spacing */
+.form-group,
+.mktoFormRow {
+  margin-bottom: 20px !important;
+  position: relative !important;
+}
+
+/* Form inputs - Corporate material design style */
+/* Only apply to inputs within actual forms, not search/filter areas */
+form:not(.search-form):not(.filter-form) input[type="text"],
+form:not(.search-form):not(.filter-form) input[type="email"],
+form:not(.search-form):not(.filter-form) input[type="password"],
+form:not(.search-form):not(.filter-form) input[type="number"],
+form:not(.search-form):not(.filter-form) input[type="tel"],
+form:not(.search-form):not(.filter-form) input[type="url"],
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.mktoForm input,
+.mktoFieldWrap input,
+form:not(.search-form):not(.filter-form) textarea {
+  font-size: var(--font-sm) !important;
+  padding: 5px 17px 12px !important;
+  line-height: 1.5 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--deep-navy, #1a1f4e) !important;
+  border-radius: 0 !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  width: 100% !important;
+}
+
+/* Preserve standard styling for search inputs and filter dropdowns */
+input[type="search"],
+.search-input,
+.filter-input,
+[class*="search"] input,
+[class*="filter"] input,
+[class*="filter"] select,
+table select,
+.datatable select,
+.input-group input {
+  font-size: var(--font-sm) !important;
+  padding: 8px 12px !important;
+  background: white !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius-sm) !important;
+}
+
+/* Standard select dropdowns (not in forms) */
+select:not(.mktoField):not(.form-group select) {
+  font-size: var(--font-sm) !important;
+  padding: 8px 12px !important;
+  background: white !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius-sm) !important;
+  -webkit-appearance: menulist !important;
+  -moz-appearance: menulist !important;
+  appearance: menulist !important;
+}
+
+/* Desktop font size for inputs */
+@media (min-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select {
+    font-size: var(--font-base) !important;
+  }
+}
+
+/* Input hover state */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover,
+input[type="tel"]:hover,
+input[type="url"]:hover,
+textarea:hover,
+select:hover {
+  border-bottom-color: var(--focus-blue, #2a34a8) !important;
+}
+
+/* Input focus state - Corporate blue underline */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  border-bottom-color: var(--focus-blue, #2a34a8) !important;
+  box-shadow: 0 1px 0 0 var(--focus-blue, #2a34a8) !important;
+  outline: none !important;
+}
+
+/* Input error/invalid state */
+input[aria-invalid="true"],
+textarea[aria-invalid="true"],
+select[aria-invalid="true"],
+input.is-invalid,
+textarea.is-invalid,
+select.is-invalid {
+  border-bottom-color: var(--error-color, #f53619) !important;
+}
+
+input[aria-invalid="true"]:focus,
+textarea[aria-invalid="true"]:focus,
+select[aria-invalid="true"]:focus,
+input.is-invalid:focus,
+textarea.is-invalid:focus,
+select.is-invalid:focus {
+  box-shadow: 0 1px 0 0 var(--error-color, #f53619) !important;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-medium) !important;
+  font-size: var(--font-base) !important;
+}
+
+/* Textarea specific */
+textarea {
+  min-height: 100px !important;
+  resize: vertical !important;
+}
+
+/* Select dropdown arrow */
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 17px center !important;
+  padding-right: 40px !important;
+}
+
+/* Checkbox styling - Corporate style */
+input[type="checkbox"] {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  width: 18px !important;
+  height: 18px !important;
+  border: 1.5px solid var(--text-dark) !important;
+  border-radius: 0 !important;
+  background-color: white !important;
+  cursor: pointer !important;
+  position: relative !important;
+  margin-right: 10px !important;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--text-dark) !important;
+  border-color: var(--text-dark) !important;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 5px !important;
+  top: 2px !important;
+  width: 5px !important;
+  height: 10px !important;
+  border: solid white !important;
+  border-width: 0 2px 2px 0 !important;
+  transform: rotate(45deg) !important;
+}
+
+/* Radio button styling - Corporate style */
+input[type="radio"] {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  width: 18px !important;
+  height: 18px !important;
+  border: 1.5px solid var(--text-dark) !important;
+  border-radius: 50% !important;
+  background-color: white !important;
+  cursor: pointer !important;
+  position: relative !important;
+  margin-right: 10px !important;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--text-dark) !important;
+}
+
+/* Form error message styling */
+.error-message,
+.invalid-feedback,
+.mktoErrorMsg {
+  color: var(--error-color, #f53619) !important;
+  font-size: 12px !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  padding: 0 17px !important;
+  margin-top: 5px !important;
+}
+
+/* Carousel components - handled by dedicated carousel.css */
+/* Removed duplicate styles to prevent conflicts */
+
+.carousel-tag {
+  font-size: var(--font-sm) !important;
+  font-weight: 600 !important;
+}
+
+/* Tables */
+table {
+  font-size: var(--font-sm) !important;
+}
+
+table th {
+  font-size: var(--font-sm) !important;
+  font-weight: 600 !important;
+}
+
+table td {
+  font-size: var(--font-sm) !important;
+}
+
+/* High-specificity overrides for carousel and PAM components */
+.carousel-title,
+.announcement-carousel .carousel-title,
+body .carousel-title,
+html .carousel-title {
+  font-size: var(--font-lg) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+.carousel-description,
+.announcement-carousel .carousel-description,
+body .carousel-description,
+html .carousel-description {
+  font-size: var(--font-base) !important;
+  line-height: 1.5 !important;
+}
+
+.carousel-tag,
+.announcement-carousel .carousel-tag,
+body .carousel-tag,
+html .carousel-tag {
+  font-size: var(--font-sm) !important;
+  font-weight: 600 !important;
+}
+
+.pam-name,
+.pam-card .pam-name,
+body .pam-name,
+html .pam-name {
+  font-size: var(--font-lg) !important;
+  font-weight: 600 !important;
+}
+
+.pam-role,
+.pam-card .pam-role,
+body .pam-role,
+html .pam-role {
+  font-size: var(--font-base) !important;
+  font-weight: 500 !important;
+}
+
+.pam-region,
+.pam-card .pam-region,
+body .pam-region,
+html .pam-region {
+  font-size: var(--font-sm) !important;
+}
+
+.pam-contact-link,
+.pam-card .pam-contact-link,
+body .pam-contact-link,
+html .pam-contact-link {
+  font-size: var(--font-base) !important;
+}
+
+/* Force card components to use updated font sizes */
+.card-title,
+.resource-title,
+.announcement-title,
+.event-title,
+body .card-title,
+body .resource-title,
+body .announcement-title,
+body .event-title {
+  font-size: var(--font-lg) !important;
+  font-weight: 600 !important;
+}
+
+.card-text,
+.card-description,
+.resource-desc,
+.announcement-desc,
+.event-description:not(.carousel-description):not(.carousel-slide .event-description):not(.carousel-content .event-description),
+body .card-text,
+body .card-description,
+body .resource-desc,
+body .announcement-desc,
+body .event-description:not(.carousel-description):not(.carousel-slide .event-description):not(.carousel-content .event-description) {
+  font-size: var(--font-base) !important;
+  line-height: 1.5 !important;
+}
+
+
+/* ============================================
+   ACCESSIBILITY - Updated to Nintex Corporate Blue
+   ============================================ */
+a:focus,
+button:focus {
+  outline: 2px solid var(--focus-blue, #2a34a8) !important;
+  outline-offset: 2px !important;
+}
+
+/* Form inputs use underline focus instead of outline */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  /* Focus handled by border-bottom + box-shadow in form styles */
+}
+
+.text-muted:not(.top-bar .text-muted):not([top-bar] .text-muted):not(.dropdown-menu .text-muted) {
+  color: #666 !important;
+}
+
+
+
+
+
+/* ============================================
+   NAVBAR PROTECTION - MINIMAL APPROACH
+   ============================================ */
+
+/* Let Bootstrap handle all navbar styling - no overrides */
+
+/* ============================================
+   HOME SECTION PADDING OVERRIDE
+   Added to fix _home.scss excessive padding issue
+   ============================================ */
+
+/* Override _home.scss padding-top: 5rem with minimal padding */
+html body[home] section,
+html [home] section {
+    padding-top: 0.5rem !important;
+}
+
+/* Carousel section should have no top padding */
+html body[home] section.carousel-section,
+html body[home] .carousel-section,
+html [home] section.carousel-section,
+html [home] .carousel-section,
+html body[home] section.announcement-carousel,
+html [home] section.announcement-carousel {
+    padding-top: 0 !important;
+    padding-bottom: var(--spacing-md, 1.5rem) !important;
+}
+
+/* ============================================
+   END OF PARTNER PORTAL STYLES
+   ============================================ */

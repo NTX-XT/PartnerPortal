@@ -1,0 +1,520 @@
+:root {
+	--wp--preset--color--black: #0E0E0E;
+	--wp--preset--color--cyan-bluish-gray: #abb8c3;
+	--wp--preset--color--white: #FFFFFF;
+	--wp--preset--color--pale-pink: #f78da7;
+	--wp--preset--color--vivid-red: #cf2e2e;
+	--wp--preset--color--luminous-vivid-orange: #ff6900;
+	--wp--preset--color--luminous-vivid-amber: #fcb900;
+	--wp--preset--color--light-green-cyan: #7bdcb5;
+	--wp--preset--color--vivid-green-cyan: #00d084;
+	--wp--preset--color--pale-cyan-blue: #8ed1fc;
+	--wp--preset--color--vivid-cyan-blue: #0693e3;
+	--wp--preset--color--vivid-purple: #9b51e0;
+	--wp--preset--color--ivory: #FFF9F4;
+	--wp--preset--color--nintex-orange: #FF6D00;
+	--wp--preset--color--light-orange: #ff9f7b;
+	--wp--preset--color--pale-orange: #FEE9E3;
+	--wp--preset--color--pink-050: #FFD4EB;
+	--wp--preset--color--navy: #030A47;
+	--wp--preset--color--pink-200: #87a38c;
+	--wp--preset--color--pink-100: #9da2a3;
+	--wp--preset--color--pink-300: #b1ccb7;
+	--wp--preset--color--pale-blue: #D4D7FC;
+	--wp--preset--color--pink-400: #64728c;
+	--wp--preset--color--purple: #8439A6;
+	--wp--preset--color--deep-purple: #3D0456;
+	--wp--preset--color--blue: #2A348A;
+	--wp--preset--color--deep-navy: #000426;
+	--wp--style--root--padding-top: 0px;
+	--wp--style--root--padding-right: 20px;
+	--wp--style--root--padding-bottom: 0px;
+	--wp--style--root--padding-left: 20px;
+}
+
+/* Author: Alloy */
+
+/* Variables */
+
+$color-black: var(--wp--preset--color--black);
+$color-white: var(--wp--preset--color--white);
+$color-ivory: var(--wp--preset--color--ivory);
+$color-nintex-orange: var(--wp--preset--color--nintex-orange);
+$color-light-orange: var(--wp--preset--color--light-orange);
+$color-pale-orange: var(--wp--preset--color--pale-orange);
+$color-pink-050: var(--wp--preset--color--pink-050);
+$color-navy: var(--wp--preset--color--navy);
+$color-pink-200: var(--wp--preset--color--pink-200);
+$color-pink-100: var(--wp--preset--color--pink-100);
+$color-pink-300: var(--wp--preset--color--pink-300);
+$color-purple: var(--wp--preset--color--purple);
+$color-deep-purple: var(--wp--preset--color--deep-purple);
+$color-blue: var(--wp--preset--color--blue);
+$color-deep-navy: var(--wp--preset--color--deep-navy);
+$color-pale-blue: var(--wp--preset--color--pale-blue);
+$color-pink-400: var(--wp--preset--color--pink-400);
+
+/* Main Block */
+
+.nintex-main-block {
+	position: relative;
+	margin: 0 auto;
+	z-index: 5;
+
+	.nintex-container {
+		margin: 0 auto;
+		max-width: calc(1232px + var(--wp--style--root--padding-left) + var(--wp--style--root--padding-right));
+		padding-left: var(--wp--style--root--padding-left);
+		padding-right: var(--wp--style--root--padding-right);
+		width: 100%;
+	}
+
+	.hero-content {
+		padding: 60px 0;
+		z-index: 2;
+
+		.hero-text {
+			max-width: 40%;
+		}
+	}
+
+	.light-text {
+		color: var(--wp--preset--color--white)
+	}
+}
+
+/* Animations Main Area */
+
+.nintex-background-animation {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 0;
+
+	// Make next element be on top of the background animation.
+	~ *:not(.nintex-background-animation) {
+		position: relative;
+	}
+
+	/* Styles */
+	&--style-1 {
+		.nintex-orbs-animation {
+			&--top-left,
+			&--bottom-left {
+				.nintex-orbs-animation__orb {
+					--orb-rgb: 255, 159, 123; // light-orange
+
+					&:nth-of-type(2) {
+						--orb-rgb: 42, 52, 138; // blue
+					}
+
+					&:nth-of-type(3) {
+						--orb-rgb: 132, 57, 166; // purple
+					}
+				}
+			}
+		}
+	}
+
+	.nintex-orbs-animation:nth-child(1) {
+		.nintex-orbs-animation__orb {
+			&:nth-of-type(1) {
+				--orb-size: 140%;
+				left: -75%;
+				top: -10%;
+			}
+
+			&:nth-of-type(2) {
+				--orb-size: 125%;
+				left: 10%;
+				top: 30%;
+			}
+
+			&:nth-of-type(3) {
+				--orb-size: 125%;
+				left: -10%;
+				top: 50%;
+			}
+
+			@media (max-width: 768px) {
+				&:nth-of-type(1) {
+				}
+
+				&:nth-of-type(2) {
+					top: 0%;
+				}
+
+				&:nth-of-type(3) {
+					top: 10%;
+					--orb-size: 100%;
+				}
+			}
+		}
+	}
+}
+
+/* Orbs Animations. */
+
+.nintex-orbs-animation {
+	pointer-events: none;
+	position: absolute;
+	top: -230px;
+	right: -14%;
+	aspect-ratio: 1 / 1;
+	height: 100%;
+	max-height: 684px;
+
+	/* Only show one orb container on mobile (3 orbs instead of 6). Prevent stacking. */
+	&--top-left + &,
+	&--bottom-left + & {
+		display: none;
+	}
+
+	&--bottom-left {
+		right: auto;
+		left: -14%;
+		transform: scale(-1, -1);
+	}
+
+	&--bottom-left,
+	&--bottom-right {
+		bottom: -200px;
+		top: auto;
+	}
+
+	&--bottom-right {
+		transform: scale(1, -1);
+	}
+
+	/* Always top right orbs on mobile */
+
+	@media (min-width: 768px) {
+		&--top-left + &,
+		&--bottom-left + & {
+			display: block;
+		}
+
+		&--top-left {
+			right: auto;
+			left: -14%;
+			transform: scaleX(-1); // flip horizontally.
+		}
+
+		&--center-right,
+		&--center-left {
+			top: 50%;
+			right: 25%;
+			translate: 50% -50%;
+
+			.nintex-orbs-animation__orb {
+				--orb-size: 70%;
+				top: auto;
+				bottom: 0;
+				left: -15%;
+
+				&:nth-of-type(1) {
+					animation-name: floating-reverse;
+				}
+
+				&:nth-of-type(2) {
+					--orb-rgb: 255, 109, 0; // nintex-orange
+					top: 0;
+					right: -15%;
+					left: auto;
+					animation-delay: 1s;
+				}
+
+				&:nth-of-type(3) {
+					--orb-size: 90%; // 10% is the animation offset.
+					--orb-rgb: 237, 40, 145; // pink-100
+					top: 0;
+					left: 50%;
+					translate: -50% 0;
+					animation-delay: 2s;
+				}
+			}
+		}
+
+		&--center-left {
+			right: 75%;
+		}
+	}
+
+	&-wrapper {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 50%;
+		translate: 50% 0;
+	}
+
+	&__orb {
+		--orb-rgb: 255, 159, 123; // light-orange
+		--orb-size: 50%;
+		--orb-alpha: 0.5;
+		background: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(var(--orb-rgb), var(--orb-alpha)) 0,
+			rgba(var(--orb-rgb), calc(var(--orb-alpha) * 0.987)) 8.1%,
+			rgba(var(--orb-rgb), calc(var(--orb-alpha) * 0.951)) 15.5%,
+			rgba(var(--orb-rgb), calc(var(--orb-alpha) * 0.55)) 47.1%,
+			rgba(var(--orb-rgb), calc(var(--orb-alpha) * 0.45)) 52.9%,
+			rgba(var(--orb-rgb), calc(var(--orb-alpha) * 0.049)) 84.5%,
+			rgba(var(--orb-rgb), calc(var(--orb-alpha) * 0.013)) 91.9%,
+			rgba(var(--orb-rgb), 0) 100%
+		);
+		height: var(--orb-size);
+		width: var(--orb-size);
+		min-height: 345px;
+		min-width: 345px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		animation: floating 7s ease 0s infinite;
+
+		@keyframes floating {
+			0% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(10%);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes floating-reverse {
+			0% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(-10%);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		&:nth-of-type(2) {
+			left: 20%;
+			animation-delay: 1s;
+			--orb-rgb: 255, 109, 0; // nintex-orange
+		}
+
+		&:nth-of-type(3) {
+			--orb-size: 100%;
+			left: 25%;
+			animation-delay: 2s;
+			--orb-rgb: 237, 40, 145; // pink-100
+		}
+	}
+
+	&:nth-of-type(2) {
+		.nintex-orbs-animation__orb {
+			animation: floating 6.5s ease 1s infinite;
+		}
+	}
+}
+
+/* Lines Animations */
+
+.nintex-lines-animation {
+	position: absolute;
+	width: 100%;
+
+	&--bottom {
+		bottom: 150px;
+	}
+
+	/* Always top lines on mobile */
+
+	@media (min-width: 768px) {
+		&--bottom {
+			bottom: 200px;
+		}
+
+		&--top {
+			top: 80px;
+		}
+
+		&--center {
+			bottom: 65%;
+		}
+	}
+
+	svg {
+		position: absolute;
+		top: 24px;
+		left: 0;
+		width: 400%;
+		animation: nintex-wave linear 28s infinite;
+		opacity: .2;
+
+		&:nth-child(2) {
+			animation: nintex-wave-reverse linear 38s infinite;
+			top: -40px;
+		}
+
+		&:nth-child(3) {
+			animation: nintex-wave linear 48s infinite;
+			top: -20px;
+		}
+
+		path {
+			stroke: var(--wp--preset--color--white);
+		}
+
+		@media (min-width: 768px) {
+			width: 200%;
+		}
+	}
+
+	@keyframes nintex-wave {
+		0% {
+			transform: translateX(0);
+		}
+
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	@keyframes nintex-wave-reverse {
+		0% {
+			transform: translateX(-50%);
+		}
+
+		100% {
+			transform: translateX(0);
+		}
+	}
+}
+
+/* Background Colors */
+
+.background-blue {
+	background-color: #2a348a;
+	.nintex-background-animation {
+		.nintex-orbs-animation:nth-child(1) {
+			.nintex-orbs-animation__orb {
+				&:nth-of-type(1) {
+					--orb-rgb: 132, 57, 166;
+					--orb-alpha: 0.5;
+				}
+
+				&:nth-of-type(2) {
+					--orb-alpha: 0.3;
+				}
+
+				&:nth-of-type(3) {
+					--orb-rgb: 132, 57, 166;
+					--orb-alpha: 0.3;
+				}
+			}
+		}
+	}
+}
+
+.background-purple {
+	background-color: #3d0456;
+	.nintex-background-animation {
+		z-index: 0;
+		.nintex-orbs-animation:nth-child(1) {
+			.nintex-orbs-animation__orb {
+				&:nth-of-type(1) {
+					--orb-rgb: 237, 40, 145; // pink
+					--orb-alpha: 0.3;
+				}
+
+				&:nth-of-type(2) {
+					--orb-alpha: 0.2;
+				}
+
+				&:nth-of-type(3) {
+					--orb-rgb: 132, 57, 166; // purple
+					--orb-alpha: 0.3;
+				}
+			}
+		}
+	}
+}
+
+.background-ivory {
+	background-color: $color-ivory;
+
+	.nintex-background-animation {
+		svg {
+			opacity: 1;
+			path {
+				stroke: $color-ivory;
+			}
+		}
+	}
+}
+
+.background-white {
+	background-color: $color-white;
+	.nintex-background-animation {
+		svg {
+			opacity: 1;
+			path {
+				stroke: $color-white;
+			}
+		}
+	}
+}
+
+
+.nintex-background-gradient {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	right: 45%;
+	bottom: 0;
+	z-index: 2;
+	&.blue {
+		background: $color-blue;
+		background: linear-gradient(
+			90deg,
+			rgba(42, 52, 138, 1) 0%,
+			rgba(42, 52, 138, 1) 53%,
+			rgba(42, 52, 138, 0) 100%
+		);
+	}
+	&.purple {
+		background: $color-deep-purple;
+		background: linear-gradient(
+			90deg,
+			rgba(#3d0456, 1) 0%,
+			rgba(#3d0456, 1) 50%,
+			rgba(#3d0456, 0) 100%
+		);
+	}
+	&.ivory {
+		background: $color-ivory;
+		background: linear-gradient(
+			90deg,
+			rgba(#fff9f4, 1) 0%,
+			rgba(#fff9f4, 1) 50%,
+			rgba(#fff9f4, 0) 100%
+		);
+	}
+	&.white {
+		background: $color-white;
+		background: linear-gradient(
+			90deg,
+			rgba($color-white, 1) 0%,
+			rgba($color-white, 1) 50%,
+			rgba($color-white, 0) 100%
+		);
+	}
+}

@@ -1,0 +1,373 @@
+/* Nintex Form Background Animations
+ * Enhanced version with colored gradient lines on white background
+ * Designed for Nintex Connect Frankfurt 2025 forms
+ * FINAL FIX: Resolves z-index stacking context issues
+ */
+
+/* Variables - Nintex brand colors */
+:root {
+    --anim-light-orange: #ff9f7b;
+    --anim-orange: #FF6D00;
+    --anim-blue: #2A348A;
+    --anim-purple: #8439A6;
+    --anim-deep-purple: #3D0456;
+    --anim-ivory: #FFF9F4;
+    --anim-pink: #ed2891;
+    --anim-magenta: #BE0075;
+}
+
+/* Page Background Color - White like the Nintex website */
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Create stacking context at root level */
+    position: relative;
+    z-index: 0;
+}
+
+/* ================= WAVE LINES WITH GRADIENT COLORS ================= */
+/* First wave line - Purple to Pink gradient */
+body::before {
+    content: '';
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 400%;
+    height: 200px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 5392 393' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205' stroke='url(%23purplePinkGradient)' stroke-width='3' stroke-miterlimit='10' fill='none'/%3E%3ClinearGradient id='purplePinkGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%238439A6'/%3E%3Cstop offset='100%25' stop-color='%23ed2891'/%3E%3C/linearGradient%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: contain;
+    opacity: 0.6;
+    z-index: 0;
+    animation: nintex-wave 60s linear infinite;
+    pointer-events: none;
+}
+
+/* Second wave line - Orange to Light Orange gradient */
+body::after {
+    content: '';
+    position: fixed;
+    top: 5%;
+    left: -50%;
+    width: 400%;
+    height: 150px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 5392 393' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205' stroke='url(%23orangeGradient)' stroke-width='3' stroke-miterlimit='10' fill='none'/%3E%3ClinearGradient id='orangeGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23FF6D00'/%3E%3Cstop offset='100%25' stop-color='%23ff9f7b'/%3E%3C/linearGradient%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: contain;
+    opacity: 0.6;
+    z-index: 0;
+    animation: nintex-wave-reverse 70s linear infinite;
+    pointer-events: none;
+}
+
+/* Create our own background div for the third wave instead of using .nx-theme-styles::before */
+/* This will be inserted via CSS as a universal fix */
+body > div > div > div::before {
+    content: '';
+    position: fixed;
+    top: 15%;
+    left: -40%;
+    width: 400%;
+    height: 180px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 5392 393' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205' stroke='url(%23blueGradient)' stroke-width='3' stroke-miterlimit='10' fill='none'/%3E%3ClinearGradient id='blueGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%232A348A'/%3E%3Cstop offset='100%25' stop-color='%238439A6'/%3E%3C/linearGradient%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: contain;
+    opacity: 0.6;
+    z-index: 0;
+    animation: nintex-wave 75s linear infinite;
+    pointer-events: none;
+}
+
+/* Hide the original problematic selectors */
+.nx-theme-styles::before {
+    display: none !important;
+}
+
+@keyframes nintex-wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes nintex-wave-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ================= ANIMATED ORBS ================= */
+/* Hide all existing orbs first */
+.nx-theme-styles::after,
+.nx-theme-form::before {
+    display: none !important;
+}
+
+/* First orb - Pink - using a different element */
+.language-selector-row::before {
+    content: '' !important;
+    display: block !important;
+    position: fixed !important;
+    top: 5% !important;
+    left: 10% !important;
+    width: 350px !important;
+    height: 350px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(237, 40, 145, 0.3) 0%,
+        rgba(237, 40, 145, 0.2) 30%,
+        rgba(237, 40, 145, 0.1) 70%,
+        rgba(237, 40, 145, 0) 100%
+    ) !important;
+    z-index: -3 !important;
+    animation: cloud-float-1 40s ease-in-out infinite !important;
+    pointer-events: none !important;
+}
+
+/* Second orb - Orange gradient - correctly positioned at top right of form */
+.nx-form > div:first-child::after {
+    content: '' !important;
+    display: block !important;
+    position: fixed !important;
+    top: 8% !important; /* Position at top of viewport */
+    right: 10% !important; /* Position from right instead of left */
+    left: auto !important; /* Clear any left positioning */
+    width: 500px !important; /* Slightly larger */
+    height: 500px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(255, 159, 123, 0.4) 0%,
+        rgba(255, 159, 123, 0.3) 30%,
+        rgba(255, 159, 123, 0.2) 70%,
+        rgba(255, 159, 123, 0) 100%
+    ) !important;
+    z-index: 0 !important; /* Same z-index as other backgrounds */
+    animation: orange-pulse 8s ease-in-out infinite !important; /* Simple pulsing animation */
+    pointer-events: none !important;
+}
+
+/* Pulsing animation for orange orb */
+@keyframes orange-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* Cloud-like horizontal floating animation for first orb */
+@keyframes cloud-float-1 {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(20vw, 10px);
+    }
+    50% {
+        transform: translate(40vw, 0);
+    }
+    75% {
+        transform: translate(20vw, -10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* ================= NINTEX FORM SPECIFIC STYLES ================= */
+/* Semi-transparent form background */
+.nx-theme-styles .nx-theme-form {
+    background: rgba(255, 255, 255, 0.85); /* Slightly transparent */
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 10; /* Higher z-index to ensure form is above background elements */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px); /* Subtle blur effect */
+}
+
+/* Group Headers with decorative corner */
+.nx-theme-styles .nx-theme-form .group-control {
+    background: rgba(255, 255, 255, 0.95); /* Very slightly transparent */
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.nx-theme-styles .nx-theme-form .group-control::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,109,0,0.1) 0%, rgba(190,0,117,0.1) 100%);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    z-index: 0;
+}
+
+/* Form title */
+.nx-theme-styles .nx-theme-form h1 {
+    color: var(--anim-deep-purple, #3D0456);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Form button styling */
+.nx-theme-styles .nx-theme-button-1 {
+    background: linear-gradient(90deg, var(--anim-magenta, #BE0075) 0%, var(--anim-purple, #8439A6) 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.nx-theme-styles .nx-theme-button-1:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ================= RESPONSIVE ADJUSTMENTS ================= */
+@media (max-width: 768px) {
+    /* Adjust wave positions for smaller screens */
+    body::before,
+    body::after,
+    body > div > div > div::before {
+        height: 120px;
+    }
+    
+    /* Adjust orb sizes for smaller screens */
+    .nx-theme-styles::after {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .nx-theme-form::before {
+        width: 300px;
+        height: 300px;
+    }
+}
+/* Redesign of the repeating section delete row button */
+
+/* Hide the original delete button container */
+.ntx-repeating-section-overlay {
+    display: none !important;
+}
+
+/* Add a compact delete button to the top-right corner of each repeating section */
+.ntx-repeating-section-repeated-section {
+    position: relative !important; /* Ensure proper positioning context */
+}
+
+.ntx-repeating-section-repeated-section::after {
+    content: '\2715' !important; /* × symbol */
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    background-color: rgba(190, 0, 117, 0.1) !important;
+    color: var(--anim-magenta, #BE0075) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    z-index: 20 !important;
+    transition: all 0.2s ease !important;
+}
+
+.ntx-repeating-section-repeated-section::after:hover {
+    background-color: rgba(190, 0, 117, 0.2) !important;
+}
+/* Font Family Enforcement for Nintex Forms */
+
+/* Define font family variables */
+:root {
+    --nx-font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+/* Apply font family to all text elements in the form */
+.nx-theme-styles,
+.nx-theme-form,
+.nx-form,
+.nx-form *,
+.nx-theme-form *,
+.nx-theme-styles *,
+.nx-zinc-control-group,
+.nx-form-label,
+.form-control,
+.nx-checkbox-label,
+.nx-checkbox-toggle-on,
+.nx-checkbox-toggle-off,
+input, 
+textarea,
+select,
+button,
+.btn,
+.ng-select-container,
+.ng-dropdown-panel,
+.nx-theme-button-1,
+.nx-theme-button-2,
+.nx-theme-richtext,
+.nx-theme-ng-select-1,
+.nx-theme-input-1,
+.nx-theme-label-1 {
+    font-family: var(--nx-font-family) !important;
+}
+
+/* Ensure font family is also applied to dynamically created elements */
+#nx-form-container,
+.nx-form-runtime-content {
+    font-family: var(--nx-font-family) !important;
+}
+
+/* Specific overrides for elements that might resist styling */
+.nx-theme-styles .nx-theme-form h1,
+.nx-theme-styles .nx-theme-form h2,
+.nx-theme-styles .nx-theme-form h3,
+.nx-theme-styles .nx-theme-form h4,
+.nx-theme-styles .nx-theme-form h5,
+.nx-theme-styles .nx-theme-form h6,
+.nx-theme-styles .nx-theme-form p,
+.nx-theme-styles .nx-theme-form span,
+.nx-theme-styles .nx-theme-form div {
+    font-family: var(--nx-font-family) !important;
+}
+
+/* Ensure font is loaded properly */
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+    font-display: swap;
+}
+
+/* Import font from Google Fonts as a fallback method */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');

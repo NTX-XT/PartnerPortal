@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="PK-4227" Name="PQL whiteglove process" xmlns="http://www.wfmc.org/2009/XPDL2.2">
+  <PackageHeader>
+    <XPDLVersion>2.2</XPDLVersion>
+    <Vendor>Promapp Solutions Ltd</Vendor>
+    <Created>2025-11-12T23:45:25.9815166Z</Created>
+  </PackageHeader>
+  <ConformanceClass BPMNModelPortabilityConformance="STANDARD" />
+  <Pages>
+    <Page Name="PQL whiteglove process" Id="PG-1" Height="660" Width="1280" />
+  </Pages>
+  <Pools>
+    <Pool Id="PL-4227" Name="PQL whiteglove process" Process="P-4227" BoundaryVisible="true">
+      <Lanes>
+        <Lane Orientation="HORIZONTAL" Id="L-1" Name="UNASSIGNED" ParentLane="PL-4227">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1130">
+              <Coordinates XCoordinate="100" YCoordinate="50" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-2" Name="Partner Account Manager" ParentLane="PL-4227">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1130">
+              <Coordinates XCoordinate="100" YCoordinate="190" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-3" Name="Account Executive" ParentLane="PL-4227">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1130">
+              <Coordinates XCoordinate="100" YCoordinate="330" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-4" Name="Account Executive, Nintex Partner, Partner Account Manager" ParentLane="PL-4227">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1130">
+              <Coordinates XCoordinate="100" YCoordinate="470" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+      </Lanes>
+      <NodeGraphicsInfos>
+        <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="560" Width="1180">
+          <Coordinates XCoordinate="50" YCoordinate="50" />
+        </NodeGraphicsInfo>
+      </NodeGraphicsInfos>
+    </Pool>
+  </Pools>
+  <WorkflowProcesses>
+    <WorkflowProcess Id="P-4227" Name="PQL whiteglove process" DefaultStartActivityId="START-1">
+      <ProcessHeader />
+      <Activities>
+        <Activity Id="START-1" Name="Start">
+          <Event>
+            <StartEvent Trigger="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="210" YCoordinate="100" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-317093" Name="1.0 PQL Received">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="80" Width="120">
+              <Coordinates XCoordinate="350" YCoordinate="80" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-317094" Name="2.0 Partner Manager Requests Call">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="80" Width="120">
+              <Coordinates XCoordinate="350" YCoordinate="220" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-317095" Name="3.0 Call Scheduled">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="80" Width="120">
+              <Coordinates XCoordinate="530" YCoordinate="220" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-317096" Name="4.0 SPM converts Lead to Opportunity">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="80" Width="120">
+              <Coordinates XCoordinate="710" YCoordinate="220" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-317097" Name="5.0 AE prepares PQL Research Report">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="80" Width="120">
+              <Coordinates XCoordinate="710" YCoordinate="360" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-317098" Name="6.0 Partner Meeting">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-4" Height="80" Width="120">
+              <Coordinates XCoordinate="710" YCoordinate="500" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-317099" Name="7.0 AE Updates Opp Record">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="80" Width="120">
+              <Coordinates XCoordinate="890" YCoordinate="360" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="END-1" Name="End">
+          <Event>
+            <EndEvent Result="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="40" Width="40">
+              <Coordinates XCoordinate="1110" YCoordinate="380" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+      </Activities>
+      <Transitions>
+        <Transition Id="T-1" From="START-1" To="PP-317093">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="250" YCoordinate="120" />
+              <Coordinates XCoordinate="350" YCoordinate="120" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-2" From="PP-317093" To="PP-317094">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="410" YCoordinate="160" />
+              <Coordinates XCoordinate="410" YCoordinate="220" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-3" From="PP-317094" To="PP-317095">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="470" YCoordinate="260" />
+              <Coordinates XCoordinate="530" YCoordinate="260" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-4" From="PP-317095" To="PP-317096">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="650" YCoordinate="260" />
+              <Coordinates XCoordinate="710" YCoordinate="260" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-5" From="PP-317096" To="PP-317097">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="770" YCoordinate="300" />
+              <Coordinates XCoordinate="770" YCoordinate="360" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-6" From="PP-317097" To="PP-317098">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="770" YCoordinate="440" />
+              <Coordinates XCoordinate="770" YCoordinate="500" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-7" From="PP-317098" To="PP-317099">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="830" YCoordinate="540" />
+              <Coordinates XCoordinate="860" YCoordinate="540" />
+              <Coordinates XCoordinate="860" YCoordinate="400" />
+              <Coordinates XCoordinate="890" YCoordinate="400" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-8" From="PP-317099" To="END-1">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1010" YCoordinate="400" />
+              <Coordinates XCoordinate="1110" YCoordinate="400" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+    </WorkflowProcess>
+  </WorkflowProcesses>
+</Package>

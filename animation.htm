@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nintex SVG Animation Replica with Intertwining Waves</title>
+    <style>
+        /* Base Nintex styles from head (simplified for brevity) */
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        :root {
+            --wp--preset--color--blue: #03161E;
+            --wp--preset--color--pink-300: #FF3366;
+            --wp--preset--color--pink-400: #E6194D;
+            --wp--preset--color--deep-navy: #03161E;
+            --wp--preset--color--white: #FFFFFF;
+            --wp--preset--color--black: #000000;
+        }
+        .nintex-background-animation {
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+            background: linear-gradient(45deg, #03161E, #4A148C, #FF3366); /* Blue to purple to pink gradient, matching original */
+        }
+        .nintex-container {
+            margin: 0 auto;
+            max-width: calc(1232px + 20px + 20px);
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 100%;
+            position: relative;
+        }
+        .nintex-lines-animation--top {
+            position: relative;
+            width: 100%;
+            max-width: 5392px;
+            margin: 0 auto;
+        }
+        .nintex-lines-animation--top svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .nintex-lines-animation--top path {
+            stroke: rgba(255, 255, 255, 0.3); /* Lighter, semi-transparent white, matching original */
+            stroke-width: 5.5;
+            stroke-miterlimit: 10;
+            fill: none;
+        }
+
+        /* Orbs styling */
+        .nintex-orbs-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Behind lines but above background */
+        }
+        .nintex-orbs-animation__orb {
+            position: absolute;
+            width: 30px; /* Smaller orbs, matching screenshot */
+            height: 30px;
+            background-color: rgba(255, 159, 123, 0.5); /* Light orange, matching Nintex style */
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        /* Ensure content is above animation */
+        .nintex-content {
+            position: relative;
+            z-index: 2;
+            color: var(--wp--preset--color--white);
+        }
+
+        /* Form styling to match original */
+        .nintex-form {
+            background: var(--wp--preset--color--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        .gform_wrapper, .mktoForm {
+            position: relative;
+            width: 100%!important;
+        }
+
+        .gform_wrapper .gform_body, .gform_wrapper .mktoFormRow, .mktoForm .gform_body, .mktoForm .mktoFormRow {
+            padding: 0 10px;
+            width: 100%;
+        }
+
+        .gform_wrapper .gform_body .field_sublabel_below, .gform_wrapper .mktoFormRow .field_sublabel_below, .mktoForm .gform_body .field_sublabel_below, .mktoForm .mktoFormRow .field_sublabel_below {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .gform_wrapper .gform_body label, .gform_wrapper .mktoFormRow label, .mktoForm .gform_body label, .mktoForm .mktoFormRow label {
+            display: flex;
+            flex-wrap: wrap;
+            float: none;
+            font-size: 11px;
+            font-weight: 800!important;
+            letter-spacing: 1px;
+            line-height: 18px;
+            padding-left: 17px;
+            text-transform: uppercase;
+            width: 100%!important;
+            margin-bottom: 0!important;
+            color: var(--wp--preset--color--deep-navy);
+        }
+
+        .gform_wrapper .gform_body input[type=email], .gform_wrapper .gform_body input[type=text], .gform_wrapper .mktoFormRow input[type=email], .gform_wrapper .mktoFormRow input[type=text], .mktoForm .gform_body input[type=email], .mktoForm .gform_body input[type=text], .mktoForm .mktoFormRow input[type=email], .mktoForm .mktoFormRow input[type=text] {
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid var(--wp--preset--color--deep-navy);
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 5px 17px 12px;
+            position: relative;
+            width: 100%!important;
+        }
+
+        @media (min-width: 768px) {
+            .gform_wrapper .gform_body input[type=email], .gform_wrapper .gform_body input[type=text], .gform_wrapper .mktoFormRow input[type=email], .gform_wrapper .mktoFormRow input[type=text], .mktoForm .gform_body input[type=email], .mktoForm .gform_body input[type=text], .mktoForm .mktoFormRow input[type=email], .mktoForm .mktoFormRow input[type=text] {
+                font-size: 16px;
+            }
+        }
+
+        .gform_wrapper .gform_body input[type=email]::placeholder, .gform_wrapper .gform_body input[type=text]::placeholder, .gform_wrapper .mktoFormRow input[type=email]::placeholder, .gform_wrapper .mktoFormRow input[type=text]::placeholder, .mktoForm .gform_body input[type=email]::placeholder, .mktoForm .gform_body input[type=text]::placeholder, .mktoForm .mktoFormRow input[type=email]::placeholder, .mktoForm .mktoFormRow input[type=text]::placeholder {
+            color: var(--wp--preset--color--deep-navy);
+            font-size: 16px;
+        }
+
+        .gform_wrapper .gform_body input[type=email]:hover, .gform_wrapper .gform_body input[type=text]:hover, .gform_wrapper .mktoFormRow input[type=email]:hover, .gform_wrapper .mktoFormRow input[type=text]:hover, .mktoForm .gform_body input[type=email]:hover, .mktoForm .gform_body input[type=text]:hover, .mktoForm .mktoFormRow input[type=email]:hover, .mktoForm .mktoFormRow input[type=text]:hover {
+            border-bottom: 1px solid #2a34a8;
+        }
+
+        .gform_wrapper .gform_body input[type=email]:focus, .gform_wrapper .gform_body input[type=text]:focus, .gform_wrapper .mktoFormRow input[type=email]:focus, .gform_wrapper .mktoFormRow input[type=text]:focus, .mktoForm .gform_body input[type=email]:focus, .mktoForm .gform_body input[type=text]:focus, .mktoForm .mktoFormRow input[type=email]:focus, .mktoForm .mktoFormRow input[type=text]:focus {
+            border-bottom: 1px solid #2a34a8;
+            box-shadow: 0 1px 0 0 #2a34a8;
+            outline: none;
+        }
+
+        .gform_footer, .mktoForm .mktoButtonRow {
+            display: flex;
+            justify-content: flex-start;
+            padding: 30px 10px 0;
+            position: relative;
+        }
+
+        .gform_footer input, .mktoForm .mktoButtonRow input {
+            background: var(--wp--preset--color--pink-300);
+            border: 1px solid var(--wp--preset--color--pink-300);
+            color: var(--wp--preset--color--white);
+            cursor: pointer;
+            font-size: 16px;
+            padding: 16px 24px;
+            position: relative;
+            text-align: center;
+            transition: all .3s;
+            margin: 0 8px;
+        }
+
+        .gform_footer input:hover, .mktoForm .mktoButtonRow input:hover {
+            background: var(--wp--preset--color--white);
+            color: var(--wp--preset--color--black);
+        }
+
+        /* Asterisk styling (required fields) */
+        .mktoAsterix {
+            color: var(--wp--preset--color--deep-navy);
+            float: none;
+            order: 2;
+        }
+    </style>
+    <!-- GSAP Scripts from Nintex head -->
+    <script src="https://www.nintex.com/wp-content/themes/nintex/node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="https://www.nintex.com/wp-content/themes/nintex/node_modules/gsap/dist/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lines animation (intertwining with wave and cross-over like individual waves)
+            const paths = document.querySelectorAll(".nintex-lines-animation--top path");
+            paths.forEach((path, index) => {
+                const length = path.getTotalLength();
+                path.style.strokeDasharray = length;
+                path.style.strokeDashoffset = length;
+
+                // Initial draw animation
+                gsap.to(path, {
+                    strokeDashoffset: 0,
+                    duration: 2.5,
+                    delay: index * 0.5,
+                    ease: "power2.inOut"
+                });
+
+                // Wave-like motion with varying amplitudes and offsets for crossing waves
+                gsap.to(path, {
+                    y: 50 * Math.sin(Date.now() / 1000 + index * Math.PI / 2), // Individual wave pattern with phase shift for crossing
+                    x: 100 * Math.cos(Date.now() / 2000 + index * Math.PI / 3), // Horizontal oscillation for crossing
+                    repeat: -1,
+                    duration: 4,
+                    ease: "sine.inOut",
+                    transformOrigin: "50% 50%"
+                });
+            });
+
+            // Orbs animation (floating in)
+            const orbsContainer = document.querySelector('.nintex-orbs-animation');
+            for (let i = 0; i < 3; i++) { // Add 3 orbs as in the original
+                const orb = document.createElement('div');
+                orb.className = 'nintex-orbs-animation__orb';
+                orb.style.left = `${Math.random() * 100}%`; // Random horizontal position
+                orb.style.top = `${Math.random() * 100}%`;  // Random vertical position
+                orbsContainer.appendChild(orb);
+
+                // Animate orbs to float
+                gsap.to(orb, {
+                    x: Math.random() * 200 - 100, // Random horizontal float
+                    y: Math.random() * 200 - 100, // Random vertical float
+                    rotation: Math.random() * 360, // Optional rotation
+                    repeat: -1,
+                    yoyo: true,
+                    duration: 8 + Math.random() * 4, // Vary duration for natural movement
+                    ease: "sine.inOut"
+                });
+            }
+        });
+    </script>
+</head>
+<body class="resource-template-default single single-resource postid-9918 wp-embed-responsive">
+    <div class="wp-site-blocks">
+        <!-- Header (Navbar) - Simplified for brevity -->
+        <header class="wp-block-template-part">
+            <a href="#main-content" class="nintex-skip-link screen-reader-text js-nintex-skip-link">Skip to content</a>
+            <div class="wp-block-acf-navbar js-navbar alignfull">
+                <div class="navbar nintex-container">
+                    <a class="navbar__brand-link" href="/" title="Homepage" rel="noopener" aria-label="Go to homepage">
+                        <picture class="navbar__logo">
+                            <source srcset="https://www.nintex.com/wp-content/uploads/2024/10/nintex-logo-color.svg" media="(max-width: 768px)">
+                            <source srcset="https://www.nintex.com/wp-content/uploads/2024/10/nintex-logo-color.svg">
+                            <img width="1024" height="1024" src="https://www.nintex.com/wp-content/uploads/2024/10/nintex-logo-color.svg" class="attachment-large size-large" alt="" loading="eager" fetchpriority="high" decoding="async">
+                        </picture>
+                    </a>
+                    <nav class="navbar__nav js-menu-nav">
+                        <ul class="navbar__menu">
+                            <li class="navbar__menu-dropdown js-dropdown-item">
+                                <button class="navbar__menu-dropdown-link">Solutions
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.94 5.5L8 8.59042L11.06 5.5L12 6.45142L8 10.5L4 6.45142L4.94 5.5Z" fill="#0E0E0E"></path>
+                                    </svg>
+                                </button>
+                            </li>
+                            <li class="navbar__menu-dropdown js-dropdown-item">
+                                <button class="navbar__menu-dropdown-link">Platforms
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.94 5.5L8 8.59042L11.06 5.5L12 6.45142L8 10.5L4 6.45142L4.94 5.5Z" fill="#0E0E0E"></path>
+                                    </svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content with Animation and Form -->
+        <div class="nintex-background-animation">
+            <div class="nintex-container">
+                <div class="nintex-lines-animation nintex-lines-animation--top">
+                    <svg viewBox="0 0 5392 393" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205"></path>
+                    </svg>
+                    <svg viewBox="0 0 5392 393" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205"></path>
+                    </svg>
+                    <svg viewBox="0 0 5392 393" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205"></path>
+                    </svg>
+                </div>
+                <div class="nintex-orbs-animation"></div> <!-- Container for orbs -->
+            </div>
+        </div>
+        <div class="nintex-container nintex-content" id="main-content">
+            <h1 style="color: var(--wp--preset--color--white); font-size: 2.5rem;">New at Nintex: Product Update Q1 2025</h1>
+            <p style="color: var(--wp--preset--color--white); font-size: 1rem;">March 4th | 7:00 AM PT | 9:00 AM GMT | 9:00 AM AEST</p>
+            <div class="nintex-form gform_wrapper">
+                <h2 style="color: var(--wp--preset--color--deep-navy); font-size: 1.5rem;">Register Now</h2>
+                <div class="gform_body">
+                    <div class="field_sublabel_below">
+                        <label for="firstName">First Name <span class="mktoAsterix">*</span></label>
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="field_sublabel_below">
+                        <label for="lastName">Last Name <span class="mktoAsterix">*</span></label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="field_sublabel_below">
+                        <label for="workEmail">Work Email <span class="mktoAsterix">*</span></label>
+                        <input type="email" id="workEmail" name="workEmail" placeholder="Work Email" required>
+                    </div>
+                    <div class="field_sublabel_below">
+                        <label for="company">Company <span class="mktoAsterix">*</span></label>
+                        <input type="text" id="company" name="company" placeholder="Company" required>
+                    </div>
+                    <div class="gform_footer">
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer - Simplified for brevity (expand as needed) -->
+        <footer class="nintex-footer">
+            <div class="nintex-container">
+                <div class="nintex-footer__featured">
+                    <!-- Add featured items as needed -->
+                </div>
+                <div class="nintex-footer__copy-links">
+                    <a class="nintex-btn nintex-btn--tertiary-reverse nintex-footer__copy-link" href="https://www.nintex.com/platforms/" target="_self" aria-label="Why Nintex?">
+                        Why Nintex?
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.71402 2L8.2998 3.41421L13.0927 8.20711L8.2998 13L9.71402 14.4142L15.9211 8.20711L9.71402 2Z" fill="white"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="nintex-footer__columns">
+                    <div class="nintex-footer__column">
+                        <span class="nintex-footer__column-title nintex-preheader nintex-preheader--inverse">Learn</span>
+                        <ul class="nintex-footer__column-links">
+                            <li><a class="nintex-link nintex-link--reverse" href="/learn/digital-forms/" target="_self" aria-label="Digital Forms">Digital Forms</a></li>
+                            <!-- Add more links as needed -->
+                        </ul>
+                    </div>
+                    <!-- Add other columns (Resources, Company, Support) as needed -->
+                </div>
+            </div>
+            <div class="nintex-c-sub-footer">
+                <div class="nintex-c-sub-footer__wrapper nintex-container">
+                    <div class="nintex-c-sub-footer__links">
+                        <p class="nintex-c-sub-footer__copyright nintex-c-sub-footer__link">© 2025 Nintex</p>
+                        <a class="nintex-link nintex-c-sub-footer__link" href="https://www.nintex.com/legal/website-and-community-terms-of-use/" target="_self" aria-label="Terms of use">Terms of use</a>
+                        <a class="nintex-link nintex-c-sub-footer__link" href="/legal/privacy-policy/" target="_self" aria-label="Privacy policy">Privacy policy</a>
+                        <a class="nintex-link nintex-c-sub-footer__link" href="/legal/" target="_self" aria-label="Legal">Legal</a>
+                    </div>
+                    <div class="nintex-c-sub-footer__socials">
+                        <a href="https://www.youtube.com/user/Nintex" class="nintex-c-sub-footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="youtube">
+                            <picture>
+                                <img src="https://www.nintex.com/wp-content/uploads/2024/10/icon-youtube-white.svg" alt="YouTube" loading="lazy" decoding="async">
+                            </picture>
+                        </a>
+                        <!-- Add LinkedIn, Facebook links as needed -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPG4GNG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    </div>
+</body>
+</html>

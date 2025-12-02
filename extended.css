@@ -1,0 +1,178 @@
+/* ============================================
+   Enhanced Banner Background Extension
+   ============================================ */
+   .main-banner-with-carousel {
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    overflow: visible;
+    background-color: var(--secondary-color);
+    background-image: url("https://ntxtemplatestorage.blob.core.windows.net/partner/AdobeStock_903865635.png");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: soft-light;
+  }
+  
+  /* Full-height overlay */
+  .main-banner-with-carousel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 102, 204, 0.75);
+    z-index: 1;
+  }
+  
+  /* Banner adjustments within the extended container */
+  .main-banner-with-carousel .main-banner {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    background-image: none;
+    position: relative;
+    min-height: auto;
+  }
+  
+  /* Hide the original overlay */
+  .main-banner-with-carousel .main-banner::before {
+    display: none;
+  }
+  
+  /* Keep container content above the overlay */
+  .main-banner-with-carousel .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Carousel adjustments */
+  .main-banner-with-carousel .carousel-section {
+    position: relative;
+    z-index: 2;
+    margin-top: 5px;
+    padding: 0;
+  }
+  
+  /* Semi-transparent carousel background */
+  .main-banner-with-carousel .announcement-carousel {
+    background-color: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  /* Tag styling within the extended banner */
+  .main-banner-with-carousel .carousel-tag {
+    opacity: 0.95;
+    transition: opacity 0.3s ease;
+  }
+  
+  .main-banner-with-carousel .carousel-slide:hover .carousel-tag {
+    opacity: 1;
+  }
+  
+  /* Enhanced control visibility */
+  .main-banner-with-carousel .carousel-controls .carousel-nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 36px;
+    height: 36px;
+    transition: all 0.3s ease;
+  }
+  
+  .main-banner-with-carousel .carousel-controls .carousel-nav:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+  }
+  
+  /* Indicator styling */
+  .main-banner-with-carousel .carousel-indicators {
+    margin-top: 15px;
+  }
+  
+  .main-banner-with-carousel .carousel-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+  }
+  
+  .main-banner-with-carousel .carousel-indicator:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .main-banner-with-carousel .carousel-indicator.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+  }
+  
+  /* Accent diagonal element */
+  .main-banner-with-carousel .banner-accent {
+    z-index: 1;
+    opacity: 0.7;
+  }
+  /* ============================================
+   Horizontal Alignment Fix for PAM and Carousel
+   ============================================ */
+
+/* Container padding for floating tags that extend above cards */
+.pam-carousel-container {
+  padding-top: 15px !important; /* Space for floating tags (top: -12px) */
+}
+
+/* Main container alignment - critical fix */
+.pam-carousel-container > .row {
+  display: flex !important;
+  align-items: flex-start !important; /* This is key for top alignment */
+  margin-top: 0 !important;
+}
+
+/* Both columns should be flex containers with top alignment */
+.pam-carousel-container > .row > .col-md-4,
+.pam-carousel-container > .row > .col-md-8 {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Remove any top margin on the webinar tag that might be pushing content down */
+.upcoming-webinar {
+  margin-top: 0 !important;
+}
+
+/* Fix top margins/paddings on both main components */
+.pam-card,
+.carousel-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Reset any margins in extended.css that might be affecting alignment */
+.main-banner-with-carousel .carousel-section {
+  margin-top: 0 !important;
+}
+
+/* Adjust carousel components for consistent alignment */
+.announcement-carousel,
+.carousel-container,
+.carousel-slide {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure content within carousel maintains alignment */
+.carousel-content {
+  margin-top: 0 !important;
+  padding-top: 15px !important;
+}
+
+/* Fix for the upcoming webinar badge */
+.carousel-section .upcoming-webinar {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  padding: 10px !important;
+  z-index: 10 !important;
+}

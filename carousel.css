@@ -1,0 +1,534 @@
+/**
+ * Clean Carousel Styles - FIXED VERSION
+ * 195px height, larger text, immediate display, tag icons
+ * REMOVED: First slide override that was preventing transitions
+ * 
+ * DEPENDENCIES:
+ * - This file requires partnerportal.css to be loaded FIRST
+ * - Uses CSS variables defined in partnerportal.css (--primary-color, --secondary-color, etc.)
+ * - Assumes Plus Jakarta Sans font is loaded by partnerportal.css
+ * - Load order must be: partnerportal.css → carousel.css
+ */
+
+/* ========================================
+   CSS VARIABLES REFERENCE
+   (Defined in partnerportal.css)
+   ========================================
+   
+   Colors:
+   --primary-color: #FF6B00 (Nintex Orange)
+   --secondary-color: #0066CC (Nintex Blue)
+   --text-dark: #333
+   --text-medium: #555
+   --text-light: #777
+   
+   Spacing:
+   --spacing-xs: 0.5rem (8px)
+   --spacing-sm: 1rem (16px)
+   --spacing-md: 1.5rem (24px)
+   --spacing-lg: 2rem (32px)
+   
+   Typography:
+   --font-xs: 0.75rem (12px)
+   --font-sm: 0.875rem (14px)
+   --font-base: 1rem (16px)
+   --font-md: 1.125rem (18px)
+   --font-lg: 1.25rem (20px)
+   --font-xl: 1.5rem (24px)
+   
+   Other:
+   --border-radius: 8px
+   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)
+   --transition-speed: 0.3s
+   
+   ======================================== */
+
+/* ---------- 1. SHELL / GLASSMORPHIC CARD ---------- */
+.announcement-carousel {
+    background: rgba(255,255,255,.75);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.06);
+    overflow: visible !important; /* Allow tag to extend outside */
+    position: relative;
+}
+
+/* REMOVED: This was causing the problem! */
+/* .announcement-carousel .carousel-slide:first-child {
+    display: flex !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+} */
+
+/* ---------- 2. FIXED HEIGHT LAYOUT - 195px ---------- */
+.carousel-section,
+.carousel-container,
+.carousel-slide.enhanced-slide {
+    height: 195px !important;
+    min-height: 195px !important;
+    max-height: 195px !important;
+}
+
+/* ---------- 3. SMOOTH CROSS-FADE TRANSITION ---------- */
+.carousel-slide {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .55s ease, transform .55s ease;
+    position: relative;
+}
+
+/* UPDATED: More specific selector to work with JavaScript */
+.carousel-slide.active,
+.carousel-slide[style*="display: flex"] {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Ensure hidden slides are properly hidden */
+.carousel-slide[style*="display: none"] {
+    opacity: 0 !important;
+    transform: translateY(12px) !important;
+}
+
+/* ---------- 4. CONTENT BOX - ADJUSTED FOR 195px ---------- */
+.carousel-slide.enhanced-slide .carousel-content {
+    padding: 12px 28px 50px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.content-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- 5. TYPOGRAPHY - LARGER TEXT FOR READABILITY ---------- */
+/* NOTE: Font family (Plus Jakarta Sans) is applied by partnerportal.css */
+/* This file only defines font sizes, weights, and other typographic properties */
+
+.carousel-title {
+    font-size: 1.25rem !important;
+    font-weight: 700;
+    letter-spacing: -.3px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+    hyphens: auto;
+    color: var(--secondary-color); /* Defined in partnerportal.css */
+}
+
+.carousel-description {
+    font-size: 1.0rem !important;
+    line-height: 1.4 !important;
+    color: #444;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+    hyphens: auto;
+    flex: 1;
+    margin-bottom: 6px;
+}
+
+/* Override partnerportal.css event-description styling for carousel */
+.carousel-slide .carousel-description,
+.carousel-content .carousel-description,
+body .carousel-slide .carousel-description,
+body .carousel-content .carousel-description {
+    font-size: 1.0rem !important;
+    line-height: 1.4 !important;
+}
+
+/* ---------- 6. TIMING INFO - ENHANCED DISPLAY ---------- */
+.event-timing-info {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.timing-details {
+    font-weight: 500;
+    color: #0066cc;
+    font-size: 0.85rem;
+}
+
+.carousel-time {
+    font-size: 0.75rem !important;
+    color: #666 !important;
+    background: rgba(255,255,255,0.9) !important;
+    padding: 3px 6px !important;
+    border-radius: 3px !important;
+    margin-top: 4px !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+    display: block !important;
+}
+
+/* ---------- 7. FOOTER POSITIONING - ADJUSTED FOR 195px ---------- */
+.carousel-slide.enhanced-slide .carousel-footer.enhanced-footer {
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px !important;
+    padding: 8px 28px;
+    background: rgba(255,255,255,.96);
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    backdrop-filter: blur(2px);
+}
+
+/* Event meta - hide pricing and attendance info */
+.event-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.event-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Hide unwanted meta information */
+.event-meta span:has(i.fa-users),
+.event-meta span:has(i.fa-tag),
+.event-meta span[title*="capacity"],
+.event-meta span[title*="cost"],
+.event-meta span[title*="price"] {
+    display: none !important;
+}
+
+/* Footer actions layout */
+.footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* ---------- 8. CTA BUTTON - SIZED FOR 195px ---------- */
+.carousel-btn.enhanced-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #ff8533 100%); /* Uses partnerportal.css variable */
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 3px 8px rgba(255,107,0,.25);
+    transition: all .3s cubic-bezier(.25,.8,.25,1);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.carousel-btn.enhanced-btn:hover {
+    background: linear-gradient(135deg, #e55a00 0%, #e55a00 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255,107,0,.35);
+    text-decoration: none;
+    color: white;
+}
+
+/* Details button - HIDDEN */
+.details-btn {
+    display: none !important; /* Hide Details button completely */
+}
+
+/* ---------- 9. NAV ARROWS - POSITIONED FOR 195px ---------- */
+.carousel-controls {
+    position: absolute !important;
+    top: 50% !important;
+    right: 12px !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    z-index: 20 !important;
+}
+
+.carousel-nav {
+    width: 28px !important;
+    height: 28px !important;
+    background: rgba(255,255,255,.9) !important;
+    color: var(--secondary-color) !important; /* Defined in partnerportal.css */
+    border: 1px solid rgba(0,102,204,.2) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1) !important;
+    transition: all .25s ease !important;
+    cursor: pointer !important;
+    font-size: 0.7rem !important;
+}
+
+.carousel-nav:hover {
+    background: white !important;
+    color: var(--primary-color) !important; /* Defined in partnerportal.css */
+    transform: scale(1.1) !important;
+    border-color: rgba(255,107,0,.3) !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,.15) !important;
+}
+
+/* ---------- 10. INDICATORS ---------- */
+.carousel-indicators {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+}
+
+.carousel-indicator {
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+    background: #dfe4ea;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all .3s ease;
+    border: none;
+}
+
+.carousel-indicator.active {
+    width: 28px;
+    background: var(--primary-color); /* Defined in partnerportal.css */
+    opacity: 1;
+}
+
+.carousel-indicator:hover {
+    background: #999;
+    opacity: 0.9;
+}
+
+/* ---------- 11. TAG + DATE BADGE - ATTACHED STYLE LIKE PAM ---------- */
+.carousel-tag-container {
+    flex: 0 0 120px;
+    position: relative; /* Enable absolute positioning for tag */
+}
+
+.carousel-tag {
+    position: absolute !important;
+    top: -12px !important; /* Position 50% outside the carousel border */
+    left: 15px !important; /* Offset from the left edge */
+    height: auto !important;
+    min-height: 36px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    padding: 8px 16px !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: white;
+    gap: 0.3rem;
+    border-radius: var(--border-radius) !important;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    transition: all var(--transition-speed) ease !important;
+    z-index: 10 !important;
+}
+
+/* Add icons to tags using Font Awesome */
+.carousel-tag::before {
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8rem;
+}
+
+.tag-ai::before { content: "\f544"; } /* fa-robot */
+.tag-updates::before { content: "\f021"; } /* fa-sync-alt */
+.tag-workshop::before { content: "\f0c0"; } /* fa-users */
+.tag-salesforce::before { content: "\f0e7"; } /* fa-bolt */
+.tag-enterprise::before { content: "\f1ad"; } /* fa-building */
+.tag-migration::before { content: "\f362"; } /* fa-route */
+.tag-connect::before { content: "\f0c1"; } /* fa-link */
+
+/* Hover effect for attached tag */
+.announcement-carousel:hover .carousel-tag {
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 
+        0 6px 16px rgba(255, 107, 0, 0.25),
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.carousel-date-top {
+    position: absolute !important;
+    top: 40px !important; /* Position below the tag with more spacing */
+    left: 15px !important; /* Align with tag */
+    font-size: 0.75rem !important;
+    color: #666 !important;
+    background: rgba(255,255,255,0.95) !important;
+    padding: 4px 10px !important;
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+    z-index: 9 !important; /* Below the tag */
+}
+
+/* ---------- 12. MOBILE RESPONSIVENESS ---------- */
+@media (max-width: 767px) {
+    .carousel-section,
+    .carousel-container,
+    .carousel-slide.enhanced-slide {
+        height: 220px !important;
+        min-height: 220px !important;
+    }
+    
+    .carousel-slide.enhanced-slide .carousel-content {
+        padding: 12px 20px 55px 20px !important;
+    }
+    
+    .carousel-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .carousel-description {
+        font-size: 1rem !important;
+        -webkit-line-clamp: 3;
+    }
+    
+    .carousel-slide.enhanced-slide .carousel-footer.enhanced-footer {
+        height: 50px !important;
+        padding: 8px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .footer-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .carousel-nav {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.65rem !important;
+    }
+    
+    .carousel-controls {
+        right: 8px !important;
+        gap: 3px !important;
+    }
+    
+    .carousel-btn.enhanced-btn {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+    
+    .details-btn {
+        display: none !important; /* Keep hidden on mobile */
+    }
+    
+    .carousel-tag {
+        position: static !important; /* Reset positioning on mobile */
+        margin: 0 auto var(--spacing-xs) auto !important;
+        transform: none !important;
+    }
+    
+    .carousel-tag-container {
+        overflow: hidden; /* Reset overflow on mobile */
+    }
+}
+
+/* ---------- 13. PAM CONTAINER FIXES ---------- */
+.pam-carousel-container .carousel-section {
+    margin: 0;
+    z-index: 2;
+}
+
+.pam-carousel-container > .row > .col-md-8 {
+    padding-right: 5px !important;
+}
+
+.pam-carousel-container > .row > .col-md-4 {
+    padding-left: 5px !important;
+}
+
+/* Section padding controlled by partnerportal.css - removed conflicting override */
+
+/* ---------- 14. ACCESSIBILITY ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-slide,
+    .carousel-nav,
+    .carousel-indicator {
+        transition: none;
+    }
+}
+
+/* ---------- 15. TAG COLOR CLASSES ---------- */
+.tag-ai { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+.tag-updates { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.tag-workshop { background: linear-gradient(135deg, #10b981, #059669); }
+.tag-salesforce { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.tag-enterprise { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+.tag-migration { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+.tag-connect { background: linear-gradient(135deg, #ec4899, #db2777); }
+
+/* New tag classes for your JSON events */
+.tag-webinar { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.tag-event { background: linear-gradient(135deg, #10b981, #059669); }
+
+/* ---------- 16. CAROUSEL ERROR STATE ---------- */
+.carousel-error {
+    padding: 40px 20px;
+    text-align: center;
+    color: #666;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.carousel-error i {
+    font-size: 2rem;
+    color: #dc3545;
+    margin-bottom: 15px;
+}
+
+.carousel-error p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* ---------- 17. HOME SECTION PADDING OVERRIDE ---------- */
+/* Note: Global home section padding (0.5rem) is now handled in partnerportal.css */
+/* This section ensures carousel specifically has 0 padding-top */
+html body[home] .carousel-section,
+html body[home] section.carousel-section,
+html [home] .carousel-section,
+html [home] section.carousel-section,
+html body[home] section.announcement-carousel,
+html [home] section.announcement-carousel,
+html .main-banner-with-carousel .carousel-section {
+    padding-top: 0 !important;
+    /* Keep controlled bottom padding for spacing after carousel */
+    padding-bottom: var(--spacing-md) !important; /* 24px from partnerportal.css */
+}

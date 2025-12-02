@@ -1,0 +1,571 @@
+/**
+ * Content Sections CSS - DEPRECATED
+ * Version: 3.0.0
+ * 
+ * This file has been MOVED to content.css
+ * content.css is now the MAIN content styling file.
+ * 
+ * This file is kept minimal for backwards compatibility.
+ * All content styles are now in content.css
+ */
+
+/* All content styles have been moved to content.css */
+/* Please use content.css as the main content styling file */
+
+/* This file can be removed from your HTML includes */
+/* Use content.css instead */
+
+/* ============================================
+   WINDOWS SECTION STYLES
+   ============================================ */
+
+.windows-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 2px solid #dee2e6;
+  padding: 2rem 0;
+}
+
+.window-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+}
+
+.window-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.window-header {
+  padding: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.video-header {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.documents-header {
+  background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
+}
+
+.window-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+}
+
+.window-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.window-body {
+  padding: 1.5rem;
+}
+
+/* Video Window Styles */
+.video-preview {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.video-thumbnail-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-preview:hover .video-thumbnail-img {
+  transform: scale(1.05);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 107, 0, 0.9);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.play-overlay:hover {
+  background: rgba(255, 107, 0, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-info h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.video-description {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.video-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.video-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Documents Window Styles */
+.document-link-no-icon {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #495057;
+  transition: all 0.3s ease;
+}
+
+.document-link-no-icon:hover {
+  background: #e9ecef;
+  color: #495057;
+  text-decoration: none;
+  transform: translateX(5px);
+}
+
+.document-link-no-icon:last-child {
+  margin-bottom: 0;
+}
+
+.document-info-large {
+  width: 100%;
+}
+
+.document-title-large {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+}
+
+.document-desc-large {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* ============================================
+   RESOURCE CARDS SECTION STYLES
+   ============================================ */
+
+.resource-section {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+}
+
+.section-heading {
+  color: #0066cc;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.resource-card .card-header {
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  background: #f8f9fa;
+}
+
+/* Background color classes for resource cards */
+.bg-workflow {
+  background-color: #FFF5E6 !important;
+  background-image: linear-gradient(135deg, #FFE4CC 0%, #FFF5EB 100%) !important;
+}
+
+.bg-webinar {
+  background-color: #FFF5E6 !important;
+  background-image: linear-gradient(135deg, #FFE4CC 0%, #FFF5EB 100%) !important;
+}
+
+.bg-upgrade {
+  background-color: #FFF5E6 !important;
+  background-image: linear-gradient(135deg, #FFE4CC 0%, #FFF5EB 100%) !important;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0066cc;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.btn-outline-primary {
+  border: 2px solid #0066cc;
+  color: #0066cc;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.btn-outline-primary:hover {
+  background: #0066cc;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   VIDEO MODAL STYLES
+   ============================================ */
+
+.custom-modal.video-modal {
+  background-color: rgba(0, 0, 0, 0.95);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-modal.video-modal.show {
+  display: flex;
+}
+
+.custom-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.custom-modal.video-modal .custom-modal-container {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 80vw;
+  height: auto;
+  background-color: #000;
+  padding: 0;
+  margin: auto;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-modal.video-modal .custom-modal-content {
+  background-color: #000;
+  border-radius: 8px;
+}
+
+.custom-modal.video-modal .custom-modal-header {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 1000;
+}
+
+.custom-modal.video-modal .custom-modal-close {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.custom-modal.video-modal .custom-modal-close:hover {
+  background: rgba(255, 107, 0, 0.8);
+}
+
+.custom-modal.video-modal .custom-modal-body {
+  padding: 0;
+  position: relative;
+  background-color: #000;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 45%;
+  background-color: #000;
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============================================
+   CONTENT PAGE LAYOUTS (from content.css)
+   ============================================ */
+
+/* Base content container with proper z-index */
+.content-page-container {
+  position: relative;
+  overflow: visible !important;
+  z-index: 4;
+}
+
+/* Header section */
+.header {
+  position: relative;
+  overflow: hidden;
+  height: 120px;
+  margin-bottom: var(--spacing-lg);
+  background: rgb(74, 20, 140);
+  z-index: 4;
+}
+
+.header img {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+/* Pricing resources container with alignment fixes and transparency */
+.pricing-resources-container {
+  padding: var(--spacing-lg) 0;
+  position: relative;
+  z-index: 4;
+}
+
+.pricing-resources-container > .row {
+  display: flex;
+  align-items: flex-start;
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+  z-index: 4;
+}
+
+.pricing-resources-container > .row > .col-md-4,
+.pricing-resources-container > .row > .col-md-8 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Glass effect panels */
+.pricing-news-panel {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  z-index: 5;
+  border-left: 4px solid var(--primary-color);
+}
+
+.pricing-news-panel:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.pricing-resources {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-md);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  z-index: 5;
+}
+
+.pricing-resources:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .windows-section .row {
+    flex-direction: column;
+  }
+  
+  .video-thumbnail-img {
+    height: 150px;
+  }
+  
+  .window-header {
+    padding: 1rem;
+  }
+  
+  .window-body {
+    padding: 1rem;
+  }
+  
+  .section-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-header {
+    padding: 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .custom-modal.video-modal .custom-modal-container {
+    width: 95vw;
+    height: auto;
+    margin: 20px auto;
+  }
+  
+  .video-container {
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .resource-section {
+    padding: 1rem 0;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
+  
+  .btn-outline-primary {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

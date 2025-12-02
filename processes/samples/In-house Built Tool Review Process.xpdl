@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="PK-4667" Name="In-house Built Tool Review Process" xmlns="http://www.wfmc.org/2009/XPDL2.2">
+  <PackageHeader>
+    <XPDLVersion>2.2</XPDLVersion>
+    <Vendor>Promapp Solutions Ltd</Vendor>
+    <Created>2025-11-12T22:11:01.5276448Z</Created>
+  </PackageHeader>
+  <ConformanceClass BPMNModelPortabilityConformance="STANDARD" />
+  <Pages>
+    <Page Name="In-house Built Tool Review Process" Id="PG-1" Height="940" Width="1820" />
+  </Pages>
+  <Pools>
+    <Pool Id="PL-4667" Name="In-house Built Tool Review Process" Process="P-4667" BoundaryVisible="true">
+      <Lanes>
+        <Lane Orientation="HORIZONTAL" Id="L-1" Name="Request Submitter" ParentLane="PL-4667">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="280" Width="1670">
+              <Coordinates XCoordinate="100" YCoordinate="50" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-2" Name="AI Feasibility Review Team" ParentLane="PL-4667">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1670">
+              <Coordinates XCoordinate="100" YCoordinate="330" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-3" Name="AI Data Privacy Review Team" ParentLane="PL-4667">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1670">
+              <Coordinates XCoordinate="100" YCoordinate="470" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-4" Name="AI Architecture &amp; Engineering Review Team" ParentLane="PL-4667">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1670">
+              <Coordinates XCoordinate="100" YCoordinate="610" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-5" Name="AI Security Review Team" ParentLane="PL-4667">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="140" Width="1670">
+              <Coordinates XCoordinate="100" YCoordinate="750" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+      </Lanes>
+      <NodeGraphicsInfos>
+        <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="840" Width="1720">
+          <Coordinates XCoordinate="50" YCoordinate="50" />
+        </NodeGraphicsInfo>
+      </NodeGraphicsInfos>
+    </Pool>
+  </Pools>
+  <WorkflowProcesses>
+    <WorkflowProcess Id="P-4667" Name="In-house Built Tool Review Process" DefaultStartActivityId="START-1">
+      <ProcessHeader />
+      <Activities>
+        <Activity Id="START-1" Name="Start">
+          <Event>
+            <StartEvent Trigger="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="210" YCoordinate="100" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-316477" Name="1.0 AI Tool Review Form Submission Received">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="80" Width="120">
+              <Coordinates XCoordinate="350" YCoordinate="80" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-316478-D" Name="Is this a POC?">
+          <Route />
+          <TransitionRestrictions>
+            <TransitionRestriction>
+              <Split Type="Exclusive">
+                <TransitionRefs>
+                  <TransitionRef Id="T-3" />
+                  <TransitionRef Id="T-5" />
+                </TransitionRefs>
+              </Split>
+            </TransitionRestriction>
+          </TransitionRestrictions>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="570" YCoordinate="100" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-316478" Name="POC Review Process" StartQuantity="0" CompletionQuantity="0">
+          <Implementation>
+            <SubFlow Id="P-4668" />
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="80" Width="120">
+              <Coordinates XCoordinate="530" YCoordinate="220" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="END-PP-316478" Name="End POC Review Process">
+          <Event>
+            <EndEvent Result="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="750" YCoordinate="240" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-316479" Name="2.0 Feasibility review">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="80" Width="120">
+              <Coordinates XCoordinate="890" YCoordinate="360" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-316480" Name="3.0 Data Privacy Review">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="80" Width="120">
+              <Coordinates XCoordinate="890" YCoordinate="500" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-316481" Name="4.0 Architecture &amp; Engineering Review">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-4" Height="80" Width="120">
+              <Coordinates XCoordinate="1070" YCoordinate="640" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-316482" Name="4.1 Security Review">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-5" Height="80" Width="120">
+              <Coordinates XCoordinate="1070" YCoordinate="780" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-316483-D" Name="Has the request been approved by all parties?">
+          <Route />
+          <TransitionRestrictions>
+            <TransitionRestriction>
+              <Split Type="Exclusive">
+                <TransitionRefs>
+                  <TransitionRef Id="T-7" />
+                  <TransitionRef Id="T-9" />
+                </TransitionRefs>
+              </Split>
+            </TransitionRestriction>
+          </TransitionRestrictions>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="40" Width="40">
+              <Coordinates XCoordinate="1470" YCoordinate="380" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PP-316483" Name="5.0 Implementation Confirmation">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="80" Width="120">
+              <Coordinates XCoordinate="1430" YCoordinate="80" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="END-PP-316483" Name="End Implementation Confirmation">
+          <Event>
+            <EndEvent Result="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="1650" YCoordinate="100" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="OUT-884" Name="Request decision is logged">
+          <Event>
+            <EndEvent Result="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="40" Width="40">
+              <Coordinates XCoordinate="1650" YCoordinate="380" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PARA-1-IN">
+          <Route GatewayType="Parallel" GatewayDirection="Diverging" />
+          <TransitionRestrictions>
+            <TransitionRestriction>
+              <Split Type="Parallel">
+                <TransitionRefs>
+                  <TransitionRef Id="T-10" />
+                  <TransitionRef Id="T-12" />
+                </TransitionRefs>
+              </Split>
+            </TransitionRestriction>
+          </TransitionRestrictions>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-4" Height="40" Width="40">
+              <Coordinates XCoordinate="930" YCoordinate="660" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="PARA-1-OUT">
+          <Route GatewayType="Parallel" GatewayDirection="Converging" />
+          <TransitionRestrictions>
+            <TransitionRestriction>
+              <Join Type="Parallel" />
+            </TransitionRestriction>
+          </TransitionRestrictions>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-4" Height="40" Width="40">
+              <Coordinates XCoordinate="1290" YCoordinate="660" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+      </Activities>
+      <Transitions>
+        <Transition Id="T-1" From="START-1" To="PP-316477">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="250" YCoordinate="120" />
+              <Coordinates XCoordinate="350" YCoordinate="120" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-2" From="PP-316477" To="PP-316478-D">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="470" YCoordinate="120" />
+              <Coordinates XCoordinate="570" YCoordinate="120" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-3" From="PP-316478-D" To="PP-316478" Name="Yes">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="590" YCoordinate="140" />
+              <Coordinates XCoordinate="590" YCoordinate="220" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-4" From="PP-316478" To="END-PP-316478">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="650" YCoordinate="260" />
+              <Coordinates XCoordinate="750" YCoordinate="260" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-5" From="PP-316478-D" To="PP-316479" Name="No">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="610" YCoordinate="120" />
+              <Coordinates XCoordinate="860" YCoordinate="120" />
+              <Coordinates XCoordinate="860" YCoordinate="400" />
+              <Coordinates XCoordinate="890" YCoordinate="400" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-6" From="PP-316479" To="PP-316480">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="950" YCoordinate="440" />
+              <Coordinates XCoordinate="950" YCoordinate="500" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-7" From="PP-316483-D" To="PP-316483" Name="Yes">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1490" YCoordinate="380" />
+              <Coordinates XCoordinate="1490" YCoordinate="160" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-8" From="PP-316483" To="END-PP-316483">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1550" YCoordinate="120" />
+              <Coordinates XCoordinate="1650" YCoordinate="120" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-9" From="PP-316483-D" To="OUT-884" Name="No">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1510" YCoordinate="400" />
+              <Coordinates XCoordinate="1650" YCoordinate="400" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-10" From="PARA-1-IN" To="PP-316481">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="970" YCoordinate="680" />
+              <Coordinates XCoordinate="1070" YCoordinate="680" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-11" From="PP-316481" To="PARA-1-OUT">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1190" YCoordinate="680" />
+              <Coordinates XCoordinate="1290" YCoordinate="680" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-12" From="PARA-1-IN" To="PP-316482">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="970" YCoordinate="680" />
+              <Coordinates XCoordinate="1040" YCoordinate="680" />
+              <Coordinates XCoordinate="1040" YCoordinate="820" />
+              <Coordinates XCoordinate="1070" YCoordinate="820" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-13" From="PP-316482" To="PARA-1-OUT">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1190" YCoordinate="820" />
+              <Coordinates XCoordinate="1220" YCoordinate="820" />
+              <Coordinates XCoordinate="1220" YCoordinate="680" />
+              <Coordinates XCoordinate="1290" YCoordinate="680" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-14" From="PP-316480" To="PARA-1-IN">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="950" YCoordinate="580" />
+              <Coordinates XCoordinate="950" YCoordinate="660" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-15" From="PARA-1-OUT" To="PP-316483-D">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1330" YCoordinate="680" />
+              <Coordinates XCoordinate="1400" YCoordinate="680" />
+              <Coordinates XCoordinate="1400" YCoordinate="400" />
+              <Coordinates XCoordinate="1470" YCoordinate="400" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+    </WorkflowProcess>
+    <WorkflowProcess Id="P-4668" Name="POC Review Process">
+      <ProcessHeader />
+    </WorkflowProcess>
+  </WorkflowProcesses>
+</Package>

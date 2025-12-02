@@ -1,0 +1,34 @@
+{
+    "slides": [
+      {
+        "id": "slide1",
+        "image": "https://ntxtemplatestorage.blob.core.windows.net/partner/AdobeStock_903865635.png",
+        "badge": "Webinar",
+        "title": "New at Nintex: Product Update Q1 2025",
+        "description": "Join us for an exclusive webinar where we'll explore the latest advancements in Nintex platforms and solutions.",
+        "date": "March 15, 2025",
+        "buttonText": "Register Now",
+        "buttonLink": "https://www.nintex.com/resources/new-at-nintex-product-update-q1-2025/"
+      },
+      {
+        "id": "slide2",
+        "image": "https://ntxtemplatestorage.blob.core.windows.net/partner/webinar-bg.jpg",
+        "badge": "Event",
+        "title": "Global Partner Summit 2025",
+        "description": "Connect with Nintex experts and fellow partners to expand your network and discover new business opportunities.",
+        "date": "April 10-12, 2025",
+        "buttonText": "Learn More",
+        "buttonLink": "#"
+      },
+      {
+        "id": "slide3",
+        "image": "https://ntxtemplatestorage.blob.core.windows.net/partner/upgrade-bg.jpg",
+        "badge": "Training",
+        "title": "New Certification Program Now Available",
+        "description": "Enhance your team's expertise with our updated certification paths designed for the latest Nintex solutions.",
+        "date": "Available Now",
+        "buttonText": "Enroll Today",
+        "buttonLink": "#"
+      }
+    ]
+  }

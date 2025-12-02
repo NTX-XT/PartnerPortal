@@ -1,0 +1,363 @@
+[
+  {
+    "id": "event24",
+    "tag": "AI Solutions",
+    "tagClass": "tag-ai",
+    "title": "AI Solutions to Global Efficiency Crisis",
+    "description": "Join the webinar to dive deep into the causes, challenges, and potential AI solutions to this global efficiency crisis.",
+    "date": "September 5th",
+    "url": "https://www.nintex.com/resources/ai-efficiency-crisis-webinar",
+    "buttonText": "Explore AI",
+    "timing": {
+      "startTime": "2:00 PM EST",
+      "endTime": "3:30 PM EST",
+      "duration": "90 minutes",
+      "timezone": "EST/GMT-5",
+      "registration_deadline": "September 4th, 11:59 PM EST"
+    },
+    "event_details": {
+      "format": "Live Webinar",
+      "capacity": "500 attendees",
+      "recording_available": true,
+      "replay_access": "30 days",
+      "certificate": false,
+      "cost": "Free",
+      "target_audience": "Business Leaders, IT Directors, Process Managers",
+      "prerequisites": "Basic understanding of business processes"
+    },
+    "agenda": [
+      {
+        "time": "2:00 PM - 2:15 PM",
+        "topic": "Welcome & Introduction",
+        "speaker": "Nintex Product Team",
+        "description": "Event overview and introductions"
+      },
+      {
+        "time": "2:15 PM - 2:45 PM",
+        "topic": "The Global Efficiency Crisis",
+        "speaker": "Dr. Sarah Mitchell, Process Intelligence Expert",
+        "description": "Understanding the root causes and industry impact"
+      },
+      {
+        "time": "2:45 PM - 3:15 PM",
+        "topic": "AI-Powered Solutions",
+        "speaker": "Mark Thompson, AI Solutions Architect",
+        "description": "Live demonstrations of AI automation capabilities"
+      },
+      {
+        "time": "3:15 PM - 3:30 PM",
+        "topic": "Q&A Session",
+        "speaker": "Panel Discussion",
+        "description": "Interactive Q&A with attendee questions"
+      }
+    ],
+    "speakers": [
+      {
+        "name": "Dr. Sarah Mitchell",
+        "title": "Process Intelligence Expert",
+        "company": "Nintex",
+        "bio": "15+ years in process optimization and digital transformation"
+      },
+      {
+        "name": "Mark Thompson",
+        "title": "AI Solutions Architect",
+        "company": "Nintex",
+        "bio": "Leading AI implementation strategies across Fortune 500 companies"
+      }
+    ],
+    "resources": [
+      "AI Process Automation Whitepaper",
+      "ROI Calculator Tool",
+      "Implementation Checklist",
+      "Case Study Collection"
+    ]
+  },
+  {
+    "id": "event25",
+    "tag": "Product Updates",
+    "tagClass": "tag-updates",
+    "title": "New at Nintex: Product update Q3 2025",
+    "description": "Join our exclusive Nintex webinar to explore platform updates & boost team efficiency and business success.",
+    "date": "September 9th",
+    "url": "https://www.nintex.com/resources/new-at-nintex-product-update-q3-2025",
+    "buttonText": "See What's New",
+    "timing": {
+      "startTime": "11:00 AM PST",
+      "endTime": "12:00 PM PST",
+      "duration": "60 minutes",
+      "timezone": "PST/GMT-8",
+      "registration_deadline": "September 8th, 11:59 PM PST"
+    },
+    "event_details": {
+      "format": "Live Product Demo",
+      "capacity": "1000 attendees",
+      "recording_available": true,
+      "replay_access": "Unlimited",
+      "certificate": false,
+      "cost": "Free for Nintex customers",
+      "target_audience": "Existing Customers, Partners, Prospects",
+      "prerequisites": "None"
+    },
+    "agenda": [
+      {
+        "time": "11:00 AM - 11:10 AM",
+        "topic": "Q3 2025 Highlights",
+        "speaker": "Nintex Product Team",
+        "description": "Major feature releases and improvements"
+      },
+      {
+        "time": "11:10 AM - 11:35 AM",
+        "topic": "Live Product Demonstrations",
+        "speaker": "Product Specialists",
+        "description": "New features in action with real-world scenarios"
+      },
+      {
+        "time": "11:35 AM - 11:50 AM",
+        "topic": "Roadmap Preview",
+        "speaker": "Chief Product Officer",
+        "description": "What's coming in Q4 2025 and beyond"
+      },
+      {
+        "time": "11:50 AM - 12:00 PM",
+        "topic": "Customer Success Stories",
+        "speaker": "Customer Success Team",
+        "description": "Real implementations and results"
+      }
+    ],
+    "key_features": [
+      "AI-powered workflow generator",
+      "Enhanced Salesforce integration",
+      "New mobile app capabilities",
+      "Advanced analytics dashboard",
+      "Improved security features"
+    ]
+  },
+  {
+    "id": "event26",
+    "tag": "Process Excellence Workshop",
+    "tagClass": "tag-workshop",
+    "title": "Process Excellence Workshop: Nintex Process Manager",
+    "description": "Join this hands-on, two-part workshop to master process excellence with Nintex Process Manager.",
+    "date": "September 12th",
+    "url": "https://www.nintex.com/resources/process-excellence-workshop",
+    "buttonText": "Join Workshop",
+    "timing": {
+      "startTime": "9:00 AM EST",
+      "endTime": "4:00 PM EST",
+      "duration": "6 hours (with breaks)",
+      "timezone": "EST/GMT-5",
+      "registration_deadline": "September 10th, 5:00 PM EST"
+    },
+    "event_details": {
+      "format": "Interactive Workshop",
+      "capacity": "50 attendees",
+      "recording_available": false,
+      "replay_access": "N/A",
+      "certificate": true,
+      "cost": "$299 (Free for Premium customers)",
+      "target_audience": "Process Managers, Business Analysts, Operations Teams",
+      "prerequisites": "Basic Nintex Process Manager access"
+    },
+    "agenda": [
+      {
+        "time": "9:00 AM - 9:30 AM",
+        "topic": "Welcome & Workshop Overview",
+        "speaker": "Workshop Facilitator",
+        "description": "Introductions and learning objectives"
+      },
+      {
+        "time": "9:30 AM - 11:00 AM",
+        "topic": "Process Mapping Fundamentals",
+        "speaker": "Process Excellence Expert",
+        "description": "Hands-on process mapping exercises"
+      },
+      {
+        "time": "11:15 AM - 12:30 PM",
+        "topic": "Advanced Process Analysis",
+        "speaker": "Senior Consultant",
+        "description": "Identifying bottlenecks and optimization opportunities"
+      },
+      {
+        "time": "1:30 PM - 3:00 PM",
+        "topic": "Automation Planning",
+        "speaker": "Automation Specialist",
+        "description": "Creating automation roadmaps"
+      },
+      {
+        "time": "3:15 PM - 4:00 PM",
+        "topic": "Implementation Strategy",
+        "speaker": "Implementation Expert",
+        "description": "Best practices and next steps"
+      }
+    ],
+    "materials_included": [
+      "Process Excellence Toolkit",
+      "Template Library Access",
+      "90-day consultation credit",
+      "Certification upon completion"
+    ]
+  },
+  {
+    "id": "event31",
+    "tag": "Nintex Connect",
+    "tagClass": "tag-connect",
+    "title": "Nintex Connect Paris 2025",
+    "description": "Transformez votre entreprise grâce à l'intelligence des processus et à l'automatisation.",
+    "date": "October 16th",
+    "url": "https://www.nintex.com/resources/nintex-connect-paris-2025",
+    "buttonText": "Rejoignez-nous",
+    "timing": {
+      "startTime": "9:00 AM CET",
+      "endTime": "5:30 PM CET",
+      "duration": "Full day event",
+      "timezone": "CET/GMT+1",
+      "registration_deadline": "October 14th, 11:59 PM CET"
+    },
+    "event_details": {
+      "format": "In-Person Conference",
+      "location": "Chalet des Îles, Paris",
+      "address": "Lac Inférieur du Bois de Boulogne, 75116 Paris, France",
+      "capacity": "200 attendees",
+      "recording_available": "Selected sessions only",
+      "replay_access": "30 days",
+      "certificate": false,
+      "cost": "Free (invitation only)",
+      "target_audience": "Enterprise customers, Partners, Prospects",
+      "prerequisites": "None",
+      "language": "French with English translation available"
+    },
+    "agenda": [
+      {
+        "time": "9:00 AM - 9:30 AM",
+        "topic": "Accueil et petit-déjeuner",
+        "speaker": "Registration",
+        "description": "Welcome reception and networking"
+      },
+      {
+        "time": "9:30 AM - 10:30 AM",
+        "topic": "Keynote: L'avenir de l'automatisation",
+        "speaker": "Amit Mathradas, CEO Nintex",
+        "description": "Vision for the future of process automation"
+      },
+      {
+        "time": "10:45 AM - 11:45 AM",
+        "topic": "Intelligence des processus en action",
+        "speaker": "Product Experts",
+        "description": "Live demonstrations of process intelligence capabilities"
+      },
+      {
+        "time": "12:00 PM - 1:00 PM",
+        "topic": "Témoignages clients",
+        "speaker": "Customer Panel",
+        "description": "Real customer success stories and implementations"
+      },
+      {
+        "time": "2:00 PM - 3:00 PM",
+        "topic": "Ateliers techniques",
+        "speaker": "Technical Specialists",
+        "description": "Hands-on technical workshops (multiple tracks)"
+      },
+      {
+        "time": "3:15 PM - 4:15 PM",
+        "topic": "Roadmap et innovations",
+        "speaker": "Product Leadership",
+        "description": "Product roadmap and upcoming innovations"
+      },
+      {
+        "time": "4:30 PM - 5:30 PM",
+        "topic": "Networking et clôture",
+        "speaker": "All attendees",
+        "description": "Networking reception and event wrap-up"
+      }
+    ],
+    "tracks": [
+      {
+        "name": "Process Intelligence",
+        "focus": "Advanced process mapping and analysis",
+        "target": "Business analysts and process managers"
+      },
+      {
+        "name": "Automation",
+        "focus": "Workflow automation and RPA",
+        "target": "IT professionals and developers"
+      },
+      {
+        "name": "Integration",
+        "focus": "Enterprise system integration",
+        "target": "System architects and IT leaders"
+      }
+    ],
+    "networking_opportunities": [
+      "Welcome breakfast",
+      "Lunch networking session",
+      "Afternoon coffee breaks",
+      "Closing reception"
+    ]
+  },
+  {
+    "id": "event33",
+    "tag": "Enterprise Excellence",
+    "tagClass": "tag-enterprise",
+    "title": "Enterprise Process Intelligence Workshop",
+    "description": "Unlock enterprise excellence through advanced process maturity and intelligent mapping techniques.",
+    "date": "November 14th",
+    "url": "https://www.nintex.com/resources/enterprise-process-intelligence",
+    "buttonText": "Join Workshop",
+    "timing": {
+      "startTime": "10:00 AM EST",
+      "endTime": "3:00 PM EST",
+      "duration": "5 hours (with lunch break)",
+      "timezone": "EST/GMT-5",
+      "registration_deadline": "November 12th, 5:00 PM EST"
+    },
+    "event_details": {
+      "format": "Virtual Workshop",
+      "capacity": "100 attendees",
+      "recording_available": true,
+      "replay_access": "60 days",
+      "certificate": true,
+      "cost": "$499 (Free for Enterprise customers)",
+      "target_audience": "Enterprise architects, Process leaders, Digital transformation teams",
+      "prerequisites": "Enterprise-level Nintex license recommended"
+    },
+    "agenda": [
+      {
+        "time": "10:00 AM - 10:30 AM",
+        "topic": "Enterprise Process Maturity Assessment",
+        "speaker": "Process Maturity Expert",
+        "description": "Evaluating your organization's process maturity level"
+      },
+      {
+        "time": "10:30 AM - 12:00 PM",
+        "topic": "Advanced Process Intelligence",
+        "speaker": "Senior Process Consultant",
+        "description": "Deep dive into process intelligence capabilities"
+      },
+      {
+        "time": "1:00 PM - 2:15 PM",
+        "topic": "Enterprise Mapping Strategies",
+        "speaker": "Enterprise Architect",
+        "description": "Mapping complex enterprise processes across departments"
+      },
+      {
+        "time": "2:30 PM - 3:00 PM",
+        "topic": "Implementation Roadmap",
+        "speaker": "Implementation Manager",
+        "description": "Creating your enterprise transformation roadmap"
+      }
+    ],
+    "enterprise_focus": [
+      "Cross-departmental process mapping",
+      "Scalability planning",
+      "Governance frameworks",
+      "ROI measurement strategies",
+      "Change management approaches"
+    ],
+    "deliverables": [
+      "Process maturity assessment report",
+      "Custom implementation roadmap",
+      "Enterprise template library",
+      "30-day consulting session"
+    ]
+  }
+]

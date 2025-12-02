@@ -1,0 +1,620 @@
+/**
+ * Partner Portal CSS Fixes - Font Size and Readability Improvements
+ * Version: 3.0.0
+ * 
+ * This file contains critical fixes for font sizing issues across the portal
+ * Load this AFTER all other CSS files to ensure proper override
+ * 
+ * Issues Fixed:
+ * - Navigation menu text too small
+ * - Body text not respecting CSS variable sizes
+ * - Video descriptions and card text appearing smaller than specified
+ * - Inconsistent font rendering across different browsers
+ */
+
+/* ============================================
+   CRITICAL FONT SIZE RESETS
+   Force all text to use proper sizing
+   ============================================ */
+
+/* Reset base HTML font size to ensure rem units work correctly */
+html {
+  font-size: 16px !important; /* Base for rem calculations */
+}
+
+/* Force body to use proper font family and size */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  font-size: 18px !important; /* Base body text at 18px */
+  line-height: 1.6 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* ============================================
+   NAVIGATION & MENU FIXES
+   ============================================ */
+
+/* Top navigation bar - ensure readable size */
+.navbar.navbar-fixed-top,
+.top-bar,
+.navbar .navbar-nav {
+  font-size: 16px !important;
+}
+
+.navbar.navbar-fixed-top .top-bar {
+  background-color: #8439A6 !important;
+}
+
+/* Dropdown menus - must be readable */
+.dropdown-menu,
+.dropdown-menu li,
+.dropdown-menu a {
+  font-size: 16px !important; /* Increased from 12px */
+  line-height: 1.5 !important;
+}
+
+/* Navigation links */
+.navbar-nav > li > a,
+nav a,
+.nav-link {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+/* Dropdown toggle */
+.dropdown-toggle {
+  font-size: 16px !important;
+}
+
+/* Push notifications menu */
+[push-notifications] .prm-notify-menu-message > a h4 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  font-size: 15px !important; /* Increased from 12px */
+  font-weight: 500 !important;
+}
+
+/* ============================================
+   GENERAL TEXT ELEMENTS
+   ============================================ */
+
+/* All paragraphs */
+p {
+  font-size: 16px !important; /* 2025 best practice body text */
+  line-height: 1.6 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* All headings with proper hierarchy - Golden Ratio (1.618) scale */
+h1 {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+h2 {
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  margin-bottom: 0.625rem !important;
+}
+
+h3 {
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+h4 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+h5 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 0.375rem !important;
+}
+
+h6 {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 0.375rem !important;
+}
+
+/* All list items */
+ul li,
+ol li {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 0.375rem !important;
+}
+
+/* Links */
+a {
+  font-size: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Spans and inline elements */
+span {
+  font-size: inherit !important;
+}
+
+/* ============================================
+   CARD & RESOURCE COMPONENTS
+   ============================================ */
+
+/* Video description - this was showing as very small */
+.video-description,
+[class*="video-description"],
+span.video-description {
+  font-size: 18px !important; /* Much larger than the 11px it was appearing as */
+  color: #555555 !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+/* Card titles */
+.card-title,
+.resource-title,
+.announcement-title,
+.event-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Card text/descriptions */
+.card-text,
+.card-description,
+.resource-desc,
+.announcement-desc,
+.event-description {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  color: #555 !important;
+  font-weight: 400 !important;
+}
+
+/* Card body */
+.card-body {
+  font-size: 14px !important;
+}
+
+/* ============================================
+   BANNER & HEADER SECTIONS
+   ============================================ */
+
+/* Main banner header */
+.banner-header {
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: #333 !important;
+}
+
+/* Banner text */
+.banner-text {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: #555 !important;
+}
+
+/* Welcome message */
+.banner-welcome h3 {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+
+/* Section titles */
+.section-heading,
+.section-title,
+.panel-title,
+.resources-title {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* ============================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ============================================ */
+
+/* All buttons */
+.btn,
+button,
+[type="button"],
+[type="submit"] {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  padding: 0.625rem 1.25rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Button text should not inherit smaller sizes */
+.btn span,
+button span {
+  font-size: inherit !important;
+}
+
+/* Links that look like buttons */
+.btn-link {
+  font-size: 16px !important;
+}
+
+/* ============================================
+   SPECIFIC COMPONENT FIXES
+   ============================================ */
+
+/* News cards */
+.news-card {
+  font-size: 18px !important;
+}
+
+.news-date {
+  font-size: 16px !important;
+  color: #777 !important;
+  font-weight: 500 !important;
+}
+
+.news-title {
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.news-summary {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  color: #555 !important;
+}
+
+/* Announcement cards */
+.announcement-card {
+  font-size: 18px !important;
+}
+
+/* Resource items */
+.resource-item {
+  font-size: 18px !important;
+}
+
+.resource-row {
+  font-size: 18px !important;
+}
+
+/* Remember box */
+.remember-title {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+}
+
+.remember-text {
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+}
+
+/* ============================================
+   FOOTER FIXES
+   ============================================ */
+
+footer[site-footer] {
+  font-size: 16px !important;
+}
+
+footer[site-footer] p,
+footer[site-footer] li,
+footer[site-footer] a {
+  font-size: 16px !important;
+}
+
+footer[site-footer] h4 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
+
+/* ============================================
+   TABLE & DATA DISPLAY
+   ============================================ */
+
+table {
+  font-size: 16px !important;
+}
+
+table th {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+table td {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
+/* Form labels */
+label,
+.form-label {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+  font-size: 16px !important;
+  padding: 0.625rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Form helper text */
+.form-text,
+.help-block,
+small {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* ============================================
+   CAROUSEL & SLIDER COMPONENTS
+   ============================================ */
+
+/* Carousel text elements */
+.carousel-title {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+.carousel-description {
+  font-size: 18px !important;
+  line-height: 1.5 !important;
+}
+
+.carousel-tag {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}
+
+/* ============================================
+   UTILITY CLASSES FOR CONSISTENT SIZING
+   ============================================ */
+
+/* Text size utility classes */
+.text-xs {
+  font-size: 14px !important;
+}
+
+.text-sm {
+  font-size: 16px !important;
+}
+
+.text-base {
+  font-size: 18px !important;
+}
+
+.text-lg {
+  font-size: 20px !important;
+}
+
+.text-xl {
+  font-size: 24px !important;
+}
+
+.text-2xl {
+  font-size: 30px !important;
+}
+
+.text-3xl {
+  font-size: 36px !important;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Tablet adjustments */
+@media (max-width: 991px) {
+  body {
+    font-size: 17px !important;
+  }
+  
+  p {
+    font-size: 19px !important;
+  }
+  
+  h1 {
+    font-size: 32px !important;
+  }
+  
+  h2 {
+    font-size: 28px !important;
+  }
+  
+  h3 {
+    font-size: 24px !important;
+  }
+  
+  .banner-header {
+    font-size: 30px !important;
+  }
+  
+  .section-title,
+  .panel-title {
+    font-size: 26px !important;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  html {
+    font-size: 15px !important; /* Slightly smaller base for mobile */
+  }
+  
+  body {
+    font-size: 16px !important;
+  }
+  
+  p {
+    font-size: 18px !important;
+  }
+  
+  h1 {
+    font-size: 28px !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+  }
+  
+  h3 {
+    font-size: 22px !important;
+  }
+  
+  h4 {
+    font-size: 20px !important;
+  }
+  
+  .banner-header {
+    font-size: 26px !important;
+  }
+  
+  .section-title,
+  .panel-title {
+    font-size: 24px !important;
+  }
+  
+  .card-title {
+    font-size: 20px !important;
+  }
+  
+  .card-text {
+    font-size: 17px !important;
+  }
+  
+  /* Navigation should still be readable on mobile */
+  .navbar-nav > li > a {
+    font-size: 16px !important;
+  }
+  
+  .dropdown-menu,
+  .dropdown-menu a {
+    font-size: 16px !important;
+  }
+}
+
+/* ============================================
+   BROWSER-SPECIFIC FIXES
+   ============================================ */
+
+/* Firefox-specific fixes */
+@-moz-document url-prefix() {
+  body {
+    font-size: 18px !important;
+  }
+}
+
+/* Safari-specific fixes */
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    body {
+      -webkit-font-smoothing: antialiased !important;
+      font-size: 18px !important;
+    }
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    font-size: 12pt !important;
+  }
+  
+  h1 {
+    font-size: 24pt !important;
+  }
+  
+  h2 {
+    font-size: 20pt !important;
+  }
+  
+  h3 {
+    font-size: 18pt !important;
+  }
+  
+  p {
+    font-size: 12pt !important;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+/* Ensure focus states are visible */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #FF6B00 !important;
+  outline-offset: 2px !important;
+}
+
+/* Improve contrast for better readability */
+.text-muted {
+  color: #666 !important; /* Darker than typical muted text */
+}
+
+/* ============================================
+   FORCE OVERRIDE ANY INLINE STYLES
+   These rules use !important to override any
+   inline styles that might be reducing font sizes
+   ============================================ */
+
+/* Target any element with inline font-size */
+*[style*="font-size"] {
+  font-size: inherit !important;
+}
+
+/* Ensure all text elements use minimum readable sizes */
+body * {
+  min-font-size: 14px; /* Non-standard but helpful */
+}
+
+/* ============================================
+   DEBUG HELPER (Remove in production)
+   Uncomment to see which elements have small text
+   ============================================ */
+
+/*
+body *:not(i):not(svg) {
+  outline: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+body *[style*="font-size"]:not(i):not(svg) {
+  outline: 2px solid red !important;
+}
+*/

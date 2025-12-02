@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .events-container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .event-item {
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0;
+        }
+        .event-item h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #0073aa;
+        }
+        .event-item p {
+            margin: 5px 0;
+        }
+        .event-item a {
+            color: #0073aa;
+            text-decoration: none;
+        }
+        .event-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="events-container">
+        <h1>Upcoming Events</h1>
+        <ul id="events-list"></ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const eventsList = document.getElementById("events-list");
+            const apiUrl = "https://www.nintex.com/wp-json/wp/v2/resource/";
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("API Response:", data); // Debugging: Print the full API response
+
+                    if (!Array.isArray(data)) {
+                        throw new Error("Unexpected API response format");
+                    }
+
+                    const events = data.slice(0, 10); // Get only the next 10 events
+
+                    events.forEach(event => {
+                        console.log("Event Object:", event); // Debugging: Print each event
+
+                        // Safely extract data
+                        const titleText = event?.title?.rendered || "No title available";
+                        const dateText = event?.date ? new Date(event.date).toLocaleDateString() : "No date available";
+                        const link = event?.link || "#";
+                        const descriptionText = event?.yoast_head_json?.description || "No description available";
+                        const imageUrl = event?.yoast_head_json?.og_image?.[0]?.url || "https://via.placeholder.com/800x400"; // Default image
+
+                        // Create list item
+                        const listItem = document.createElement("li");
+                        listItem.className = "event-item";
+
+                        const title = document.createElement("h2");
+                        title.innerHTML = `<a href="${link}" target="_blank">${titleText}</a>`;
+
+                        const date = document.createElement("p");
+                        date.textContent = `📅 Date: ${dateText}`;
+
+                        const description = document.createElement("p");
+                        description.textContent = descriptionText;
+
+                        const image = document.createElement("img");
+                        image.src = imageUrl;
+                        image.alt = titleText;
+                        image.style.width = "100%";
+                        image.style.maxWidth = "400px";
+
+                        listItem.appendChild(title);
+                        listItem.appendChild(image);
+                        listItem.appendChild(date);
+                        listItem.appendChild(description);
+                        eventsList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching events:", error);
+                    eventsList.innerHTML = '<li class="error">⚠️ Unable to load events at this time.</li>';
+                });
+        });
+    </script>
+
+</body>
+</html>

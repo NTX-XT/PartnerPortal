@@ -1,0 +1,861 @@
+{
+  "id": "30bd310a-55ae-4c84-a8b3-5acde1c11f14",
+  "name": "Partner Readiness Assessment",
+  "ruleGroups": [],
+  "theme": {
+    "styles": {
+      "name": "Custom",
+      "customCss": {
+        "cssIsTurnedOff": false,
+        "codeString": ""
+      },
+      "color": {
+        "pageBackground": "#F5F5F5",
+        "formBackground": "#FFFFFF",
+        "userInterface": "#757575",
+        "highlight": "#4CAF50",
+        "textInput": "#212121",
+        "fieldAndModal": "#FFFFFF",
+        "error": "#D32F2F",
+        "border": "#BDBDBD"
+      },
+      "textSize": {
+        "textInput": 14,
+        "formText": 14
+      },
+      "fontFamily": {
+        "name": "Open Sans",
+        "value": "\"Open Sans\", \"Helvetica\", \"Arial\", sans-serif"
+      },
+      "borderStyle": "Rounded"
+    },
+    "name": "Custom"
+  },
+  "pageSettings": {
+    "headerText": "multiPage.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+    "footerText": "multiPage.FORMDESIGNER_CONTROL_PROP_FOOTER_TEXT",
+    "pages": [
+      {
+        "isEnabled": true,
+        "name": "page_default",
+        "title": "page_default.FORMDESIGNER_CONTROL_PROP_TITLE"
+      },
+      {
+        "isEnabled": true,
+        "name": "page_EVqNHvrfkF",
+        "title": "page_EVqNHvrfkF.FORMDESIGNER_CONTROL_PROP_TITLE"
+      },
+      {
+        "isEnabled": true,
+        "name": "page_0EsWhLLxQX",
+        "title": "page_0EsWhLLxQX.FORMDESIGNER_CONTROL_PROP_TITLE"
+      }
+    ],
+    "pageTitleSize": "Heading 4",
+    "pageFlow": "2",
+    "pageStyle": "2",
+    "showTitle": true,
+    "showPageNavigation": true,
+    "showPageNumberIcon": true,
+    "showHeader": false,
+    "showFooter": false
+  },
+  "translationSettings": {
+    "selectedLanguages": [],
+    "participantLanguage": "en",
+    "baseLanguage": "en",
+    "enableRuntimeLanguageSelector": true
+  },
+  "version": 26,
+  "formType": "startform",
+  "contract": {
+    "version": "v3",
+    "variablePrefix": "se"
+  },
+  "variableContext": {
+    "variables": []
+  },
+  "translations": {
+    "en": {
+      "form_header.FORMDESIGNER_CONTROL_PROP_TEXT": "<p class=\"text-right\"><span style=\"font-size:36px\">Partner Readiness Assessment</span></p><p class=\"text-right\"><span style=\"font-size:18px\">Discover your partnership potential with Nintex</span></p>",
+      "company_info_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Company Information</strong></p>",
+      "business_presence_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Business Presence</strong></p>",
+      "sales_org_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Sales Organization</strong></p>",
+      "business_dev_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Business Development</strong></p>",
+      "market_position_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Market Position</strong></p>",
+      "org_focus_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Organizational Focus</strong></p>",
+      "partnership_philosophy_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Partnership Philosophy</strong></p>",
+      "customer_engagement_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Customer Engagement</strong></p>",
+      "sales_methodology_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Sales Methodology</strong></p>",
+      "training_commitment_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Training Commitment</strong></p>",
+      "pipeline_management_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Pipeline Management</strong></p>",
+      "success_metrics_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Success Metrics</strong></p>",
+      "partnership_objectives_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Partnership Objectives</strong></p>",
+      "additional_info_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "<p><strong>Additional Information</strong></p>",
+      "thank_you_message.FORMDESIGNER_CONTROL_PROP_TEXT": "<p class=\"text-center\"><span style=\"font-size:16px\"><strong>Thank you for completing the Nintex Partner Readiness Assessment. We will review your responses and follow up with next steps.</strong></span></p>",
+      "actionpanel1.FORMDESIGNER_CONTROL_PROP_PRINT_BUTTON_LABEL": "Print",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_SUBMIT_TEXT_TITLE": "Submit Assessment",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_NEXT_TEXT_TITLE": "Next",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_PREVIOUS_TEXT_TITLE": "Previous",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_SAVE_CONTINUE_TEXT_TITLE": "Save",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_CANCEL_TEXT_TITLE": "Cancel",
+      "page_default.FORMDESIGNER_CONTROL_PROP_TITLE": "Partner Readiness Assessment",
+      "multiPage.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "",
+      "multiPage.FORMDESIGNER_CONTROL_PROP_FOOTER_TEXT": "",
+      "page_EVqNHvrfkF.FORMDESIGNER_CONTROL_PROP_TITLE": "Partnership Assessment",
+      "page_0EsWhLLxQX.FORMDESIGNER_CONTROL_PROP_TITLE": "Partnership Goals & Objectives",
+      "company_name.FORMDESIGNER_CONTROL_PROP_TITLE": "Company Name",
+      "company_name.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER": "Enter your company name",
+      "industry_focus.FORMDESIGNER_CONTROL_PROP_TITLE": "Primary Industry/Vertical Focus",
+      "industry_focus.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER": "e.g., Healthcare, Manufacturing, Financial Services",
+      "primary_market.FORMDESIGNER_CONTROL_PROP_TITLE": "Primary Market/Geography",
+      "primary_market.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER": "e.g., Northeast US, UK & Ireland, APAC",
+      "company_size.FORMDESIGNER_CONTROL_PROP_TITLE": "Company Size",
+      "company_size.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "1-10 employees|1-10\n11-50 employees|11-50\n51-200 employees|51-200\n201-500 employees|201-500\n500+ employees|500+",
+      "years_business.FORMDESIGNER_CONTROL_PROP_TITLE": "Years in Business",
+      "years_business.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Less than 2 years|<2\n2-5 years|2-5\n6-10 years|6-10\n11-20 years|11-20\n20+ years|20+",
+      "contact_email.FORMDESIGNER_CONTROL_PROP_TITLE": "Primary Contact Email",
+      "contact_email.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER": "your.email@company.com",
+      "business_presence_type.FORMDESIGNER_CONTROL_PROP_TITLE": "Which best describes your business presence?",
+      "business_presence_type.FORMDESIGNER_CONTROL_PROP_TOOLTIP": "Understanding your customer-facing operations and business stability",
+      "business_presence_type.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Established office(s) with regular customer visits (Readiness: High)|established_office\nProfessional office space for meetings and operations (Readiness: High)|professional_office\nFlexible/co-working space with professional meeting capabilities (Readiness: Medium)|flexible_workspace\nPrimarily remote but with established business processes (Readiness: Medium)|primarily_remote\nHome-based business (Readiness: Low)|home_based",
+      "sales_structure.FORMDESIGNER_CONTROL_PROP_TITLE": "How is your sales team structured?",
+      "sales_structure.FORMDESIGNER_CONTROL_PROP_TOOLTIP": "Help us understand how your sales organization is structured for growth",
+      "sales_structure.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Dedicated sales team with professional sales manager/director (Readiness: High)|dedicated_sales_team\nProfessional salespeople with proven track records (Readiness: High)|sales_professionals\nCEO/owner sells alongside dedicated sales staff (Readiness: Medium)|ceo_plus_sales\nTechnical team members handle sales activities (Readiness: Medium)|technical_team_sells\nCEO/owner is the primary salesperson (Readiness: Low)|ceo_primary_seller",
+      "business_dev_methods.FORMDESIGNER_CONTROL_PROP_TITLE": "How do you generate new business? (Select all that apply)",
+      "business_dev_methods.FORMDESIGNER_CONTROL_PROP_TOOLTIP": "Select all the methods you actively use to acquire new customers",
+      "business_dev_methods.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Outbound prospecting (phone, email campaigns) (Readiness: High)|outbound_prospecting\nLinkedIn and social media selling (Readiness: High)|social_selling\nContent marketing and thought leadership (Readiness: High)|content_marketing\nTrade shows and industry events (Readiness: Medium)|trade_shows\nStrategic partner referrals (Readiness: Medium)|partner_referrals\nSystematic customer referral program (Readiness: Medium)|systematic_referrals\nWebsite and inbound marketing leads (Readiness: Medium)|inbound_leads\nWord of mouth referrals (Readiness: Low)|word_of_mouth\nPrimarily wait for incoming inquiries (Readiness: Low)|wait_for_calls",
+      "market_reputation.FORMDESIGNER_CONTROL_PROP_TITLE": "How would you describe your reputation and standing in your market?",
+      "market_reputation.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Recognized market leader with strong brand recognition (Readiness: High)|market_leader\nWell-established with good customer testimonials (Readiness: High)|established_player\nGrowing reputation with positive customer feedback (Readiness: Medium)|growing_reputation\nEmerging player building market presence (Readiness: Medium)|emerging_player\nNew to market or rebuilding reputation (Readiness: Low)|new_to_market",
+      "organizational_culture.FORMDESIGNER_CONTROL_PROP_TITLE": "How would you characterize your company culture and primary strengths?",
+      "organizational_culture.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Balanced technical expertise and sales excellence (Readiness: High)|balanced_approach\nSales-driven with strong technical support (Readiness: High)|sales_driven\nTechnical focus but strong appreciation for sales (Readiness: Medium)|technical_with_sales\nPrimarily technical with emerging sales focus (Readiness: Low)|primarily_technical\nEngineering/technical focused organization (Readiness: Low)|engineering_focused",
+      "partnership_approach.FORMDESIGNER_CONTROL_PROP_TITLE": "How do you typically approach vendor partnerships and collaboration?",
+      "partnership_approach.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Highly collaborative, view vendors as strategic partners (Readiness: High)|collaborative_partner\nOpen communication, willing to share customer insights (Readiness: High)|open_communication\nPrefer structured processes and clear expectations (Readiness: Medium)|structured_approach\nCautious approach, need to build trust gradually (Readiness: Medium)|cautious_partnership\nPrimarily transactional, protect customer relationships (Readiness: Low)|transactional_focus",
+      "customer_engagement_comfort.FORMDESIGNER_CONTROL_PROP_TITLE": "How comfortable are you with Nintex engaging directly with your customers when appropriate?",
+      "customer_engagement_comfort.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Encourage joint customer engagement for better outcomes (Readiness: High)|encourage_engagement\nWelcome it with proper structure and communication (Readiness: High)|structured_engagement\nOpen to it on a case-by-case basis (Readiness: Medium)|case_by_case\nPrefer to maintain primary customer relationship (Readiness: Low)|limited_engagement\nPrefer to handle all customer communication internally (Readiness: Low)|protective_approach",
+      "sales_approach.FORMDESIGNER_CONTROL_PROP_TITLE": "How do your salespeople typically engage with prospects?",
+      "sales_approach.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Consultative approach focused on business problems and ROI (Readiness: High)|consultative_selling\nSolution-focused with good discovery questions (Readiness: High)|solution_focused\nMix of technical demos and business discussions (Readiness: Medium)|mixed_approach\nPrimarily technical discussions and feature demonstrations (Readiness: Low)|technical_focus\nRespond to specific customer requests and RFPs (Readiness: Low)|reactive_selling",
+      "training_readiness.FORMDESIGNER_CONTROL_PROP_TITLE": "How do you view partner training and certification programs?",
+      "training_readiness.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Enthusiastic about training, see it as competitive advantage (Readiness: High)|enthusiastic_learner\nCommitted to team development and certification (Readiness: High)|committed_development\nWilling to participate in required training programs (Readiness: Medium)|willing_participant\nSelective about training based on time and resources (Readiness: Medium)|selective_training\nPrefer minimal training, learn as we go (Readiness: Low)|minimal_training",
+      "pipeline_transparency.FORMDESIGNER_CONTROL_PROP_TITLE": "How comfortable are you with regular pipeline reviews and forecasting collaboration?",
+      "pipeline_transparency.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Full transparency, regular pipeline reviews are valuable (Readiness: High)|full_transparency\nComfortable with structured monthly/quarterly reviews (Readiness: High)|structured_reviews\nWilling to share high-level pipeline information (Readiness: Medium)|high_level_sharing\nPrefer to share information on a need-to-know basis (Readiness: Low)|limited_sharing\nKeep pipeline information confidential (Readiness: Low)|confidential_pipeline",
+      "success_measurement.FORMDESIGNER_CONTROL_PROP_TITLE": "How do you prefer to measure and track partnership success? (Select all that apply)",
+      "success_measurement.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Clear revenue targets and growth goals (Readiness: High)|revenue_targets\nCustomer satisfaction and retention metrics (Readiness: High)|customer_satisfaction\nMarket expansion and new customer acquisition (Readiness: High)|market_expansion\nTeam certification and competency levels (Readiness: Medium)|certification_levels\nActivity metrics (calls, demos, proposals) (Readiness: Medium)|activity_metrics\nRelationship quality and collaboration effectiveness (Readiness: Medium)|relationship_quality\nInformal assessment and feedback (Readiness: Low)|informal_assessment",
+      "partnership_goals.FORMDESIGNER_CONTROL_PROP_TITLE": "What are your primary goals for partnering with Nintex? (Select all that apply)",
+      "partnership_goals.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL": "Accelerate revenue growth (Readiness: High)|revenue_growth\nExpand solution portfolio for customers (Readiness: High)|solution_expansion\nGain competitive advantage in market (Readiness: High)|competitive_advantage\nIncrease customer value and satisfaction (Readiness: High)|customer_value\nMarket differentiation and positioning (Readiness: Medium)|market_differentiation\nEnhance technical capabilities (Readiness: Medium)|technical_capability\nGeographic or vertical market expansion (Readiness: Medium)|geographic_expansion\nVendor portfolio diversification (Readiness: Low)|vendor_diversification",
+      "additional_comments.FORMDESIGNER_CONTROL_PROP_TITLE": "Additional Comments",
+      "additional_comments.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER": "Optional: Share any additional context about your organization or partnership interests"
+    }
+  },
+  "plugins": {},
+  "settings": {
+    "TimeZone": "Pacific Standard Time",
+    "Region": "en-US",
+    "TimeFormat": "12H",
+    "GeneralDefaultFileUpLoadControl": "ntx-no-default-control",
+    "GeneralSetValueRulesRunOption": 0
+  },
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "nintex_logo",
+          "dataType": "string",
+          "widget": "image",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "customizeName": true,
+            "name": "",
+            "url": "https://www.nintex.com/wp-content/uploads/2024/10/nintex-logo-color.svg",
+            "width": 100,
+            "alignment": "0",
+            "hideValidationErrors": false
+          }
+        },
+        {
+          "id": "form_header",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "visible": true,
+            "text": "<p class=\"text-right\"><span style=\"font-size:36px\">Partner Readiness Assessment</span></p><p class=\"text-right\"><span style=\"font-size:18px\">Discover your partnership potential with Nintex</span></p>",
+            "textTranslation": "form_header.FORMDESIGNER_CONTROL_PROP_TEXT",
+            "verticalAlignment": "1",
+            "hideValidationErrors": false
+          }
+        }
+      ],
+      "sizes": [3, 9],
+      "pageName": "page_default"
+    },
+    {
+      "controls": [
+        {
+          "id": "company_info_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "companyInformation",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "company_info_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "showExpandable": false,
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "company_name",
+                    "dataType": "string",
+                    "widget": "textbox",
+                    "properties": {
+                      "name": "companyName",
+                      "title": "company_name.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "placeholder": "company_name.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER",
+                      "connectedVariableId": "se_company_name_001",
+                      "hideValidationErrors": false
+                    }
+                  },
+                  {
+                    "id": "contact_email",
+                    "dataType": "string",
+                    "widget": "email",
+                    "properties": {
+                      "name": "contactEmail",
+                      "title": "contact_email.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "placeholder": "contact_email.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER",
+                      "connectedVariableId": "se_contact_email_002",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ],
+                "sizes": [6, 6]
+              },
+              {
+                "controls": [
+                  {
+                    "id": "industry_focus",
+                    "dataType": "string",
+                    "widget": "textbox",
+                    "properties": {
+                      "name": "industryFocus",
+                      "title": "industry_focus.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "placeholder": "industry_focus.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER",
+                      "connectedVariableId": "se_industry_focus_003",
+                      "hideValidationErrors": false
+                    }
+                  },
+                  {
+                    "id": "primary_market",
+                    "dataType": "string",
+                    "widget": "textbox",
+                    "properties": {
+                      "name": "primaryMarket",
+                      "title": "primary_market.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "placeholder": "primary_market.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER",
+                      "connectedVariableId": "se_primary_market_004",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ],
+                "sizes": [6, 6]
+              },
+              {
+                "controls": [
+                  {
+                    "id": "company_size",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "companySize",
+                      "title": "company_size.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "1-10 employees|1-10\n11-50 employees|11-50\n51-200 employees|51-200\n201-500 employees|201-500\n500+ employees|500+",
+                      "itemsTranslation": "company_size.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_company_size_005",
+                      "hideValidationErrors": false
+                    }
+                  },
+                  {
+                    "id": "years_business",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "yearsInBusiness",
+                      "title": "years_business.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Less than 2 years|<2\n2-5 years|2-5\n6-10 years|6-10\n11-20 years|11-20\n20+ years|20+",
+                      "itemsTranslation": "years_business.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_years_business_006",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ],
+                "sizes": [6, 6]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_default"
+    },
+    {
+      "controls": [
+        {
+          "id": "market_position_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "marketPosition",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "market_position_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "market_reputation",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "marketReputation",
+                      "title": "market_reputation.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Recognized market leader with strong brand recognition (Readiness: High)|market_leader\nWell-established with good customer testimonials (Readiness: High)|established_player\nGrowing reputation with positive customer feedback (Readiness: Medium)|growing_reputation\nEmerging player building market presence (Readiness: Medium)|emerging_player\nNew to market or rebuilding reputation (Readiness: Low)|new_to_market",
+                      "itemsTranslation": "market_reputation.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_market_reputation_010",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_default"
+    },
+    {
+      "controls": [
+        {
+          "id": "org_focus_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "organizationalFocus",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "org_focus_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "organizational_culture",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "organizationalCulture",
+                      "title": "organizational_culture.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Balanced technical expertise and sales excellence (Readiness: High)|balanced_approach\nSales-driven with strong technical support (Readiness: High)|sales_driven\nTechnical focus but strong appreciation for sales (Readiness: Medium)|technical_with_sales\nPrimarily technical with emerging sales focus (Readiness: Low)|primarily_technical\nEngineering/technical focused organization (Readiness: Low)|engineering_focused",
+                      "itemsTranslation": "organizational_culture.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_organizational_culture_011",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_EVqNHvrfkF"
+    },
+    {
+      "controls": [
+        {
+          "id": "partnership_philosophy_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "partnershipPhilosophy",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "partnership_philosophy_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "partnership_approach",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "partnershipApproach",
+                      "title": "partnership_approach.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Highly collaborative, view vendors as strategic partners (Readiness: High)|collaborative_partner\nOpen communication, willing to share customer insights (Readiness: High)|open_communication\nPrefer structured processes and clear expectations (Readiness: Medium)|structured_approach\nCautious approach, need to build trust gradually (Readiness: Medium)|cautious_partnership\nPrimarily transactional, protect customer relationships (Readiness: Low)|transactional_focus",
+                      "itemsTranslation": "partnership_approach.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_partnership_approach_012",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_EVqNHvrfkF"
+    },
+    {
+      "controls": [
+        {
+          "id": "customer_engagement_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "customerEngagement",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "customer_engagement_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "customer_engagement_comfort",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "customerEngagementComfort",
+                      "title": "customer_engagement_comfort.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Encourage joint customer engagement for better outcomes (Readiness: High)|encourage_engagement\nWelcome it with proper structure and communication (Readiness: High)|structured_engagement\nOpen to it on a case-by-case basis (Readiness: Medium)|case_by_case\nPrefer to maintain primary customer relationship (Readiness: Low)|limited_engagement\nPrefer to handle all customer communication internally (Readiness: Low)|protective_approach",
+                      "itemsTranslation": "customer_engagement_comfort.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_customer_engagement_013",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_EVqNHvrfkF"
+    },
+    {
+      "controls": [
+        {
+          "id": "sales_methodology_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "salesMethodology",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "sales_methodology_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "sales_approach",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "salesApproach",
+                      "title": "sales_approach.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Consultative approach focused on business problems and ROI (Readiness: High)|consultative_selling\nSolution-focused with good discovery questions (Readiness: High)|solution_focused\nMix of technical demos and business discussions (Readiness: Medium)|mixed_approach\nPrimarily technical discussions and feature demonstrations (Readiness: Low)|technical_focus\nRespond to specific customer requests and RFPs (Readiness: Low)|reactive_selling",
+                      "itemsTranslation": "sales_approach.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_sales_approach_014",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_EVqNHvrfkF"
+    },
+    {
+      "controls": [
+        {
+          "id": "training_commitment_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "trainingCommitment",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "training_commitment_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "training_readiness",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "trainingReadiness",
+                      "title": "training_readiness.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Enthusiastic about training, see it as competitive advantage (Readiness: High)|enthusiastic_learner\nCommitted to team development and certification (Readiness: High)|committed_development\nWilling to participate in required training programs (Readiness: Medium)|willing_participant\nSelective about training based on time and resources (Readiness: Medium)|selective_training\nPrefer minimal training, learn as we go (Readiness: Low)|minimal_training",
+                      "itemsTranslation": "training_readiness.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_training_readiness_015",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_EVqNHvrfkF"
+    },
+    {
+      "controls": [
+        {
+          "id": "pipeline_management_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "pipelineManagement",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "pipeline_management_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "pipeline_transparency",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "pipelineTransparency",
+                      "title": "pipeline_transparency.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Full transparency, regular pipeline reviews are valuable (Readiness: High)|full_transparency\nComfortable with structured monthly/quarterly reviews (Readiness: High)|structured_reviews\nWilling to share high-level pipeline information (Readiness: Medium)|high_level_sharing\nPrefer to share information on a need-to-know basis (Readiness: Low)|limited_sharing\nKeep pipeline information confidential (Readiness: Low)|confidential_pipeline",
+                      "itemsTranslation": "pipeline_transparency.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_pipeline_transparency_016",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_0EsWhLLxQX"
+    },
+    {
+      "controls": [
+        {
+          "id": "success_metrics_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "successMetrics",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "success_metrics_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "success_measurement",
+                    "dataType": "array",
+                    "widget": "multichoice",
+                    "properties": {
+                      "name": "successMeasurement",
+                      "title": "success_measurement.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "allowFillInOption": true,
+                      "items": "Clear revenue targets and growth goals (Readiness: High)|revenue_targets\nCustomer satisfaction and retention metrics (Readiness: High)|customer_satisfaction\nMarket expansion and new customer acquisition (Readiness: High)|market_expansion\nTeam certification and competency levels (Readiness: Medium)|certification_levels\nActivity metrics (calls, demos, proposals) (Readiness: Medium)|activity_metrics\nRelationship quality and collaboration effectiveness (Readiness: Medium)|relationship_quality\nInformal assessment and feedback (Readiness: Low)|informal_assessment",
+                      "itemsTranslation": "success_measurement.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_success_measurement_017",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_0EsWhLLxQX"
+    },
+    {
+      "controls": [
+        {
+          "id": "partnership_objectives_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "partnershipObjectives",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "partnership_objectives_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "partnership_goals",
+                    "dataType": "array",
+                    "widget": "multichoice",
+                    "properties": {
+                      "name": "partnershipGoals",
+                      "title": "partnership_goals.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "allowFillInOption": true,
+                      "items": "Accelerate revenue growth (Readiness: High)|revenue_growth\nExpand solution portfolio for customers (Readiness: High)|solution_expansion\nGain competitive advantage in market (Readiness: High)|competitive_advantage\nIncrease customer value and satisfaction (Readiness: High)|customer_value\nMarket differentiation and positioning (Readiness: Medium)|market_differentiation\nEnhance technical capabilities (Readiness: Medium)|technical_capability\nGeographic or vertical market expansion (Readiness: Medium)|geographic_expansion\nVendor portfolio diversification (Readiness: Low)|vendor_diversification",
+                      "itemsTranslation": "partnership_goals.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_partnership_goals_018",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_0EsWhLLxQX"
+    },
+    {
+      "controls": [
+        {
+          "id": "additional_info_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "additionalInformation",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "additional_info_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "additional_comments",
+                    "dataType": "string",
+                    "widget": "multilinetext",
+                    "properties": {
+                      "name": "additionalComments",
+                      "title": "additional_comments.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "placeholder": "additional_comments.FORMDESIGNER_CONTROL_PROP_PLACEHOLDER",
+                      "textAreaRows": "4",
+                      "autoResize": true,
+                      "connectedVariableId": "se_additional_comments_019",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_0EsWhLLxQX"
+    },
+    {
+      "controls": [
+        {
+          "id": "thank_you_message",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "properties": {
+            "text": "<p class=\"text-center\"><span style=\"font-size:16px\"><strong>Thank you for completing the Nintex Partner Readiness Assessment. We will review your responses and follow up with next steps.</strong></span></p>",
+            "textTranslation": "thank_you_message.FORMDESIGNER_CONTROL_PROP_TEXT",
+            "verticalAlignment": "1",
+            "hideValidationErrors": false
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_0EsWhLLxQX"
+    },
+    {
+      "controls": [
+        {
+          "id": "actionpanel1",
+          "widget": "actionpanel",
+          "properties": {
+            "name": "FORMDESIGNER_ACTIONPANEL_TEXT_ALT",
+            "showSubmitButton": true,
+            "submitButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_SUBMIT_TEXT_TITLE",
+            "afterSubmitType": "0",
+            "nextButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_NEXT_TEXT_TITLE",
+            "previousButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_PREVIOUS_TEXT_TITLE",
+            "saveAndContinueButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_SAVE_CONTINUE_TEXT_TITLE",
+            "cancelButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_CANCEL_TEXT_TITLE",
+            "hideValidationErrors": false
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_0EsWhLLxQX"
+    }
+  ]
+},
+    {
+      "controls": [
+        {
+          "id": "business_presence_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "businessPresence",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "business_presence_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "business_presence_type",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "businessPresenceType",
+                      "title": "business_presence_type.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "tooltip": "business_presence_type.FORMDESIGNER_CONTROL_PROP_TOOLTIP",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Established office(s) with regular customer visits (Readiness: High)|established_office\nProfessional office space for meetings and operations (Readiness: High)|professional_office\nFlexible/co-working space with professional meeting capabilities (Readiness: Medium)|flexible_workspace\nPrimarily remote but with established business processes (Readiness: Medium)|primarily_remote\nHome-based business (Readiness: Low)|home_based",
+                      "itemsTranslation": "business_presence_type.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_business_presence_007",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_default"
+    },
+    {
+      "controls": [
+        {
+          "id": "sales_org_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "salesOrganization",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "sales_org_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "sales_structure",
+                    "dataType": "string",
+                    "widget": "choice",
+                    "properties": {
+                      "name": "salesStructure",
+                      "title": "sales_structure.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "tooltip": "sales_structure.FORMDESIGNER_CONTROL_PROP_TOOLTIP",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "items": "Dedicated sales team with professional sales manager/director (Readiness: High)|dedicated_sales_team\nProfessional salespeople with proven track records (Readiness: High)|sales_professionals\nCEO/owner sells alongside dedicated sales staff (Readiness: Medium)|ceo_plus_sales\nTechnical team members handle sales activities (Readiness: Medium)|technical_team_sells\nCEO/owner is the primary salesperson (Readiness: Low)|ceo_primary_seller",
+                      "itemsTranslation": "sales_structure.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_sales_structure_008",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sizes": [12],
+      "pageName": "page_default"
+    },
+    {
+      "controls": [
+        {
+          "id": "business_dev_section",
+          "widget": "group-control",
+          "properties": {
+            "name": "businessDevelopment",
+            "showHeader": true,
+            "showBorder": true,
+            "headerText": "business_dev_section.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+            "hideValidationErrors": false,
+            "rows": [
+              {
+                "controls": [
+                  {
+                    "id": "business_dev_methods",
+                    "dataType": "array",
+                    "widget": "multichoice",
+                    "properties": {
+                      "name": "businessDevMethods",
+                      "title": "business_dev_methods.FORMDESIGNER_CONTROL_PROP_TITLE",
+                      "tooltip": "business_dev_methods.FORMDESIGNER_CONTROL_PROP_TOOLTIP",
+                      "required": true,
+                      "viewType": "0",
+                      "layoutType": "1",
+                      "allowFillInOption": true,
+                      "items": "Outbound prospecting (phone, email campaigns) (Readiness: High)|outbound_prospecting\nLinkedIn and social media selling (Readiness: High)|social_selling\nContent marketing and thought leadership (Readiness: High)|content_marketing\nTrade shows and industry events (Readiness: Medium)|trade_shows\nStrategic partner referrals (Readiness: Medium)|partner_referrals\nSystematic customer referral program (Readiness: Medium)|systematic_referrals\nWebsite and inbound marketing leads (Readiness: Medium)|inbound_leads\nWord of mouth referrals (Readiness: Low)|word_of_mouth\nPrimarily wait for incoming inquiries (Readiness: Low)|wait_for_calls",
+                      "itemsTranslation": "business_dev_methods.FORMDESIGNER_CONTROL_PROP_CHOICE_OPTIONS_INSERT_LABEL",
+                      "connectedVariableId": "se_business_dev_methods_009",
+                      "hideValidationErrors": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }

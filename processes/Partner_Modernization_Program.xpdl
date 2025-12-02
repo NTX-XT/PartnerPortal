@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="PK-5001" Name="Partner Modernization Program - K2 Migration Delivery" xmlns="http://www.wfmc.org/2009/XPDL2.2">
+  <PackageHeader>
+    <XPDLVersion>2.2</XPDLVersion>
+    <Vendor>Promapp Solutions Ltd</Vendor>
+    <Created>2025-11-12T00:00:00.0000000Z</Created>
+  </PackageHeader>
+  <ConformanceClass BPMNModelPortabilityConformance="STANDARD" />
+  <Pages>
+    <Page Name="Partner Modernization Program - K2 Migration Delivery" Id="PG-1" Height="1680" Width="3200" />
+  </Pages>
+  <Pools>
+    <Pool Id="PL-5001" Name="Partner Modernization Program - K2 Migration Delivery" Process="P-5001" BoundaryVisible="true">
+      <Lanes>
+        <Lane Orientation="HORIZONTAL" Id="L-1" Name="Channel/Partner Team" ParentLane="PL-5001">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="280" Width="3050">
+              <Coordinates XCoordinate="100" YCoordinate="50" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-2" Name="Sales (AM/AD)" ParentLane="PL-5001">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="280" Width="3050">
+              <Coordinates XCoordinate="100" YCoordinate="330" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-3" Name="PS Overlay" ParentLane="PL-5001">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="280" Width="3050">
+              <Coordinates XCoordinate="100" YCoordinate="610" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-4" Name="Partner Delivery Team" ParentLane="PL-5001">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="280" Width="3050">
+              <Coordinates XCoordinate="100" YCoordinate="890" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-5" Name="Customer" ParentLane="PL-5001">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="280" Width="3050">
+              <Coordinates XCoordinate="100" YCoordinate="1170" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Orientation="HORIZONTAL" Id="L-6" Name="Finance/Deal Desk" ParentLane="PL-5001">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="280" Width="3050">
+              <Coordinates XCoordinate="100" YCoordinate="1450" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+      </Lanes>
+      <NodeGraphicsInfos>
+        <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" Height="1630" Width="3100">
+          <Coordinates XCoordinate="50" YCoordinate="50" />
+        </NodeGraphicsInfo>
+      </NodeGraphicsInfos>
+    </Pool>
+  </Pools>
+  <WorkflowProcesses>
+    <WorkflowProcess Id="P-5001" Name="Partner Modernization Program - K2 Migration Delivery" DefaultStartActivityId="START-1">
+      <ProcessHeader />
+      <Activities>
+        <Activity Id="START-1" Name="Start Partner Program">
+          <Event>
+            <StartEvent Trigger="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="180" YCoordinate="160" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="ACT-1" Name="1.0 Build Partner Delivery Capacity">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="80" Width="120">
+              <Coordinates XCoordinate="280" YCoordinate="140" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="ACT-2" Name="2.0 Qualify Migration Opportunity">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="80" Width="120">
+              <Coordinates XCoordinate="480" YCoordinate="420" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="GATE-1" Name="Delivery Model Decision">
+          <Route />
+          <TransitionRestrictions>
+            <TransitionRestriction>
+              <Split Type="Exclusive">
+                <TransitionRefs>
+                  <TransitionRef Id="T-PARTNER" />
+                  <TransitionRef Id="T-NINTEX-PS" />
+                  <TransitionRef Id="T-SELF-SERVE" />
+                </TransitionRefs>
+              </Split>
+            </TransitionRestriction>
+          </TransitionRestrictions>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="40" Width="40">
+              <Coordinates XCoordinate="680" YCoordinate="720" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="ACT-3" Name="3.0 Select Partner &amp; Allocate Opportunity">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="80" Width="120">
+              <Coordinates XCoordinate="880" YCoordinate="140" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="ACT-4" Name="4.0 Structure Commercial Terms">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-6" Height="80" Width="120">
+              <Coordinates XCoordinate="1080" YCoordinate="1540" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="ACT-5" Name="5.0 Execute Partner-Led Migration Delivery">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-4" Height="80" Width="120">
+              <Coordinates XCoordinate="1380" YCoordinate="1000" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="ACT-6" Name="6.0 Evaluate Delivery Success &amp; Partner Performance">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="80" Width="120">
+              <Coordinates XCoordinate="1680" YCoordinate="700" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="GATE-2" Name="Performance Assessment">
+          <Route />
+          <TransitionRestrictions>
+            <TransitionRestriction>
+              <Split Type="Exclusive">
+                <TransitionRefs>
+                  <TransitionRef Id="T-HIGH-PERFORMER" />
+                  <TransitionRef Id="T-MEETS-EXPECTATIONS" />
+                  <TransitionRef Id="T-NEEDS-IMPROVEMENT" />
+                  <TransitionRef Id="T-PIP" />
+                </TransitionRefs>
+              </Split>
+            </TransitionRestriction>
+          </TransitionRestrictions>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="40" Width="40">
+              <Coordinates XCoordinate="1900" YCoordinate="720" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="ACT-7" Name="7.0 Update Partner Capabilities &amp; Evolve Program">
+          <Implementation>
+            <Task>
+              <TaskUser />
+            </Task>
+          </Implementation>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="80" Width="120">
+              <Coordinates XCoordinate="2200" YCoordinate="140" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="END-NINTEX-PS" Name="End - Nintex PS Delivery">
+          <Event>
+            <EndEvent Result="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-3" Height="40" Width="40">
+              <Coordinates XCoordinate="880" YCoordinate="720" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="END-SELF-SERVE" Name="End - Customer Self-Serve">
+          <Event>
+            <EndEvent Result="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-5" Height="40" Width="40">
+              <Coordinates XCoordinate="880" YCoordinate="1280" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="LOOP-IMPROVEMENT" Name="Loop Back - Partner Development">
+          <Route />
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="1900" YCoordinate="260" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="LOOP-REBUILD" Name="Loop Back - Rebuild Capability">
+          <Route />
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="2000" YCoordinate="260" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="LOOP-NEW-OPP" Name="Return to Qualify New Opportunities">
+          <Route />
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-2" Height="40" Width="40">
+              <Coordinates XCoordinate="2500" YCoordinate="460" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="END-PROGRAM-CYCLE" Name="End - Continuous Program Cycle">
+          <Event>
+            <EndEvent Result="None" />
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1" LaneId="L-1" Height="40" Width="40">
+              <Coordinates XCoordinate="2800" YCoordinate="160" />
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+      </Activities>
+      <Transitions>
+        <Transition Id="T-1" From="START-1" To="ACT-1">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="220" YCoordinate="180" />
+              <Coordinates XCoordinate="280" YCoordinate="180" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-2" From="ACT-1" To="ACT-2">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="400" YCoordinate="180" />
+              <Coordinates XCoordinate="440" YCoordinate="180" />
+              <Coordinates XCoordinate="440" YCoordinate="460" />
+              <Coordinates XCoordinate="480" YCoordinate="460" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-3" From="ACT-2" To="GATE-1">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="600" YCoordinate="460" />
+              <Coordinates XCoordinate="640" YCoordinate="460" />
+              <Coordinates XCoordinate="640" YCoordinate="740" />
+              <Coordinates XCoordinate="680" YCoordinate="740" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-PARTNER" From="GATE-1" To="ACT-3" Name="Partner Delivery">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="700" YCoordinate="720" />
+              <Coordinates XCoordinate="840" YCoordinate="720" />
+              <Coordinates XCoordinate="840" YCoordinate="180" />
+              <Coordinates XCoordinate="880" YCoordinate="180" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-NINTEX-PS" From="GATE-1" To="END-NINTEX-PS" Name="Nintex PS">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="720" YCoordinate="740" />
+              <Coordinates XCoordinate="880" YCoordinate="740" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-SELF-SERVE" From="GATE-1" To="END-SELF-SERVE" Name="Self-Serve">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="700" YCoordinate="760" />
+              <Coordinates XCoordinate="840" YCoordinate="760" />
+              <Coordinates XCoordinate="840" YCoordinate="1300" />
+              <Coordinates XCoordinate="880" YCoordinate="1300" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-4" From="ACT-3" To="ACT-4">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1000" YCoordinate="180" />
+              <Coordinates XCoordinate="1040" YCoordinate="180" />
+              <Coordinates XCoordinate="1040" YCoordinate="1580" />
+              <Coordinates XCoordinate="1080" YCoordinate="1580" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-5" From="ACT-4" To="ACT-5">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1200" YCoordinate="1580" />
+              <Coordinates XCoordinate="1340" YCoordinate="1580" />
+              <Coordinates XCoordinate="1340" YCoordinate="1040" />
+              <Coordinates XCoordinate="1380" YCoordinate="1040" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-6" From="ACT-5" To="ACT-6">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1500" YCoordinate="1040" />
+              <Coordinates XCoordinate="1640" YCoordinate="1040" />
+              <Coordinates XCoordinate="1640" YCoordinate="740" />
+              <Coordinates XCoordinate="1680" YCoordinate="740" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-7" From="ACT-6" To="GATE-2">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1800" YCoordinate="740" />
+              <Coordinates XCoordinate="1900" YCoordinate="740" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-HIGH-PERFORMER" From="GATE-2" To="ACT-7" Name="High Performer (CSAT ≥4.5)">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1920" YCoordinate="720" />
+              <Coordinates XCoordinate="2160" YCoordinate="720" />
+              <Coordinates XCoordinate="2160" YCoordinate="180" />
+              <Coordinates XCoordinate="2200" YCoordinate="180" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-MEETS-EXPECTATIONS" From="GATE-2" To="ACT-7" Name="Meets Expectations (CSAT 4.0-4.49)">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1940" YCoordinate="740" />
+              <Coordinates XCoordinate="2100" YCoordinate="740" />
+              <Coordinates XCoordinate="2100" YCoordinate="180" />
+              <Coordinates XCoordinate="2200" YCoordinate="180" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-NEEDS-IMPROVEMENT" From="GATE-2" To="LOOP-IMPROVEMENT" Name="Needs Improvement (CSAT 3.5-3.99)">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1920" YCoordinate="720" />
+              <Coordinates XCoordinate="1920" YCoordinate="300" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-PIP" From="GATE-2" To="LOOP-REBUILD" Name="Performance Improvement Plan (CSAT &lt;3.5)">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1940" YCoordinate="740" />
+              <Coordinates XCoordinate="2000" YCoordinate="740" />
+              <Coordinates XCoordinate="2000" YCoordinate="300" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-8" From="LOOP-IMPROVEMENT" To="ACT-3">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="1920" YCoordinate="260" />
+              <Coordinates XCoordinate="940" YCoordinate="260" />
+              <Coordinates XCoordinate="940" YCoordinate="220" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-9" From="LOOP-REBUILD" To="ACT-1">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="2000" YCoordinate="260" />
+              <Coordinates XCoordinate="340" YCoordinate="260" />
+              <Coordinates XCoordinate="340" YCoordinate="220" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-10" From="ACT-7" To="LOOP-NEW-OPP">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="2320" YCoordinate="180" />
+              <Coordinates XCoordinate="2500" YCoordinate="180" />
+              <Coordinates XCoordinate="2500" YCoordinate="460" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-11" From="LOOP-NEW-OPP" To="ACT-2">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="2500" YCoordinate="460" />
+              <Coordinates XCoordinate="600" YCoordinate="460" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="T-12" From="ACT-7" To="END-PROGRAM-CYCLE">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="Promapp" IsVisible="true" PageId="PG-1">
+              <Coordinates XCoordinate="2320" YCoordinate="180" />
+              <Coordinates XCoordinate="2800" YCoordinate="180" />
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+    </WorkflowProcess>
+  </WorkflowProcesses>
+</Package>

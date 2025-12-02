@@ -1,0 +1,2706 @@
+/**
+ * MAIN Content Styles - Consolidated
+ * Version: 4.9.1 - Fixed container width alignment with page-header-bar
+ * 
+ * This is the MAIN content styling file containing:
+ * - Content page layouts and panels
+ * - Windows section (video + documents)
+ * - Resource cards section (partner resources & training)
+ * - Pricing/News panels with glass effects
+ * - Video modal functionality styles
+ * - Banner action buttons
+ * - Utility classes (loading spinner, empty state, containers)
+ * - All content-related responsive design
+ * 
+ * Consolidated from content-sections.css to make this the single source
+ */
+
+/* ============================================
+   UNIVERSAL CONTENT WIDTH ALIGNMENT
+   Ensures all content matches page-header-bar width
+   Uses same responsive breakpoints as Bootstrap .container
+   ============================================ */
+
+/* Content containers that follow page-header-bar should match its width */
+.page-header-bar ~ .container,
+.page-header-bar ~ div > .container,
+.page-header-bar ~ .pricing-resources-container,
+.page-header-bar ~ .content-page-container,
+.page-header-bar ~ div > .pricing-resources-container,
+.page-header-bar ~ div > .content-page-container,
+.page-header-bar + .container,
+.page-header-bar + div .container {
+  width: 95% !important;
+  max-width: var(--container-lg, 1280px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Responsive width adjustments - match global .container breakpoints */
+@media (min-width: 1440px) {
+  .page-header-bar ~ .container,
+  .page-header-bar ~ div > .container,
+  .page-header-bar ~ .pricing-resources-container,
+  .page-header-bar ~ .content-page-container,
+  .page-header-bar ~ div > .pricing-resources-container,
+  .page-header-bar ~ div > .content-page-container,
+  .page-header-bar + .container,
+  .page-header-bar + div .container {
+    width: 92% !important;
+    max-width: var(--container-xl, 1400px) !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .page-header-bar ~ .container,
+  .page-header-bar ~ div > .container,
+  .page-header-bar ~ .pricing-resources-container,
+  .page-header-bar ~ .content-page-container,
+  .page-header-bar ~ div > .pricing-resources-container,
+  .page-header-bar ~ div > .content-page-container,
+  .page-header-bar + .container,
+  .page-header-bar + div .container {
+    width: 88% !important;
+    max-width: var(--container-xxl, 1600px) !important;
+  }
+}
+
+/* Ensure Bootstrap .row inside these containers uses full width */
+.page-header-bar ~ .container > .row,
+.page-header-bar ~ div > .container > .row,
+.page-header-bar ~ .pricing-resources-container > .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Base content container with proper z-index */
+.content-page-container {
+    position: relative;
+    overflow: visible !important;
+    z-index: 4;
+  }
+  
+  /* Header section */
+  .header {
+    position: relative;
+    overflow: hidden;
+    height: 120px;
+    margin-bottom: var(--spacing-md); /* Reduced from spacing-lg to spacing-md */
+    background: rgb(74, 20, 140);
+    z-index: 4;
+  }
+  
+  .header img {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+  }
+  
+  /* Banner z-index structure for proper layering */
+  .main-banner-with-carousel,
+  .main-banner-with-animation {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden !important; /* CRITICAL: Contain animations within banner */
+  }
+  
+  .main-banner-with-carousel .nintex-background-animation,
+  .main-banner-with-animation .nintex-background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1 !important; /* Must use !important to override background.css */
+    pointer-events: none !important; /* Prevent animations from blocking clicks */
+  }
+  
+  .main-banner-with-carousel .nintex-background-gradient,
+  .main-banner-with-animation .nintex-background-gradient {
+    z-index: 2 !important;
+    pointer-events: none !important; /* Prevent gradient from blocking clicks */
+  }
+  
+  .main-banner-with-carousel .main-banner,
+  .main-banner-with-animation .main-banner {
+    position: relative;
+    z-index: 4 !important; /* Increased to ensure content is on top */
+  }
+  
+  /* Container adjustments for banner */
+  .main-banner .container-fluid {
+    width: 100%;
+    max-width: 100%;
+    padding-left: var(--spacing-md); /* Reduced from spacing-lg to spacing-md */
+    padding-right: var(--spacing-md); /* Reduced from spacing-lg to spacing-md */
+    position: relative;
+    background-color: transparent;
+    z-index: 4;
+  }
+  
+  /* Pricing resources container with alignment fixes and transparency */
+  .pricing-resources-container {
+    padding: var(--spacing-md) 0; /* Reduced from spacing-lg to spacing-md */
+    position: relative;
+    z-index: 4;
+    width: 95%;
+    max-width: var(--container-lg, 1280px);
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Fix for column alignment */
+  .pricing-resources-container > .row {
+    display: flex;
+    align-items: flex-start;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: relative;
+    z-index: 4;
+  }
+  
+  /* Equal height columns for better alignment */
+  .pricing-resources-container > .row > .col-md-4,
+  .pricing-resources-container > .row > .col-md-8 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  
+  /* Inner rows - standard Bootstrap with reduced padding */
+  .pricing-resources .row {
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+  }
+  
+  .pricing-resources .row > [class*="col-"] {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  
+  /* Glass effect for panels with transparency */
+  .pricing-news-panel {
+    background-color: rgba(255, 255, 255, 0.75); /* More transparent for better visibility of orbs */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-sm); /* Reduced from spacing-md to spacing-sm */
+    margin-bottom: var(--spacing-md); /* Reduced from spacing-lg to spacing-md */
+    height: 100%; /* Ensure full height of container */
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    z-index: 5; /* Ensure above animations */
+  }
+  
+  .pricing-news-panel:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: var(--box-shadow-hover);
+  }
+  
+  /* Section Titles with consistent heights for alignment */
+  .panel-title,
+  .resources-title {
+    color: var(--secondary-color);
+    font-size: 18px !important;  /* Explicit size for compact section headings */
+    font-weight: 600;
+    margin: 0 0 var(--spacing-md) 0; /* Consistent margins */
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid rgba(238, 238, 238, 0.5);
+    line-height: 1.3;
+    min-height: 32px; /* Reduced height for compact look */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Apply a gradient background to section titles */
+  .panel-title {
+    background: linear-gradient(to right, rgba(230, 240, 255, 0.5), rgba(255, 255, 255, 0.3));
+    padding: 8px;
+    border-radius: 4px 4px 0 0;
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-left: 15px;
+  }
+  
+  .resources-title {
+    background: linear-gradient(to right, rgba(230, 240, 255, 0.5), rgba(255, 255, 255, 0.3));
+    padding: 8px;
+    border-radius: 4px 4px 0 0;
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-left: 15px;
+  }
+  
+  .news-card {
+    padding: var(--spacing-sm) 0; /* Reduced from spacing-md to spacing-sm */
+    border-bottom: 1px solid rgba(245, 245, 245, 0.5);
+    transition: all var(--transition-speed) ease;
+  }
+  
+  .news-card:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .news-card:last-child {
+    border-bottom: none;
+  }
+  
+  .news-date {
+    color: var(--text-medium);
+    font-size: var(--font-base);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+  }
+  
+  .news-title {
+    color: var(--text-dark);
+    font-size: 16px !important; /* Explicit size for compact look */
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.3;
+  }
+  
+  .news-summary {
+    color: var(--text-medium);
+    font-size: var(--font-sm);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+  }
+  
+  .news-link {
+    color: var(--primary-color);
+    font-size: var(--font-base);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    z-index: 6; /* Ensure links are clickable */
+    pointer-events: auto !important;
+  }
+  
+  .news-link:hover {
+    text-decoration: underline;
+    transform: translateX(3px);
+  }
+  
+  /* Transparent Resources Panel with Glass Effect */
+  .pricing-resources {
+    background-color: rgba(255, 255, 255, 0.75); /* More transparent for better visibility of orbs */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-sm); /* Reduced from spacing-md to spacing-sm */
+    height: 100%; /* Ensure full height of container */
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    z-index: 5; /* Ensure above animations */
+  }
+  
+  .pricing-resources:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: var(--box-shadow-hover);
+  }
+  
+  /* Resource row layout with enhanced hover */
+  .resource-row {
+    display: flex;
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    overflow: visible; /* Allow tag to extend outside */
+    background-color: rgba(248, 249, 250, 0.7);
+    transition: all var(--transition-speed) ease;
+    border: 1px solid rgba(230, 240, 255, 0.3);
+    position: relative !important;
+    z-index: 5 !important; /* Higher than any animation element */
+  }
+  
+  .resource-row:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow-hover);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 102, 204, 0.2);
+  }
+  
+  .resource-item {
+    display: flex;
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-sm) 80px; /* Add left padding for attached icon */
+    align-items: center;
+    position: relative !important;
+    z-index: 5 !important; /* Higher than any animation element */
+  }
+  
+  .resource-icon {
+    position: absolute;
+    top: -12px; /* Position 50% outside the row border */
+    left: 15px; /* Offset from the left edge */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color); /* Use primary color like PAM tag */
+    color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.15),
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-speed) ease;
+    z-index: 10;
+    flex-shrink: 0;
+  }
+  
+  .resource-row:hover .resource-icon {
+    transform: translateY(-2px) scale(1.05); /* Subtle lift and scale */
+    box-shadow: 
+      0 6px 16px rgba(255, 107, 0, 0.25),
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  
+  .resource-content {
+    flex: 1;
+    position: relative !important;
+    z-index: 5 !important; /* Higher than any animation element */
+  }
+  
+  /* Category-specific icon colors */
+  .resource-row[data-category="communications"] .resource-icon {
+    background-color: #FF6B00; /* Orange for communications */
+  }
+  
+  .resource-row[data-category="updates"] .resource-icon {
+    background-color: #0066CC; /* Blue for updates */
+  }
+  
+  .resource-row[data-category="training"] .resource-icon {
+    background-color: #28A745; /* Green for training */
+  }
+  
+  .resource-row[data-category="tools"] .resource-icon {
+    background-color: #8439A6; /* Purple for tools */
+  }
+  
+  .resource-row[data-category="feedback"] .resource-icon {
+    background-color: #17A2B8; /* Teal for feedback */
+  }
+  
+  .resource-row[data-category="security"] .resource-icon {
+    background-color: #6F42C1; /* Deep purple for security */
+  }
+
+/* ============================================
+   Resource Card Attached Icon Styles
+   For the existing HTML structure with card-header
+   ============================================ */
+
+/* Make resource cards support attached icons */
+.resource-card {
+  position: relative;
+  overflow: visible !important; /* Allow icons to extend outside */
+}
+
+/* Transform card icons into attached tags */
+.resource-card .card-header .card-icon {
+  position: absolute !important;
+  top: -12px !important; /* Position 50% outside the card border */
+  left: 15px !important; /* Offset from the left edge */
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition: all var(--transition-speed) ease !important;
+  z-index: 10 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Card header adjustments to accommodate attached icon */
+.resource-card .card-header {
+  position: relative;
+  overflow: visible !important;
+  padding-top: var(--spacing-md) !important; /* Add top padding for the floating icon */
+  height: 80px !important; /* Fixed height for consistency across all cards */
+  min-height: 60px !important;
+  max-height: 60px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon hover effects */
+.resource-card:hover .card-header .card-icon {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 
+    0 6px 16px rgba(255, 107, 0, 0.25),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Override font sizes specifically for resource cards */
+.resource-card .card-title {
+  font-size: var(--font-sm) !important; /* Reduced to font-sm for smaller titles */
+  line-height: 1.2 !important;
+  text-align: center;
+  font-weight: var(--font-weight-semibold) !important;
+}
+
+.resource-card .card-text {
+  font-size: var(--font-xs) !important; /* Reduced to font-xs for smaller text */
+  line-height: 1.3 !important;
+  text-align: center;
+}
+
+/* Responsive adjustments for resource cards */
+@media (max-width: 576px) {
+  .resource-card .card-header .card-icon {
+    position: static !important; /* Reset positioning on mobile */
+    margin: 0 auto var(--spacing-sm) auto !important; /* Center the icon */
+    transform: none !important; /* Reset any transforms */
+  }
+  
+  .resource-card .card-header {
+    padding-top: var(--spacing-sm) !important; /* Reset padding on mobile */
+    text-align: center;
+    height: auto !important; /* Allow flexible height on mobile */
+    min-height: 60px !important;
+  }
+  
+  .resource-card {
+    overflow: hidden !important; /* Reset overflow on mobile */
+  }
+}
+  
+  .resource-title {
+    color: var(--secondary-color);
+    font-size: 14px !important; /* Explicit size for compact look */
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    border-bottom: none;
+    padding-bottom: 0;
+    line-height: 1.3;
+    transition: color var(--transition-speed) ease;
+    position: relative !important;
+    z-index: 5 !important; /* Higher than any animation element */
+  }
+  
+  .resource-row:hover .resource-title {
+    color: var(--primary-color);
+  }
+  
+  /* CRITICAL FIX: Make sure links are clickable and above animations */
+  .resource-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+    font-size: 14px !important; /* Explicit size to override any inheritance */
+    position: relative !important;
+    z-index: 10 !important; /* Very high z-index to ensure links work */
+    pointer-events: auto !important; /* Force clickable */
+  }
+  
+  .resource-title a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  
+  .resource-desc {
+    color: var(--text-medium);
+    font-size: 13px !important; /* Explicit smaller size for descriptions */
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  /* Remember box - UPDATED WITH ENHANCED TRANSPARENCY */
+  .remember-box {
+    background: rgba(248, 249, 250, 0.75);
+    padding: var(--spacing-md); /* Reduced from spacing-lg to spacing-md */
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-lg); /* Reduced from spacing-xl to spacing-lg */
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all var(--transition-speed) ease;
+    z-index: 5;
+    position: relative;
+  }
+  
+  .remember-box:hover {
+    background: rgba(248, 249, 250, 0.85);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .remember-box-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .remember-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-right: var(--spacing-md);
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .remember-box:hover .remember-icon {
+    transform: scale(1.2);
+  }
+  
+  .remember-text-container {
+    text-align: center;
+  }
+  
+  .remember-title {
+    font-weight: 600; 
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-dark);
+    font-size: var(--font-lg);
+    line-height: 1.3;
+    display: inline-block;
+    margin-right: var(--spacing-xs);
+  }
+  
+  .remember-text {
+    color: var(--text-medium);
+    font-size: var(--font-base);
+    line-height: 1.5;
+    display: inline-block;
+  }
+  
+  /* Fix for Bootstrap fonts */
+  body .banner-header,
+  body .panel-title,
+  body .resources-title,
+  body .news-title,
+  body .news-summary,
+  body .news-date,
+  body .news-link,
+  body .resource-title,
+  body .resource-title a,
+  body .resource-desc,
+  body .remember-title,
+  body .remember-text {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  }
+  
+  /* Left border accents for pricing updates section */
+  .pricing-news-panel {
+    border-left: 4px solid var(--primary-color);
+  }
+  
+  /* All links must be clickable - CRITICAL FIX */
+  a, 
+  .btn,
+  .news-link,
+  .resource-title a {
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .main-banner .container-fluid {
+      padding-left: var(--spacing-md);
+      padding-right: var(--spacing-md);
+    }
+    
+    /* Tablet adjustments - font sizes inherited from CSS variables */
+    .panel-title {
+      min-height: 36px;
+    }
+    
+    .resources-title {
+      min-height: 36px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .col-md-4, .col-md-8 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    
+    .resource-item {
+      flex-direction: row;
+      text-align: left;
+    }
+    
+    .main-banner .container-fluid {
+      padding-left: var(--spacing-sm);
+      padding-right: var(--spacing-sm);
+    }
+    
+    /* Mobile adjustments - font sizes inherited from CSS variables */
+    .panel-title,
+    .resources-title {
+      min-height: 30px;
+    }
+    
+    /* Remember box adjustments for mobile */
+    .remember-box-content {
+      flex-direction: column;
+    }
+    
+    .remember-icon {
+      margin-right: 0;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    /* Ensure animations are still visible on mobile */
+    .nintex-orbs-animation {
+      left: 15% !important;
+      opacity: 1 !important;
+    }
+    
+    .nintex-background-gradient.blue {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(255, 255, 255, 0.5) 53%,
+        rgba(255, 255, 255, 0.3) 100%
+      ) !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .resource-item {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-sm) var(--spacing-sm); /* Remove left padding on mobile */
+    }
+    
+    .resource-icon {
+      position: static; /* Reset positioning on mobile */
+      margin: 0 auto var(--spacing-sm) auto; /* Center the icon */
+      transform: none; /* Reset any transforms */
+    }
+    
+    .resource-row {
+      overflow: hidden; /* Reset overflow on mobile */
+    }
+  }
+/**
+ * Product Categories Styling
+ * Creates equal-width product categories with hover effects
+ */
+
+/* Product categories container */
+.product-categories {
+  width: 100%;
+}
+
+/* Category styling with border-left accent */
+.product-category {
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-left: 4px solid var(--primary-color);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+/* Hover effect from existing CSS (pricing-news-panel:hover) */
+.product-category:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--box-shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* Category header */
+.category-header {
+  background-color: var(--light-gray);
+  padding: var(--spacing-md);
+}
+
+.category-header .panel-title {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+/* Category content padding */
+.category-content {
+  padding: var(--spacing-md);
+}
+
+/* Product row layout */
+.product-row {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+}
+
+.product-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Product column - equal width */
+.product-column {
+  flex: 0 0 50%;
+  padding: 0 var(--spacing-sm);
+}
+
+/* Product item styling with hover effect */
+.product-item {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition-speed) ease;
+}
+
+/* Hover effect from news-card:hover */
+.product-item:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Product icon */
+.product-triangle-icon {
+  width: 48px;
+  height: 48px;
+  margin-right: var(--spacing-md);
+  flex-shrink: 0;
+  background-image: url('https://ntxtemplatestorage.blob.core.windows.net/partner/resized_VimeoIcon.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform var(--transition-speed) ease;
+}
+
+/* Icon hover effect */
+.product-item:hover .product-triangle-icon {
+  transform: scale(1.1);
+}
+
+/* Product details content */
+.product-details {
+  flex: 1;
+}
+
+/* Title hover effect from news-title */
+.product-item:hover .news-title {
+  color: var(--primary-color);
+}
+
+/* Product content and download buttons */
+.product-content {
+  flex: 1;
+}
+
+.product-title {
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+}
+
+.product-description {
+  color: var(--text-medium);
+  font-size: calc(var(--font-sm) - 0.125rem);
+  margin-bottom: var(--spacing-xs);
+  font-weight: normal;
+}
+
+/* Download buttons */
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.download-btn {
+  background-color: var(--primary-color);
+  color: white !important;
+  border-radius: var(--border-radius-sm);
+  padding: calc(var(--spacing-xs) - 2px) var(--spacing-xs);
+  font-size: calc(var(--font-sm) - 0.1875rem);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.download-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.download-btn.outline {
+  background-color: transparent;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-color);
+}
+
+.download-btn.outline:hover {
+  background-color: rgba(255,107,0,0.05);
+}
+
+.download-btn i {
+  margin-right: var(--spacing-xs);
+}
+
+.download-btn.external-btn {
+  background-color: var(--secondary-color);
+}
+
+.download-btn.external-btn:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .download-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .product-row {
+    flex-direction: column;
+  }
+  
+  .product-column {
+    flex: 0 0 100%;
+    margin-bottom: 15px;
+  }
+  
+  .product-column:last-child {
+    margin-bottom: 0;
+  }
+  
+  .product-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  }
+
+/* ============================================
+   CONTENT PAGE FONT SIZE CONSISTENCY
+   Uses CSS variables from partnerportal.css
+   ============================================ *//* Content page text elements using CSS variables */
+.content-page-container p {
+  font-size: var(--font-base) !important;
+  line-height: 1.6 !important;
+}
+
+.content-page-container ul li,
+.content-page-container ol li {
+  font-size: var(--font-base) !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Nested lists */
+.content-page-container ul ul li,
+.content-page-container ul ol li,
+.content-page-container ol ul li,
+.content-page-container ol ol li {
+  font-size: calc(var(--font-base) - 0.0625rem) !important;
+  line-height: 1.7 !important;
+}
+
+/* Headers using CSS variables */
+.content-page-container h1 {
+  font-size: var(--font-xxl-plus) !important;
+  line-height: 1.3 !important;
+}
+
+.content-page-container h2 {
+  font-size: var(--font-xl-plus) !important;
+  line-height: 1.3 !important;
+}
+
+.content-page-container h3 {
+  font-size: var(--font-xl) !important;
+  line-height: 1.3 !important;
+}
+
+.content-page-container h4 {
+  font-size: var(--font-lg) !important;
+  line-height: 1.3 !important;
+}
+
+/* Content-specific elements */
+.content-page-container .news-date {
+  font-size: var(--font-base) !important;
+}
+
+.content-page-container .news-title {
+  font-size: 16px !important;
+}
+
+.content-page-container .news-summary {
+  font-size: 14px !important;
+}
+
+.content-page-container .resource-desc {
+  font-size: 13px !important;
+}
+
+.content-page-container .resource-title a {
+  font-size: var(--font-md) !important;
+}
+
+.content-page-container .remember-title {
+  font-size: var(--font-lg) !important;
+}
+
+.content-page-container .remember-text {
+  font-size: var(--font-base) !important;
+}
+
+/* Panel content */
+.content-page-container .pricing-resources p,
+.content-page-container .pricing-news-panel p {
+  font-size: var(--font-base) !important;
+  line-height: 1.7 !important;
+}
+
+/* Panel titles */
+.content-page-container .panel-title {
+  font-size: var(--font-xl-plus) !important;
+}
+
+.content-page-container .resources-title {
+  font-size: var(--font-xl-plus) !important;
+}
+
+/* Responsive font size adjustments inherit from CSS variables in partnerportal.css */
+@media (max-width: 991px) {
+  /* CSS variables are automatically adjusted in partnerportal.css */
+  /* No additional overrides needed - maintains consistency */
+}
+
+@media (max-width: 767px) {
+  /* CSS variables are automatically adjusted in partnerportal.css */
+  /* Content pages will inherit the responsive font sizes */
+}
+
+/* ============================================
+   WINDOWS SECTION STYLES - COMPLETE
+   ============================================ */
+
+.windows-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 2px solid #dee2e6;
+  padding: var(--spacing-md) 0; /* Reduced from 2rem to spacing-md */
+}
+
+.window-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+}
+
+.window-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.window-header {
+  padding: var(--spacing-sm); /* Use CSS variable instead of hardcoded 1.5rem */
+  color: white;
+  text-align: center;
+}
+
+.video-header {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.documents-header {
+  background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
+}
+
+.window-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-sm); /* Use CSS variable instead of hardcoded 1rem */
+  font-size: var(--font-xl); /* Use CSS variable instead of hardcoded 1.5rem */
+}
+
+.window-title {
+  margin: 0;
+  font-size: var(--font-lg);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.window-body {
+  padding: var(--spacing-md); /* Use CSS variable instead of hardcoded 1.5rem */
+}
+
+/* Video Window Styles */
+.video-preview {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm); /* Use CSS variable instead of hardcoded 1rem */
+  cursor: pointer;
+}
+
+.video-thumbnail-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-preview:hover .video-thumbnail-img {
+  transform: scale(1.05);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 107, 0, 0.9);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.play-overlay:hover {
+  background: rgba(255, 107, 0, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-info h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.video-description {
+  color: var(--text-light); /* Use CSS variable instead of hardcoded #666 */
+  font-size: var(--font-md); /* Use CSS variable instead of hardcoded 1.1rem */
+  margin-bottom: var(--spacing-sm); /* Use CSS variable instead of hardcoded 1rem */
+  line-height: var(--line-height-normal);
+}
+
+.video-meta {
+  display: flex;
+  gap: var(--spacing-sm); /* Use CSS variable instead of hardcoded 1rem */
+  font-size: var(--font-xs); /* Use CSS variable instead of hardcoded 0.8rem */
+  color: var(--text-light); /* Use CSS variable instead of hardcoded #888 */
+}
+
+.video-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Document Window Styles */
+.document-info {
+  margin-bottom: 0.75rem;
+}
+
+.document-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.document-info li {
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.document-info li:hover {
+  background: #e9ecef;
+  transform: translateX(3px);
+}
+
+.document-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.document-link {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.document-link:hover {
+  color: #ff6b00;
+  text-decoration: underline;
+}
+
+/* Video Modal Styles */
+.custom-modal.video-modal {
+  background-color: rgba(0, 0, 0, 0.95);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-modal.video-modal.show {
+  display: flex;
+}
+
+.custom-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.custom-modal.video-modal .custom-modal-container {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 80vw;
+  height: auto;
+  background-color: #000;
+  padding: 0;
+  margin: auto;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-modal.video-modal .custom-modal-content {
+  background-color: #000;
+  border-radius: 8px;
+}
+
+.custom-modal.video-modal .custom-modal-header {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 1000;
+}
+
+.custom-modal.video-modal .custom-modal-close {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.custom-modal.video-modal .custom-modal-close:hover {
+  background: rgba(255, 107, 0, 0.8);
+}
+
+.custom-modal.video-modal .custom-modal-body {
+  padding: 0;
+  position: relative;
+  background-color: #000;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 45%;
+  background-color: #000;
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive Design for Windows Section */
+@media (max-width: 768px) {
+  .windows-section .row {
+    flex-direction: column;
+  }
+  
+  .video-thumbnail-img {
+    height: 150px;
+  }
+  
+  .window-header {
+    padding: 1rem;
+  }
+  
+  .window-body {
+    padding: 1rem;
+  }
+  
+  .custom-modal.video-modal .custom-modal-container {
+    width: 95vw;
+    height: auto;
+    margin: 20px auto;
+  }
+}
+
+/* ============================================
+   ALERT & NOTICE PANELS
+   Reusable alert components for warnings, info, success messages
+   ============================================ */
+
+/* Base alert panel */
+.alert-panel {
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--box-shadow) !important;
+  padding: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-md) !important;
+  background-color: white !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Warning panel (yellow) */
+.alert-panel.warning {
+  border-left: 4px solid #ffc107 !important;
+  background-color: #fff3cd !important;
+}
+
+/* Danger panel (red border) */
+.alert-panel.danger {
+  border-left: 4px solid #dc3545 !important;
+  background-color: #f8d7da !important;
+}
+
+/* Info panel (blue) */
+.alert-panel.info {
+  border-left: 4px solid var(--secondary-color) !important;
+  background-color: #e7f1ff !important;
+}
+
+/* Success panel (green) */
+.alert-panel.success {
+  border-left: 4px solid #28a745 !important;
+  background-color: #d4edda !important;
+}
+
+/* Alert header - the prominent banner at top */
+.alert-header {
+  padding: 12px 16px !important;
+  border-radius: var(--border-radius-sm) !important;
+  margin-bottom: var(--spacing-sm) !important;
+  text-align: center !important;
+}
+
+.alert-header.danger {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.alert-header.warning {
+  background-color: #ffc107 !important;
+  color: #856404 !important;
+}
+
+.alert-header.info {
+  background-color: var(--secondary-color) !important;
+  color: white !important;
+}
+
+.alert-header.success {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+/* Alert icon */
+.alert-icon {
+  font-size: 24px !important;
+  margin-right: 10px !important;
+  vertical-align: middle !important;
+}
+
+/* Alert title */
+.alert-title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Alert subtitle */
+.alert-subtitle {
+  font-weight: 700 !important;
+  margin-top: 4px !important;
+}
+
+/* Alert body text */
+.alert-body {
+  margin-bottom: var(--spacing-sm) !important;
+  font-weight: 500 !important;
+}
+
+.alert-panel.warning .alert-body,
+.alert-panel.warning p {
+  color: #856404 !important;
+}
+
+.alert-panel.danger .alert-body,
+.alert-panel.danger p {
+  color: #721c24 !important;
+}
+
+.alert-panel.info .alert-body,
+.alert-panel.info p {
+  color: #004085 !important;
+}
+
+.alert-panel.success .alert-body,
+.alert-panel.success p {
+  color: #155724 !important;
+}
+
+/* Alert list styling */
+.alert-list {
+  margin-left: 20px !important;
+  margin-bottom: var(--spacing-sm) !important;
+  padding-left: 0 !important;
+}
+
+.alert-panel.warning .alert-list li {
+  color: #856404 !important;
+  margin-bottom: 8px !important;
+}
+
+.alert-panel.danger .alert-list li {
+  color: #721c24 !important;
+}
+
+.alert-panel.info .alert-list li {
+  color: #004085 !important;
+}
+
+.alert-panel.success .alert-list li {
+  color: #155724 !important;
+}
+
+/* Alert section heading */
+.alert-section-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+.alert-panel.warning .alert-section-title {
+  color: #856404 !important;
+}
+
+.alert-panel.success .alert-section-title,
+.alert-success-box .alert-section-title {
+  color: #155724 !important;
+}
+
+/* Success box within alert (for CTA) */
+.alert-success-box {
+  background-color: #d4edda !important;
+  border: 1px solid #c3e6cb !important;
+  border-radius: var(--border-radius-sm) !important;
+  padding: var(--spacing-sm) !important;
+  margin-top: var(--spacing-sm) !important;
+}
+
+.alert-success-box p {
+  color: #155724 !important;
+  font-weight: 500 !important;
+  margin-bottom: 8px !important;
+}
+
+.alert-success-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Accordion toggle button */
+.accordion-toggle {
+  background: none;
+  border: none;
+  color: #856404;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  margin-bottom: var(--spacing-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-speed) ease;
+}
+
+.accordion-toggle:hover {
+  color: #533f03;
+}
+
+.accordion-toggle:focus {
+  outline: 2px solid var(--focus-blue, #2a34a8);
+  outline-offset: 2px;
+}
+
+.accordion-icon {
+  font-size: 12px;
+  display: inline-block;
+  transition: transform var(--transition-speed) ease;
+}
+
+.accordion-toggle.expanded .accordion-icon {
+  transform: rotate(90deg);
+}
+
+/* Accordion content */
+.accordion-content {
+  padding-top: var(--spacing-sm);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments for alerts */
+@media (max-width: 768px) {
+  .alert-header {
+    padding: 10px 12px;
+  }
+  
+  .alert-title {
+    font-size: 16px;
+    display: block;
+    margin-top: 8px;
+  }
+  
+  .alert-icon {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+  
+  .alert-subtitle {
+    font-size: 14px;
+  }
+  
+  .alert-list {
+    margin-left: 10px;
+  }
+}
+
+/* ============================================
+   COMPACT WORKING PAGE LAYOUT
+   For functional dashboards with minimal decoration
+   ============================================ */
+
+/* Compact banner - minimal animation space */
+.main-banner-with-animation.compact-banner {
+  min-height: auto !important;
+  padding: var(--spacing-sm) 0 !important;
+}
+
+.main-banner-with-animation.compact-banner .main-banner {
+  padding: var(--spacing-sm) 0 !important;
+}
+
+.main-banner-with-animation.compact-banner .banner-header {
+  font-size: var(--font-xl-plus) !important;
+  margin-bottom: var(--spacing-xs) !important;
+}
+
+.main-banner-with-animation.compact-banner .banner-text {
+  font-size: var(--font-base) !important;
+  margin-bottom: 0 !important;
+}
+
+/* Hide orb animations on compact banners */
+.main-banner-with-animation.compact-banner .nintex-orbs-animation {
+  display: none !important;
+}
+
+/* Keep subtle line animation but reduce opacity */
+.main-banner-with-animation.compact-banner .nintex-lines-animation {
+  opacity: 0.3 !important;
+}
+
+/* NO BANNER variant - just page title bar */
+/* Using CSS variables for consistency with design system */
+body .page-header-bar,
+.page-header-bar,
+div.page-header-bar,
+[class*="page-header-bar"] {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #1a4a8c 100%) !important;
+  padding-top: 130px !important; /* Fixed navbar offset - matches --navbar-height */
+  padding-bottom: var(--spacing-sm) !important;
+  margin-bottom: 0 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+body .page-header-bar .container,
+.page-header-bar .container,
+.page-header-bar > .container,
+div.page-header-bar .container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 95% !important;
+  max-width: var(--container-lg, 1280px) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  padding-top: 20px !important; /* Extra spacing for header content */
+}
+
+/* Responsive page-header-bar container - match global breakpoints */
+@media (min-width: 1440px) {
+  body .page-header-bar .container,
+  .page-header-bar .container,
+  .page-header-bar > .container,
+  div.page-header-bar .container {
+    width: 92% !important;
+    max-width: var(--container-xl, 1400px) !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  body .page-header-bar .container,
+  .page-header-bar .container,
+  .page-header-bar > .container,
+  div.page-header-bar .container {
+    width: 88% !important;
+    max-width: var(--container-xxl, 1600px) !important;
+  }
+}
+
+/* Banner welcome inside page-header-bar needs visible title */
+.page-header-bar .banner-welcome,
+.page-header-bar .banner-header {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.page-header-bar .banner-header {
+  color: #ffffff !important;
+  font-size: var(--font-xl, 1.25rem) !important;
+  font-weight: 600 !important;
+  margin: 0 0 4px 0 !important;
+  line-height: 1.3 !important;
+}
+
+.page-header-bar .banner-text {
+  color: rgba(255,255,255,0.9) !important;
+  font-size: var(--font-sm, 0.875rem) !important;
+  margin: 0 !important;
+}
+
+body .page-header-bar .page-title,
+.page-header-bar .page-title,
+.page-header-bar h1.page-title,
+div.page-header-bar h1 {
+  color: #ffffff !important;
+  font-size: var(--font-xl) !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  background: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+body .page-header-bar .page-subtitle,
+.page-header-bar .page-subtitle,
+.page-header-bar p.page-subtitle,
+div.page-header-bar p {
+  color: var(--text-white) !important;
+  font-size: var(--font-sm) !important;
+  margin: 0 !important;
+  margin-top: var(--spacing-2xs) !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+/* Alert directly under page header - no gap */
+.page-header-bar + .pricing-resources-container {
+  padding-top: 0 !important;
+}
+
+.page-header-bar + .pricing-resources-container .alert-panel {
+  margin-top: 0 !important;
+  border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+}
+
+/* Inline alert - slim single-line warning bar */
+/* Using CSS variables for consistency with design system */
+body .alert-inline,
+.alert-inline,
+div.alert-inline,
+[class*="alert-inline"] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--spacing-sm) !important;
+  padding: var(--spacing-xs) var(--spacing-md) !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+body .alert-inline.warning,
+.alert-inline.warning,
+div.alert-inline.warning,
+[class*="alert-inline"][class*="warning"] {
+  background-color: #fff3cd !important;
+  border-left: none !important;
+  border-bottom: 3px solid #ffc107 !important;
+  border-top: none !important;
+  border-right: none !important;
+}
+
+body .alert-inline.danger,
+.alert-inline.danger,
+div.alert-inline.danger {
+  background-color: #f8d7da !important;
+  border-left: none !important;
+  border-bottom: 3px solid var(--error-color) !important;
+}
+
+body .alert-inline .alert-icon,
+.alert-inline .alert-icon,
+.alert-inline > .alert-icon,
+div.alert-inline span.alert-icon {
+  font-size: var(--font-lg) !important;
+  margin-right: var(--spacing-xs) !important;
+  flex-shrink: 0 !important;
+}
+
+body .alert-inline .alert-message,
+.alert-inline .alert-message,
+.alert-inline > .alert-message,
+div.alert-inline span.alert-message {
+  font-weight: 600 !important;
+  font-size: var(--font-sm) !important;
+}
+
+body .alert-inline.warning .alert-message,
+.alert-inline.warning .alert-message,
+div.alert-inline.warning .alert-message {
+  color: #856404 !important;
+}
+
+body .alert-inline.danger .alert-message,
+.alert-inline.danger .alert-message {
+  color: #721c24 !important;
+}
+
+body .alert-inline .alert-link,
+.alert-inline .alert-link,
+.alert-inline a.alert-link {
+  color: #533f03 !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  margin-left: var(--spacing-xs) !important;
+}
+
+.alert-inline .alert-link {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  margin-left: var(--spacing-xs) !important;
+}
+
+.alert-inline.warning .alert-link {
+  color: #533f03 !important;
+}
+
+/* Expandable details for inline alert */
+.alert-inline .alert-expand-btn {
+  background: none !important;
+  border: none !important;
+  font-size: var(--font-xs) !important;
+  cursor: pointer !important;
+  text-decoration: underline !important;
+  padding: 0 !important;
+  margin-left: var(--spacing-sm) !important;
+}
+
+.alert-inline.warning .alert-expand-btn {
+  color: #856404 !important;
+}
+
+/* Working page container - tighter spacing */
+.working-page-container {
+  padding-top: var(--spacing-sm) !important;
+}
+
+.working-page-container .pricing-resources-container {
+  padding: var(--spacing-sm) 0 !important;
+}
+
+/* Responsive compact banner */
+@media (max-width: 768px) {
+  .main-banner-with-animation.compact-banner .banner-header {
+    font-size: var(--font-xl) !important;
+  }
+  
+  .page-header-bar .page-title {
+    font-size: var(--font-lg) !important;
+  }
+  
+  .alert-inline {
+    flex-wrap: wrap !important;
+    padding: 8px var(--spacing-sm) !important;
+  }
+  
+  .alert-inline .alert-message {
+    font-size: var(--font-xs) !important;
+  }
+}
+
+/* ============================================
+   BANNER ACTION BUTTONS & QUICK LINKS
+   For landing pages with CTAs in the banner
+   ============================================ */
+
+/* Banner actions container */
+.banner-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--spacing-sm) !important;
+  align-items: flex-end !important;
+}
+
+/* Action buttons row - horizontal layout */
+.action-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: var(--spacing-sm) !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+}
+
+/* Primary action button (light background) */
+.banner-actions .btn-light,
+.action-buttons .btn-light {
+  background-color: #ffffff !important;
+  color: var(--secondary-color) !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  font-size: var(--font-sm) !important;
+  font-weight: 600 !important;
+  border-radius: var(--border-radius) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: var(--spacing-xs) !important;
+  transition: all var(--transition-speed) ease !important;
+  box-shadow: var(--box-shadow) !important;
+  white-space: nowrap !important;
+}
+
+/* Icons inside light buttons - blue */
+.banner-actions .btn-light i,
+.action-buttons .btn-light i,
+.banner-actions .btn-light .fas,
+.action-buttons .btn-light .fas {
+  color: var(--secondary-color) !important;
+}
+
+.banner-actions .btn-light:hover,
+.action-buttons .btn-light:hover {
+  background-color: var(--light-gray) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--box-shadow-hover) !important;
+}
+
+/* Secondary action button (outline) - now solid for visibility */
+.banner-actions .btn-outline-light,
+.action-buttons .btn-outline-light {
+  background-color: var(--secondary-color) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--secondary-color) !important;
+  padding: 10px 20px !important;
+  font-size: var(--font-sm) !important;
+  font-weight: 600 !important;
+  border-radius: var(--border-radius) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: var(--spacing-xs) !important;
+  transition: all var(--transition-speed) ease !important;
+  white-space: nowrap !important;
+}
+
+/* Icons inside outline buttons - white */
+.banner-actions .btn-outline-light i,
+.action-buttons .btn-outline-light i,
+.banner-actions .btn-outline-light .fas,
+.action-buttons .btn-outline-light .fas {
+  color: #ffffff !important;
+}
+
+.banner-actions .btn-outline-light:hover,
+.action-buttons .btn-outline-light:hover {
+  background-color: var(--secondary-hover) !important;
+  border-color: var(--secondary-hover) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Quick links row - horizontal layout */
+.quick-links {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: var(--spacing-sm) !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  margin-top: 4px !important;
+}
+
+/* Individual quick link - blue pill style for visibility on any background */
+.quick-link {
+  background-color: var(--secondary-color) !important;
+  color: #ffffff !important;
+  font-size: var(--font-xs) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all var(--transition-speed) ease !important;
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  white-space: nowrap !important;
+}
+
+.quick-link:hover {
+  background-color: var(--secondary-hover) !important;
+  text-decoration: none !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Icons inside quick links - white */
+.quick-link i,
+.quick-link .fas {
+  color: #ffffff !important;
+}
+
+.quick-link:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+.quick-link i {
+  font-size: var(--font-xs) !important;
+}
+
+/* ============================================
+   SECTION TITLE VARIANTS
+   Orange accent titles, icon titles, etc.
+   ============================================ */
+
+/* Orange accent title - uses primary color */
+.section-title-orange,
+.resources-title .orange,
+.panel-title .orange {
+  color: var(--primary-color) !important;
+}
+
+/* Resources title with orange text */
+.pricing-resources .resources-title span[style*="color:#e67e22"],
+.pricing-resources .resources-title span[style*="color: #e67e22"] {
+  color: var(--primary-color) !important;
+  font-weight: 600 !important;
+}
+
+/* Plus icon in resource rows (bullet style) */
+.resource-icon span[style*="font-weight:bold"] {
+  color: var(--primary-color) !important;
+  font-size: var(--font-xl) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
+
+/* Icon styling - ensure icons are white on colored backgrounds */
+.resource-row .resource-icon i,
+.resource-row .resource-icon .fas,
+.resource-row .resource-icon .fa {
+  color: white !important;
+  font-size: var(--font-lg) !important;
+}
+
+/* Larger icons (fa-2x) in Partner Kit section */
+.resource-row .resource-icon i.fa-2x {
+  font-size: var(--font-xl) !important;
+}
+
+/* Responsive banner actions */
+@media (max-width: 992px) {
+  .banner-actions {
+    margin-top: var(--spacing-md) !important;
+  }
+  
+  .action-buttons {
+    justify-content: center !important;
+  }
+  
+  .quick-links {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .action-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .banner-actions .btn-light,
+  .banner-actions .btn-outline-light,
+  .action-buttons .btn-light,
+  .action-buttons .btn-outline-light {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  
+  .quick-links {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: var(--spacing-sm) !important;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   Optional classes for consistent styling
+   Use these as needed - they don't override existing styles
+   ============================================ */
+
+/* Loading spinner utility */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.loading-spinner::after {
+  content: '';
+  width: 32px;
+  height: 32px;
+  border: 3px solid #eee;
+  border-top-color: var(--secondary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Empty state utility */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-muted);
+}
+
+.empty-state i {
+  font-size: 3rem;
+  color: #ddd;
+  margin-bottom: var(--spacing-md);
+  display: block;
+}
+
+/* Container width utilities */
+.container-tight {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ============================================
+   IMPARTNER FORM STYLES
+   Lead Registration & Deal Registration Forms
+   Targets Bootstrap form elements used by Impartner
+   Version: 4.2.0
+   ============================================ */
+
+/* Compact banner for registration pages - reduce dead space */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .main-banner-with-animation,
+.main-banner-with-animation:has(+ * #GlobalBodyContent_InternalBodyContent_BodyContent_Registration) {
+  min-height: auto !important;
+}
+
+/* Target the banner when it's a sibling to the form container */
+#PageHeaderContent .main-banner-with-animation {
+  padding-top: var(--spacing-sm) !important;
+  padding-bottom: var(--spacing-sm) !important;
+}
+
+#PageHeaderContent .main-banner-with-animation .main-banner {
+  padding: var(--spacing-md) 0 !important;
+}
+
+#PageHeaderContent .main-banner-with-animation .banner-header {
+  font-size: var(--font-xl-plus) !important;
+  margin-bottom: var(--spacing-xs) !important;
+}
+
+#PageHeaderContent .main-banner-with-animation .banner-text {
+  font-size: var(--font-base) !important;
+  margin-bottom: 0 !important;
+}
+
+/* Reduce orb animation size on form pages */
+#PageHeaderContent .nintex-orbs-animation {
+  transform: scale(0.6) !important;
+  opacity: 0.7 !important;
+}
+
+/* ============================================
+   GLASS BACKGROUND FOR ENTIRE FORM PAGE
+   Wraps all form content with frosted glass effect
+   Z-index ensures content sits ABOVE background animations
+   ============================================ */
+
+/* Force all animations to stay behind content but VISIBLE within their container */
+/* Use positive z-index (1) for animations, higher z-index (4+) for content */
+.nintex-background-animation,
+.nintex-orbs-animation,
+.nintex-orbs-animation__orb,
+.nintex-lines-animation,
+.nintex-lines-animation svg {
+  z-index: 1 !important;
+}
+
+/* Full page background animation stays behind everything */
+.page-background-animation {
+  z-index: -1 !important;
+}
+
+/* Ensure main page content container is above animations */
+.container,
+body > .container,
+#aspnetForm > .container,
+main .container {
+  position: relative;
+  z-index: 4;
+}
+
+/* Main form container glass background */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: var(--spacing-lg) !important;
+  margin: 0 auto var(--spacing-md) auto !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+/* All content containers need to be above animations */
+.pricing-resources-container {
+  position: relative !important;
+  z-index: 100 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-radius: 12px !important;
+  padding: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-md) !important;
+  width: 95% !important;
+  max-width: var(--container-lg, 1280px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Responsive pricing-resources-container - match global breakpoints */
+@media (min-width: 1440px) {
+  .pricing-resources-container {
+    width: 92% !important;
+    max-width: var(--container-xl, 1400px) !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .pricing-resources-container {
+    width: 88% !important;
+    max-width: var(--container-xxl, 1600px) !important;
+  }
+}
+
+/* Pricing-resources section cards - glass with blue accent */
+.pricing-resources-container .pricing-resources,
+.pricing-resources {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  padding: var(--spacing-md) var(--spacing-lg) !important;
+  border-radius: var(--border-radius) !important;
+  border-left: 4px solid var(--secondary-color) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+  margin-bottom: var(--spacing-md) !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.pricing-resources-container .pricing-resources .resources-title,
+.pricing-resources .resources-title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: var(--secondary-color) !important;
+  margin: 0 0 var(--spacing-xs) 0 !important;
+}
+
+.pricing-resources-container .pricing-resources .resource-desc,
+.pricing-resources .resource-desc {
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  margin: 0 !important;
+}
+
+/* Form row spacing */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration > .row {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Form group container */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .form-group {
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+/* Remove the &nbsp; paragraph spacers */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .form-group > p:last-child {
+  display: none;
+}
+
+/* Form Labels - Enhanced styling */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .control-label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--font-sm);
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: 0.02em;
+}
+
+/* Required field asterisk styling */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .control-label b {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Text inputs and textareas */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .form-control {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 12px 16px;
+  font-size: var(--font-base);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-dark);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #d1d5db;
+  border-radius: var(--border-radius);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Input focus state */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .form-control:focus {
+  border-color: var(--secondary-color);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+/* Input placeholder */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .form-control::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+/* Select dropdowns */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration select.form-control {
+  padding-right: 36px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Textarea specific styling */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Checkbox groups (Product Interest) */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+  padding: 8px 12px;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .checkbox:hover {
+  background-color: #e5e7eb;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .checkbox label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0;
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--text-dark);
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--secondary-color);
+}
+
+/* Radio button groups (Generate Trials) */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration table.thumb-radios {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration table.thumb-radios td {
+  padding: 10px 16px;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration table.thumb-radios td:hover {
+  background-color: #e5e7eb;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration table.thumb-radios input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin-right: var(--spacing-sm);
+  cursor: pointer;
+  accent-color: var(--secondary-color);
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration table.thumb-radios label {
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+/* Info tooltips */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .fa-info-circle {
+  color: var(--secondary-color);
+  font-size: 14px;
+  margin-left: 6px;
+  cursor: help;
+  transition: color 0.2s ease;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .fa-info-circle:hover {
+  color: var(--primary-color);
+}
+
+/* Info boxes (bordered-info) */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .bordered-info {
+  padding: var(--spacing-md);
+  background-color: #e0f2fe;
+  border-left: 4px solid var(--secondary-color);
+  border-radius: var(--border-radius-sm);
+  color: #0c4a6e;
+  font-size: var(--font-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .bordered-info .glyphicon-info-sign {
+  margin-right: var(--spacing-sm);
+  color: var(--secondary-color);
+}
+
+/* Section headers inside form */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration h3 {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--border-light);
+}
+
+/* Input group addon (tenant name prefix) */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .input-group-addon {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  color: #6b7280;
+  background-color: var(--background-light);
+  border: 1px solid #d1d5db;
+  border-right: none;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  white-space: nowrap;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .input-group .form-control {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* File attachment section */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration #GlobalBodyContent_InternalBodyContent_BodyContent_Attachments {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration #GlobalBodyContent_InternalBodyContent_BodyContent_Attachments strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* Collapse info text */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration #Attachment {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: #ffffff;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+}
+
+/* Submit button - Primary CTA */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration #GlobalBodyContent_InternalBodyContent_BodyContent_btnSubmit,
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .btn-default[id*="btnSubmit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  min-width: 150px;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration #GlobalBodyContent_InternalBodyContent_BodyContent_btnSubmit:hover,
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration .btn-default[id*="btnSubmit"]:hover {
+  background-color: #e55a00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+/* Choose File button */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration #GlobalBodyContent_InternalBodyContent_BodyContent_AttachmentUploader_btnChooseFiles {
+  padding: 10px 20px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--text-dark);
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration #GlobalBodyContent_InternalBodyContent_BodyContent_AttachmentUploader_btnChooseFiles:hover {
+  background-color: var(--background-light);
+  border-color: var(--secondary-color);
+}
+
+/* Country/State Region Toggler */
+#GlobalBodyContent_InternalBodyContent_BodyContent_Registration #RegionToggler_CountryState .form-control {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments for forms */
+@media (max-width: 767px) {
+  #GlobalBodyContent_InternalBodyContent_BodyContent_Registration .form-control {
+    padding: 10px 14px;
+  }
+  
+  #GlobalBodyContent_InternalBodyContent_BodyContent_Registration .input-group {
+    flex-direction: column;
+  }
+  
+  #GlobalBodyContent_InternalBodyContent_BodyContent_Registration .input-group-addon {
+    border-right: 1px solid #d1d5db;
+    border-bottom: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+  
+  #GlobalBodyContent_InternalBodyContent_BodyContent_Registration .input-group .form-control {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+  
+  #GlobalBodyContent_InternalBodyContent_BodyContent_Registration #GlobalBodyContent_InternalBodyContent_BodyContent_btnSubmit {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   ICON COLOR UTILITIES
+   Use these classes on icons to apply brand colors
+   without inline styles
+   ============================================ */
+
+/* Primary color icon (Nintex Orange) */
+.icon-primary {
+  color: var(--primary-color) !important;
+}
+
+/* Secondary color icon (Nintex Blue) */
+.icon-secondary {
+  color: var(--secondary-color) !important;
+}
+
+/* Success/Green icon */
+.icon-success {
+  color: var(--color-success, #28A745) !important;
+}
+
+/* Warning/Yellow icon */
+.icon-warning {
+  color: var(--color-warning, #F59E0B) !important;
+}
+
+/* Danger/Red icon */
+.icon-danger {
+  color: var(--color-danger, #DC3545) !important;
+}
+
+/* Purple icon */
+.icon-purple {
+  color: var(--anim-purple, #8439A6) !important;
+}
+
+/* Info icon */
+.icon-info {
+  color: var(--color-info, #17A2B8) !important;
+}
+
+/* Salesforce icon */
+.icon-salesforce {
+  color: var(--color-salesforce, #00A1E0) !important;
+}
+
+/* Dark icon */
+.icon-dark {
+  color: var(--text-dark, #333) !important;
+}
+
+/* ============================================
+   RESOURCE BUTTONS CONTAINER
+   Flex wrapper for button groups in resource rows
+   ============================================ */
+
+.resource-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--spacing-sm);
+}
+
+.resource-buttons .btn {
+  margin: 0 !important;
+}
+
+/* ============================================
+   ALERT PANELS
+   Styled info/warning/success banners for content
+   ============================================ */
+
+.alert-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-sm);
+  line-height: 1.5;
+}
+
+.alert-panel i {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Info alert - Blue */
+.alert-panel.alert-info {
+  background-color: rgba(0, 102, 204, 0.1);
+  border-left: 4px solid var(--secondary-color);
+  color: var(--text-dark);
+}
+
+.alert-panel.alert-info i {
+  color: var(--secondary-color);
+}
+
+/* Warning alert - Orange/Amber */
+.alert-panel.alert-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid #F59E0B;
+  color: var(--text-dark);
+}
+
+.alert-panel.alert-warning i {
+  color: #F59E0B;
+}
+
+/* Success alert - Green */
+.alert-panel.alert-success {
+  background-color: rgba(40, 167, 69, 0.1);
+  border-left: 4px solid #28A745;
+  color: var(--text-dark);
+}
+
+.alert-panel.alert-success i {
+  color: #28A745;
+}
+
+/* Danger alert - Red */
+.alert-panel.alert-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-left: 4px solid #DC3545;
+  color: var(--text-dark);
+}
+
+.alert-panel.alert-danger i {
+  color: #DC3545;
+}
+
+/* ============================================
+   BUTTON SECONDARY STYLE
+   For less prominent actions (legacy/archive links)
+   ============================================ */
+
+.btn-secondary {
+  background-color: #6b7280 !important;
+  border-color: #6b7280 !important;
+  color: #ffffff !important;
+}
+
+.btn-secondary:hover {
+  background-color: #4b5563 !important;
+  border-color: #4b5563 !important;
+  color: #ffffff !important;
+}

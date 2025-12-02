@@ -1,0 +1,389 @@
+/**
+ * Enhanced Partner Portal Background Animations - FULL PAGE
+ * Version: 3.4.0
+ * 
+ * Features:
+ * - Fixed position animation spanning full viewport
+ * - Wave lines at top (100px, 250px from top)
+ * - Orbs near header area
+ * - No gradient blocking right side
+ * - Uses CSS variables from partnerportal.css design system
+ */
+
+/* ============================================
+   FULL PAGE BACKGROUND ANIMATION
+   Wraps entire page content
+   ============================================ */
+
+/* Full page animation wrapper - goes at the root level */
+.page-background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none !important;
+}
+
+/* Ensure page content sits above the background */
+.page-content-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* Background Animation Section */
+.nintex-background-animation {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+
+/* Full page mode - fixed position */
+.page-background-animation .nintex-background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.nintex-background-animation ~ *:not(.nintex-background-animation) {
+  position: relative;
+}
+
+/* FIXED: Ensure Orbs Are Properly Sized & Visible */
+.nintex-orbs-animation {
+  pointer-events: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  z-index: 1 !important; /* Changed from -1 to 1 - must be visible above background */
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* FIXED: Proper orb styling with explicit dimensions */
+.nintex-orbs-animation__orb {
+  position: absolute;
+  border-radius: 50% !important;
+  animation: floating 7s ease 0s infinite;
+  pointer-events: none !important;
+  transform-origin: center center;
+}
+
+/* FIXED: Explicitly sized orbs with proper positioning */
+.nintex-orbs-animation__orb.orb-purple {
+  width: 450px !important;
+  height: 450px !important;
+  left: 5%;
+  top: -5%;
+  --orb-color: var(--anim-purple, #8439A6);
+  background: radial-gradient(
+      50% 50% at 50% 50%,
+      color-mix(in srgb, var(--orb-color) 40%, transparent) 0%,
+      color-mix(in srgb, var(--orb-color) 25%, transparent) 30%,
+      color-mix(in srgb, var(--orb-color) 15%, transparent) 70%,
+      transparent 100%
+  );
+}
+
+.nintex-orbs-animation__orb.orb-orange {
+  width: 400px !important;
+  height: 400px !important;
+  left: 55%;
+  top: -10%;
+  --orb-color: var(--primary-color, #FF6B00);
+  background: radial-gradient(
+      50% 50% at 50% 50%,
+      color-mix(in srgb, var(--orb-color) 40%, transparent) 0%,
+      color-mix(in srgb, var(--orb-color) 25%, transparent) 30%,
+      color-mix(in srgb, var(--orb-color) 15%, transparent) 70%,
+      transparent 100%
+  );
+}
+
+.nintex-orbs-animation__orb.orb-pink {
+  width: 350px !important;
+  height: 350px !important;
+  left: 30%;
+  top: 5%;
+  --orb-color: var(--anim-pink, #ed2891);
+  background: radial-gradient(
+      50% 50% at 50% 50%,
+      color-mix(in srgb, var(--orb-color) 40%, transparent) 0%,
+      color-mix(in srgb, var(--orb-color) 25%, transparent) 30%,
+      color-mix(in srgb, var(--orb-color) 15%, transparent) 70%,
+      transparent 100%
+  );
+}
+
+/* Full page orb positioning - spread across viewport */
+.page-background-animation .nintex-orbs-animation__orb.orb-purple {
+  width: 500px !important;
+  height: 500px !important;
+  left: 5%;
+  top: 10%;
+  opacity: 0.35;
+}
+
+.page-background-animation .nintex-orbs-animation__orb.orb-orange {
+  width: 450px !important;
+  height: 450px !important;
+  left: 50%;
+  top: 5%;
+  opacity: 0.3;
+}
+
+.page-background-animation .nintex-orbs-animation__orb.orb-pink {
+  width: 400px !important;
+  height: 400px !important;
+  left: 70%;
+  top: 60%;
+  opacity: 0.3;
+}
+
+/* ============================================
+   WAVE LINE ANIMATIONS
+   ============================================ */
+
+.nintex-lines-animation {
+  position: absolute;
+  width: 100%;
+  z-index: 1 !important; /* Changed from -1 to 1 - must be visible above background */
+  pointer-events: none !important;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: visible;
+}
+
+.nintex-lines-animation svg {
+  position: absolute;
+  left: 0;
+  width: 400%;
+  animation: nintex-wave linear 28s infinite;
+  opacity: 0.5;
+  pointer-events: none !important;
+}
+
+.nintex-lines-animation svg path {
+  pointer-events: none !important;
+}
+
+/* Two-line configuration - Default */
+.nintex-lines-animation svg:nth-child(1) {
+  animation: nintex-wave linear 28s infinite;
+  top: 100px;
+}
+.nintex-lines-animation svg:nth-child(1) path {
+  stroke: var(--anim-wave-color-1, rgba(0, 102, 204, 0.2)) !important;
+  stroke-width: 2px !important;
+}
+
+.nintex-lines-animation svg:nth-child(2) {
+  animation: nintex-wave-reverse linear 38s infinite;
+  top: 250px;
+}
+.nintex-lines-animation svg:nth-child(2) path {
+  stroke: var(--anim-wave-color-2, rgba(255, 107, 0, 0.15)) !important;
+  stroke-width: 2px !important;
+}
+
+/* Hide 3rd wave by default (2-line mode) */
+.nintex-lines-animation svg:nth-child(3) {
+  display: none;
+}
+
+/* Full page wave positioning - bottom of viewport */
+.page-background-animation .nintex-lines-animation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+}
+
+.page-background-animation .nintex-lines-animation svg:nth-child(1) {
+  top: auto;
+  bottom: 15%;
+}
+
+.page-background-animation .nintex-lines-animation svg:nth-child(2) {
+  top: auto;
+  bottom: 5%;
+}
+
+/* Optional: 3-line mode - add class .three-lines to container */
+.three-lines .nintex-lines-animation svg:nth-child(3) {
+  display: block;
+  animation: nintex-wave linear 48s infinite;
+  top: 45%;
+}
+.three-lines .nintex-lines-animation svg:nth-child(3) path {
+  stroke: var(--anim-wave-color-3, rgba(132, 57, 166, 0.2)) !important;
+  stroke-width: 2px !important;
+}
+
+/* ============================================
+   GRADIENT OVERLAY
+   ============================================ */
+
+.nintex-background-gradient {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: none !important;
+  opacity: 0;
+  pointer-events: none !important;
+}
+
+.nintex-background-gradient.blue {
+  background: none !important;
+  opacity: 0;
+}
+
+/* Full page gradient - subtle white overlay on left */
+.page-background-animation .nintex-background-gradient.blue {
+  position: fixed;
+  right: 60%;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%
+  ) !important;
+}
+
+/* ============================================
+   ANIMATION KEYFRAMES
+   ============================================ */
+
+@keyframes floating {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(10%);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+@keyframes nintex-wave {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+@keyframes nintex-wave-reverse {
+  0% {
+      transform: translateX(-50%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (min-width: 768px) {
+  .nintex-orbs-animation--top-left + .nintex-orbs-animation,
+  .nintex-orbs-animation--bottom-left + .nintex-orbs-animation {
+      display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust orb sizing for mobile */
+  .nintex-orbs-animation__orb.orb-purple {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  
+  .nintex-orbs-animation__orb.orb-orange {
+    width: 220px !important;
+    height: 220px !important;
+  }
+  
+  .nintex-orbs-animation__orb.orb-pink {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .nintex-orbs-animation {
+    left: 0 !important;
+    opacity: 0.8 !important;
+  }
+  
+  /* Full page mobile adjustments */
+  .page-background-animation .nintex-orbs-animation__orb.orb-purple {
+    width: 300px !important;
+    height: 300px !important;
+    left: -5%;
+    top: 5%;
+  }
+  
+  .page-background-animation .nintex-orbs-animation__orb.orb-orange {
+    width: 250px !important;
+    height: 250px !important;
+    left: 60%;
+    top: 0%;
+  }
+  
+  .page-background-animation .nintex-orbs-animation__orb.orb-pink {
+    width: 220px !important;
+    height: 220px !important;
+    left: 50%;
+    top: 70%;
+  }
+}
+
+/* ============================================
+   BANNER-SPECIFIC OVERRIDES
+   When animation is inside a banner (not full page)
+   ============================================ */
+
+.main-banner-with-carousel,
+.main-banner-with-animation {
+  overflow: hidden !important;
+}
+
+.nintex-orbs-animation-wrapper {
+  position: relative !important;
+  height: 100% !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Make all animation elements non-interactive */
+.nintex-background-animation,
+.nintex-orbs-animation,
+.nintex-orbs-animation__orb,
+.nintex-lines-animation,
+.nintex-lines-animation svg,
+.nintex-lines-animation svg path,
+.nintex-background-gradient,
+.page-background-animation {
+  pointer-events: none !important;
+}
