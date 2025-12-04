@@ -2689,6 +2689,137 @@ main .container {
 }
 
 /* ============================================
+   LMS TRAINING PANEL
+   Partner training card for homepage
+   ============================================ */
+
+.lms-training-card {
+  background: rgba(255, 255, 255, var(--glass-bg-opacity, 0.9));
+  backdrop-filter: blur(var(--glass-blur, 8px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 8px));
+  border-radius: var(--border-radius-lg, 12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+  padding: var(--spacing-lg, 24px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.lms-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 12px);
+  margin-bottom: var(--spacing-md, 16px);
+  padding-bottom: var(--spacing-sm, 12px);
+  border-bottom: 2px solid var(--primary-color, #FF6B00);
+}
+
+.lms-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-color, #FF6B00), var(--secondary-color, #0066CC));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lms-icon i {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.lms-title {
+  font-size: var(--font-lg, 1.125rem);
+  font-weight: 600;
+  color: var(--text-dark, #333);
+  margin: 0;
+}
+
+.lms-content {
+  flex: 1;
+}
+
+.lms-description {
+  color: var(--text-medium, #555);
+  font-size: var(--font-sm, 0.875rem);
+  margin-bottom: var(--spacing-md, 16px);
+  line-height: 1.5;
+}
+
+.lms-quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 8px);
+}
+
+.lms-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 12px);
+  padding: var(--spacing-xs, 8px) var(--spacing-sm, 12px);
+  background: var(--light-gray, #f8f9fa);
+  border-radius: var(--border-radius-sm, 6px);
+  text-decoration: none;
+  color: var(--text-dark, #333);
+  font-size: var(--font-sm, 0.875rem);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.lms-link:hover {
+  background: rgba(0, 102, 204, 0.1);
+  transform: translateX(4px);
+  text-decoration: none;
+  color: var(--secondary-color, #0066CC);
+}
+
+.lms-link i {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.lms-footer {
+  margin-top: var(--spacing-md, 16px);
+  padding-top: var(--spacing-md, 16px);
+  border-top: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+}
+
+.lms-footer .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Responsive adjustments for LMS panel */
+@media (max-width: 991px) {
+  .lms-training-card {
+    margin-top: var(--spacing-lg, 24px);
+  }
+}
+
+@media (max-width: 767px) {
+  .lms-quick-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xs, 8px);
+  }
+  
+  .lms-link {
+    padding: var(--spacing-sm, 12px);
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-xs, 6px);
+  }
+  
+  .lms-link:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ============================================
    BUTTON SECONDARY STYLE
    For less prominent actions (legacy/archive links)
    ============================================ */
