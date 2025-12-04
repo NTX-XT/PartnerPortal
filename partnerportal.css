@@ -8,20 +8,15 @@
 
 /* Import fonts (centralized here to avoid duplicate requests) */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-/* Ensure the background applies to all navbar variants */
-    
-[top-bar].top-bar {
-background: #8439A6;
-    background-image: initial;
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: #8439A6 !important;
-    }
+
+/* ============================================
+   TOP BAR - Background Color Override
+   ============================================ */
+[top-bar].top-bar,
+.top-bar {
+  background-color: var(--anim-purple) !important; /* #8439A6 */
+}
+
 [top-nav] .navbar-brand {
   max-width: 15rem !important;
 }
@@ -1070,6 +1065,232 @@ background: #8439A6;
 .partner-manager-email:hover {
   color: var(--secondary-color);
   text-decoration: underline;
+}
+
+/* ============================================
+   PAM CARD - Partner Account Manager Card
+   (Consolidated from pam-styles.css)
+   ============================================ */
+
+/* PAM-Carousel Container Integration */
+.pam-carousel-container {
+  padding: 0 !important;
+  padding-top: 15px !important;
+}
+
+.pam-carousel-container > .row {
+  margin: 0 !important;
+  width: 100%;
+}
+
+.pam-carousel-container > .row > .col-md-4,
+.pam-carousel-container > .row > .col-md-8 {
+  padding: 0 5px !important;
+}
+
+.pam-carousel-container .row {
+  --bs-gutter-x: 0 !important;
+}
+
+/* PAM Card - extends portal-card base */
+.pam-card {
+  height: 195px !important;
+  min-height: 195px !important;
+  max-height: 195px !important;
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid var(--secondary-color);
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Standalone fallback if portal-card not applied */
+.pam-card:not(.portal-card) {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: visible;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+}
+
+.pam-card:not(.portal-card):hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Card header with floating tag */
+.pam-header {
+  padding: 20px 15px 10px 15px;
+  background-color: rgba(245, 247, 250, 0.8);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  flex-shrink: 0;
+  height: 66px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Team tag - floating above card */
+.pam-tag {
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius);
+  z-index: 10;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.pam-title {
+  color: var(--secondary-color);
+  margin: 0;
+  font-size: var(--font-lg);
+  font-weight: 600;
+}
+
+/* Card content area */
+.pam-content {
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Avatar styling */
+.pam-avatar {
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pam-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pam-default-avatar {
+  background-color: var(--secondary-color);
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pam-default-avatar i {
+  font-size: 1.8rem;
+}
+
+.support-avatar {
+  background-color: var(--primary-color);
+}
+
+/* Contact details section */
+.pam-details {
+  flex: 1;
+  overflow: hidden;
+}
+
+.pam-name {
+  margin: 0 0 5px 0;
+  color: var(--secondary-color);
+  font-size: var(--font-xl);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pam-role {
+  margin: 0 0 8px 0;
+  color: var(--text-medium);
+  font-size: var(--font-base);
+  font-weight: 500;
+}
+
+.pam-region {
+  margin: 3px 0;
+  color: var(--text-light);
+  font-size: var(--font-base);
+}
+
+.pam-contact-link {
+  display: block;
+  color: var(--text-medium);
+  margin-bottom: 5px;
+  text-decoration: none;
+  font-size: var(--font-xl);
+  transition: color var(--transition-speed) ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pam-contact-link:hover {
+  color: var(--primary-color);
+}
+
+.pam-contact-link i {
+  margin-right: 5px;
+  color: var(--primary-color);
+  width: 16px;
+  text-align: center;
+}
+
+/* Footer with action buttons */
+.pam-footer {
+  padding: 10px 15px;
+  border-top: 1px solid var(--border-color);
+  background-color: rgba(245, 247, 250, 0.5);
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.pam-action-btn {
+  padding: 5px 10px;
+  font-size: var(--font-base);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PAM Card responsive adjustments */
+@media (max-width: 767px) {
+  .pam-card {
+    margin-bottom: 15px !important;
+    height: auto !important;
+    min-height: 180px !important;
+    max-height: none !important;
+    margin-top: 15px !important;
+  }
 }
 
 /* ============================================
