@@ -2693,17 +2693,22 @@ main .container {
    Partner training card for homepage
    ============================================ */
 
-.lms-training-card {
-  background: rgba(255, 255, 255, var(--glass-bg-opacity, 0.9));
-  backdrop-filter: blur(var(--glass-blur, 8px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 8px));
-  border-radius: var(--border-radius-lg, 12px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: var(--box-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
-  padding: var(--spacing-lg, 24px);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.lms-training-card,
+div.lms-training-card,
+.col-lg-4 .lms-training-card,
+.col-md-5 .lms-training-card {
+  background: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+  padding: 24px !important;
+  height: auto;
+  min-height: 300px;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .lms-header {
