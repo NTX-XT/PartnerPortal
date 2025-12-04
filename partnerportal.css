@@ -219,6 +219,132 @@ background: #8439A6;
 }
 
 /* ============================================
+   PORTAL CARD - Shared Base Component
+   ============================================
+   Use this base class for all homepage cards:
+   - .pam-card (Partner Account Manager)
+   - .featured-event-card
+   - .lms-training-card
+   
+   Apply .portal-card as base, then add specific class for variations.
+   Example: <div class="portal-card featured-event-card">
+   ============================================ */
+
+.portal-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+  min-height: 280px;
+  height: 100%;
+  transition: transform var(--transition-speed) ease, 
+              box-shadow var(--transition-speed) ease;
+  position: relative;
+  overflow: visible; /* Allow floating tags */
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.portal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Portal card header - shared tag/title pattern */
+.portal-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Floating tag that extends above card */
+.portal-card-tag {
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius);
+  z-index: 10;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+  transition: transform var(--transition-speed) ease;
+}
+
+.portal-card:hover .portal-card-tag {
+  transform: translateY(-2px);
+}
+
+/* Tag color variants */
+.portal-card-tag.tag-primary { background-color: var(--primary-color); }
+.portal-card-tag.tag-secondary { background-color: var(--secondary-color); }
+.portal-card-tag.tag-success { background-color: var(--color-success); }
+.portal-card-tag.tag-purple { background-color: var(--anim-purple); }
+
+/* Portal card icon - circular gradient icon */
+.portal-card-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.portal-card-icon i {
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* Portal card title */
+.portal-card-title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Portal card content area */
+.portal-card-content {
+  flex: 1;
+  padding: var(--spacing-md);
+}
+
+/* Portal card footer */
+.portal-card-footer {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments for portal cards */
+@media (max-width: 991px) {
+  .portal-card {
+    margin-top: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 767px) {
+  .portal-card {
+    min-height: auto;
+  }
+}
+
+/* ============================================
    Base Elements & Utility Classes
    ============================================ */
 /* Font family will be applied individually to specific components that need it */
@@ -1804,22 +1930,26 @@ section .container,
   font-size: var(--font-sm);
 }
 
-/* Standalone featured event card */
+/* Standalone featured event card - extends portal-card base */
 .featured-event-card {
-  background: #ffffff;
+  /* Layout-specific properties (not in base) */
+  overflow: hidden;
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Standalone fallback if portal-card not applied */
+.featured-event-card:not(.portal-card) {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
   min-height: 280px;
   height: 100%;
   transition: all 0.3s ease;
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .featured-event-card.loaded {
@@ -1827,7 +1957,7 @@ section .container,
   transform: translateY(0);
 }
 
-.featured-event-card:hover {
+.featured-event-card:not(.portal-card):hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }

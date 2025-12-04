@@ -2691,24 +2691,34 @@ main .container {
 /* ============================================
    LMS TRAINING PANEL
    Partner training card for homepage
+   Extends .portal-card base class from partnerportal.css
    ============================================ */
 
-.lms-training-card,
-div.lms-training-card,
-.col-lg-4 .lms-training-card,
-.col-md-5 .lms-training-card {
-  background: #ffffff !important;
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 12px !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+/* LMS card - extends portal-card base, adds specific styling */
+.lms-training-card {
+  /* Inherits from .portal-card when used together */
+  /* These are LMS-specific overrides only */
   padding: 24px !important;
-  min-height: 280px;
-  height: 100%;
   display: flex !important;
   flex-direction: column !important;
+}
+
+/* Standalone fallback if portal-card not applied */
+.lms-training-card:not(.portal-card) {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 280px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.lms-training-card:not(.portal-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 .lms-header {

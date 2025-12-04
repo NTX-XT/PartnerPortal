@@ -1,9 +1,9 @@
 /**
  * Partner Account Manager (PAM) Card Styling
- * Version: 2.0.0
+ * Version: 3.0.0 - Uses portal-card base class
  * 
- * This file contains ALL styles for the Partner Account Manager card component.
- * Self-contained - no dependencies on partnerportal.css for PAM-specific styles
+ * This file contains styles for the Partner Account Manager card component.
+ * Extends .portal-card base class from partnerportal.css
  */
 
 /* PAM-Carousel Container Integration */
@@ -23,28 +23,33 @@
   --bs-gutter-x: 0 !important;
 }
 
-/* PAM Card Styling - Following partner portal design patterns */
+/* PAM Card - extends portal-card base, adds specific sizing/layout */
 .pam-card {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  overflow: visible; /* Allow tag to extend outside */
-  height: 195px !important; /* Fixed height to match carousel */
+  /* PAM-specific overrides for carousel alignment */
+  height: 195px !important;
   min-height: 195px !important;
   max-height: 195px !important;
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
   border-left: 4px solid var(--secondary-color);
   margin: 0 !important;
   padding: 0 !important;
   width: 100%;
   box-sizing: border-box;
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segue UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  position: relative; /* Enable absolute positioning for tag */
 }
 
-.pam-card:hover {
+/* Standalone fallback if portal-card not applied */
+.pam-card:not(.portal-card) {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: visible;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+}
+
+.pam-card:not(.portal-card):hover {
   transform: translateY(-3px);
   box-shadow: var(--box-shadow-hover);
 }
