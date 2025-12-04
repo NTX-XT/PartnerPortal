@@ -3216,5 +3216,247 @@ html [home] section.announcement-carousel {
 }
 
 /* ============================================
+   FOOTER STYLES
+   (Consolidated from footer.css)
+   Matches Nintex public website footer design
+   ============================================ */
+
+/* Main footer container */
+footer[site-footer] {
+  background-color: #050521;
+  color: #fff;
+  padding: var(--spacing-xl) 0 var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  position: relative;
+  z-index: 10;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Pink gradient accent at top */
+footer[site-footer]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff2975, var(--primary-color));
+}
+
+/* Footer headings */
+footer[site-footer] h4 {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: white;
+  position: relative;
+  padding-bottom: var(--spacing-xs);
+}
+
+/* Address section */
+.footer-info {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.address {
+  display: flex;
+  align-items: center;
+}
+
+.address i {
+  color: var(--primary-color);
+  font-size: var(--font-lg);
+  margin-right: var(--spacing-sm);
+}
+
+.address--address {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.address--address p {
+  margin: 0;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-base);
+}
+
+/* Terms link */
+.terms {
+  margin-top: var(--spacing-sm);
+}
+
+.terms a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: var(--font-base);
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.terms a i {
+  margin-right: var(--spacing-xs);
+  color: var(--primary-color);
+}
+
+.terms a:hover {
+  color: white;
+}
+
+/* Contact list */
+.footer-contact {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.footer-contact li {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+}
+
+.footer-contact li span {
+  color: var(--primary-color);
+  margin-right: var(--spacing-xs);
+  font-size: var(--font-base);
+}
+
+.footer-contact li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: var(--font-base);
+}
+
+.footer-contact li a:hover {
+  color: white;
+}
+
+/* Social media links */
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.footer-social li {
+  display: inline-block;
+}
+
+.icon-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  background-color: transparent;
+}
+
+.icon-outline:hover {
+  opacity: 0.8;
+}
+
+.icon-outline i {
+  font-size: 1.5rem;
+}
+
+/* Copyright */
+.copyright {
+  margin-top: var(--spacing-lg);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--font-sm);
+  display: flex;
+  align-items: center;
+}
+
+/* Footer links */
+footer[site-footer] a {
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+footer[site-footer] a:hover {
+  opacity: 0.8;
+}
+
+footer[site-footer] a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Footer responsive */
+@media (max-width: 767px) {
+  footer[site-footer] {
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+    text-align: center;
+  }
+  
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .address {
+    justify-content: center;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .address--address {
+    align-items: center;
+  }
+  
+  .terms {
+    margin-top: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .footer-contact li {
+    justify-content: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+    margin-top: var(--spacing-md);
+  }
+  
+  .col-sm-3, .col-sm-4, .col-sm-5 {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .copyright {
+    justify-content: center;
+  }
+}
+
+/* Footer print styles */
+@media print {
+  footer[site-footer] {
+    background-color: white !important;
+    color: black !important;
+    border-top: 1px solid #ddd;
+  }
+  
+  footer[site-footer]::before {
+    display: none;
+  }
+  
+  footer[site-footer] a,
+  footer[site-footer] p,
+  footer[site-footer] span,
+  footer[site-footer] h4,
+  .copyright {
+    color: black !important;
+  }
+}
+
+/* ============================================
    END OF PARTNER PORTAL STYLES
    ============================================ */
