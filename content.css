@@ -1608,7 +1608,7 @@ body .page-header-bar,
 div.page-header-bar,
 [class*="page-header-bar"] {
   background: linear-gradient(135deg, var(--secondary-color) 0%, #1a4a8c 100%) !important;
-  padding-top: 130px !important; /* Fixed navbar offset - matches --navbar-height */
+  padding-top: 100px !important; /* Fixed navbar offset - matches --navbar-height */
   padding-bottom: var(--spacing-sm) !important;
   margin-bottom: 0 !important;
   position: relative !important;
