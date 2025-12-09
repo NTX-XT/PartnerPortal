@@ -1,7 +1,7 @@
 /* Nintex Form Background Animations
  * Enhanced version with colored gradient lines on white background
  * Designed for Nintex Forms 2025/2026
- * Version 2.0: Fixed 3-wave animation using reliable Nintex Forms selectors
+ * Version 2.1: Using Nintex-specific selectors for reliable wave rendering
  */
 
 /* Variables - Nintex brand colors */
@@ -18,76 +18,69 @@
 
 /* Page Background Color - White like the Nintex website */
 body {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* Create stacking context at root level */
     position: relative;
     z-index: 0;
 }
 
 /* ================= WAVE LINES WITH GRADIENT COLORS ================= */
 /* Wave 1 - Purple to Pink gradient (top wave, moves right) */
-body::before {
-    content: '';
-    position: fixed;
-    top: 8%;
-    left: 0;
-    width: 400%;
-    height: 200px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 5392 393' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='purplePinkGrad' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%238439A6'/%3E%3Cstop offset='100%25' stop-color='%23ed2891'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205' stroke='url(%23purplePinkGrad)' stroke-width='4' stroke-miterlimit='10' fill='none'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-size: contain;
-    opacity: 0.5;
-    z-index: -1;
-    animation: nintex-wave 55s linear infinite;
-    pointer-events: none;
+/* Using #nx-form-container which is the main Nintex Forms wrapper */
+#nx-form-container::before {
+    content: '' !important;
+    display: block !important;
+    position: fixed !important;
+    top: 5% !important;
+    left: 0 !important;
+    width: 400% !important;
+    height: 200px !important;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 5392 393' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='purplePinkGrad' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%238439A6'/%3E%3Cstop offset='100%25' stop-color='%23ed2891'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205' stroke='url(%23purplePinkGrad)' stroke-width='5' stroke-miterlimit='10' fill='none'/%3E%3C/svg%3E") !important;
+    background-repeat: repeat-x !important;
+    background-size: contain !important;
+    opacity: 0.6 !important;
+    z-index: -1 !important;
+    animation: nintex-wave 55s linear infinite !important;
+    pointer-events: none !important;
 }
 
 /* Wave 2 - Orange to Light Orange gradient (middle wave, moves left) */
-body::after {
-    content: '';
-    position: fixed;
-    top: 12%;
-    left: -50%;
-    width: 400%;
-    height: 180px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 5392 393' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='orangeGrad' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23FF6D00'/%3E%3Cstop offset='100%25' stop-color='%23ff9f7b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205' stroke='url(%23orangeGrad)' stroke-width='4' stroke-miterlimit='10' fill='none'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-size: contain;
-    opacity: 0.5;
-    z-index: -1;
-    animation: nintex-wave-reverse 65s linear infinite;
-    pointer-events: none;
+#nx-form-container::after {
+    content: '' !important;
+    display: block !important;
+    position: fixed !important;
+    top: 10% !important;
+    left: -50% !important;
+    width: 400% !important;
+    height: 180px !important;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 5392 393' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='orangeGrad' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23FF6D00'/%3E%3Cstop offset='100%25' stop-color='%23ff9f7b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205' stroke='url(%23orangeGrad)' stroke-width='5' stroke-miterlimit='10' fill='none'/%3E%3C/svg%3E") !important;
+    background-repeat: repeat-x !important;
+    background-size: contain !important;
+    opacity: 0.6 !important;
+    z-index: -1 !important;
+    animation: nintex-wave-reverse 65s linear infinite !important;
+    pointer-events: none !important;
 }
 
-/* Wave 3 - Blue to Purple gradient (bottom wave, moves right slower) 
-   Using html::before since body pseudo-elements are taken */
-html::before {
-    content: '';
-    position: fixed;
-    top: 18%;
-    left: -25%;
-    width: 400%;
-    height: 160px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 5392 393' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='blueGrad' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%232A348A'/%3E%3Cstop offset='100%25' stop-color='%238439A6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205' stroke='url(%23blueGrad)' stroke-width='4' stroke-miterlimit='10' fill='none'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-size: contain;
-    opacity: 0.45;
-    z-index: -2;
-    animation: nintex-wave 75s linear infinite;
-    pointer-events: none;
-}
-
-/* Ensure html element supports pseudo-elements */
-html {
-    position: relative;
-}
-
-/* Hide any original problematic Nintex theme pseudo-elements */
+/* Wave 3 - Blue to Purple gradient (bottom wave, moves right slower) */
+/* Using .nx-theme-styles which wraps the form content */
 .nx-theme-styles::before {
-    display: none !important;
+    content: '' !important;
+    display: block !important;
+    position: fixed !important;
+    top: 15% !important;
+    left: -25% !important;
+    width: 400% !important;
+    height: 160px !important;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 5392 393' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='blueGrad' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%232A348A'/%3E%3Cstop offset='100%25' stop-color='%238439A6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M1.09229 380.193C256.031 398.471 485.518 390.369 880.247 185.382C1106.65 67.8087 1461.65 -152.288 2122.03 187.076C2244.01 249.758 2521.84 361.57 2696.34 380.205M2696 380.193C2950.94 398.471 3180.43 390.369 3575.15 185.382C3801.56 67.8087 4156.56 -152.288 4816.94 187.076C4938.92 249.758 5216.75 361.57 5391.24 380.205' stroke='url(%23blueGrad)' stroke-width='5' stroke-miterlimit='10' fill='none'/%3E%3C/svg%3E") !important;
+    background-repeat: repeat-x !important;
+    background-size: contain !important;
+    opacity: 0.5 !important;
+    z-index: -2 !important;
+    animation: nintex-wave 75s linear infinite !important;
+    pointer-events: none !important;
 }
 
 @keyframes nintex-wave {
@@ -109,26 +102,20 @@ html {
 }
 
 /* ================= ANIMATED ORBS ================= */
-/* Hide all existing orbs first */
-.nx-theme-styles::after,
-.nx-theme-form::before {
-    display: none !important;
-}
-
-/* First orb - Pink - using a different element */
-.language-selector-row::before {
+/* Pink orb - floating across the screen */
+.nx-theme-styles::after {
     content: '' !important;
     display: block !important;
     position: fixed !important;
     top: 5% !important;
-    left: 10% !important;
-    width: 350px !important;
-    height: 350px !important;
+    left: 5% !important;
+    width: 400px !important;
+    height: 400px !important;
     border-radius: 50% !important;
     background: radial-gradient(
         50% 50% at 50% 50%,
-        rgba(237, 40, 145, 0.3) 0%,
-        rgba(237, 40, 145, 0.2) 30%,
+        rgba(237, 40, 145, 0.35) 0%,
+        rgba(237, 40, 145, 0.25) 30%,
         rgba(237, 40, 145, 0.1) 70%,
         rgba(237, 40, 145, 0) 100%
     ) !important;
@@ -137,26 +124,26 @@ html {
     pointer-events: none !important;
 }
 
-/* Second orb - Orange gradient - correctly positioned at top right of form */
-.nx-form > div:first-child::after {
+/* Orange orb - pulsing at top right */
+.nx-theme-form::before {
     content: '' !important;
     display: block !important;
     position: fixed !important;
-    top: 8% !important; /* Position at top of viewport */
-    right: 10% !important; /* Position from right instead of left */
-    left: auto !important; /* Clear any left positioning */
-    width: 500px !important; /* Slightly larger */
+    top: 0 !important;
+    right: 5% !important;
+    left: auto !important;
+    width: 500px !important;
     height: 500px !important;
     border-radius: 50% !important;
     background: radial-gradient(
         50% 50% at 50% 50%,
         rgba(255, 159, 123, 0.4) 0%,
         rgba(255, 159, 123, 0.3) 30%,
-        rgba(255, 159, 123, 0.2) 70%,
+        rgba(255, 159, 123, 0.15) 70%,
         rgba(255, 159, 123, 0) 100%
     ) !important;
-    z-index: 0 !important; /* Same z-index as other backgrounds */
-    animation: orange-pulse 8s ease-in-out infinite !important; /* Simple pulsing animation */
+    z-index: -3 !important;
+    animation: orange-pulse 8s ease-in-out infinite !important;
     pointer-events: none !important;
 }
 
