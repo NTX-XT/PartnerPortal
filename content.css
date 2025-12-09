@@ -1,6 +1,6 @@
 /**
  * MAIN Content Styles - Consolidated
- * Version: 4.9.1 - Fixed container width alignment with page-header-bar
+ * Version: 4.9.2 - Fixed banner/content width alignment, resource-row icon vertical centering
  * 
  * This is the MAIN content styling file containing:
  * - Content page layouts and panels
@@ -20,6 +20,17 @@
    Ensures all content matches page-header-bar width
    Uses same responsive breakpoints as Bootstrap .container
    ============================================ */
+
+/* Page header bar INNER container - must match content container widths */
+.page-header-bar .container {
+  width: 95% !important;
+  max-width: var(--container-lg, 1280px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
 
 /* Content containers that follow page-header-bar should match its width */
 .page-header-bar ~ .container,
@@ -41,6 +52,7 @@
 
 /* Responsive width adjustments - match global .container breakpoints */
 @media (min-width: 1440px) {
+  .page-header-bar .container,
   .page-header-bar ~ .container,
   .page-header-bar ~ div > .container,
   .page-header-bar ~ .pricing-resources-container,
@@ -55,6 +67,7 @@
 }
 
 @media (min-width: 1920px) {
+  .page-header-bar .container,
   .page-header-bar ~ .container,
   .page-header-bar ~ div > .container,
   .page-header-bar ~ .pricing-resources-container,
@@ -345,15 +358,16 @@
   .resource-item {
     display: flex;
     width: 100%;
-    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-sm) 80px; /* Add left padding for attached icon */
-    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 80px; /* Reduced top padding for better title alignment */
+    align-items: flex-start; /* Align content to top for better icon/title alignment */
     position: relative !important;
     z-index: 5 !important; /* Higher than any animation element */
   }
   
   .resource-icon {
     position: absolute;
-    top: -12px; /* Position 50% outside the row border */
+    top: 50%; /* Center vertically within the row */
+    transform: translateY(-50%); /* Perfect vertical centering */
     left: 15px; /* Offset from the left edge */
     width: 50px;
     height: 50px;
@@ -373,7 +387,7 @@
   }
   
   .resource-row:hover .resource-icon {
-    transform: translateY(-2px) scale(1.05); /* Subtle lift and scale */
+    transform: translateY(-50%) scale(1.05); /* Maintain vertical centering + subtle scale */
     box-shadow: 
       0 6px 16px rgba(255, 107, 0, 0.25),
       0 2px 4px rgba(0, 0, 0, 0.1),
