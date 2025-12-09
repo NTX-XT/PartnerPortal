@@ -1,0 +1,1927 @@
+{
+  "id": "nintex-partner-survey-2026",
+  "name": "Nintex Global Partner Survey 2026",
+  "ruleGroups": [],
+  "theme": {
+    "name": "Custom",
+    "styles": {
+      "fontFamily": {
+        "name": "Open Sans",
+        "value": "\"Open Sans\", \"Helvetica\", \"Arial\", sans-serif"
+      },
+      "color": {
+        "pageBackground": "#EFF0F0",
+        "formBackground": "#FFFFFF",
+        "userInterface": "#575C61",
+        "highlight": "#006BD6",
+        "textInput": "#161718",
+        "fieldAndModal": "#FFFFFF",
+        "error": "#C23934",
+        "border": "#898F94"
+      },
+      "textSize": {
+        "textInput": 14,
+        "formText": 14
+      },
+      "borderStyle": "Rounded",
+      "name": "Custom"
+    },
+    "customCss": {
+      "cssIsTurnedOff": false,
+      "url": "https://ntxtemplatestorage.blob.core.windows.net/partner/nintex2025.css"
+    }
+  },
+  "pageSettings": {
+    "headerText": "multiPage.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT",
+    "footerText": "multiPage.FORMDESIGNER_CONTROL_PROP_FOOTER_TEXT",
+    "pages": [
+      {
+        "name": "page_intro",
+        "title": "Introduction",
+        "isEnabled": true
+      },
+      {
+        "name": "page_partner_basics",
+        "title": "Partner Information",
+        "isEnabled": true
+      },
+      {
+        "name": "page_satisfaction",
+        "title": "Partnership Experience",
+        "isEnabled": true
+      },
+      {
+        "name": "page_agentic_abo",
+        "title": "Agentic Business Orchestration",
+        "isEnabled": true
+      },
+      {
+        "name": "page_enablement",
+        "title": "Enablement & Communication",
+        "isEnabled": true
+      },
+      {
+        "name": "page_competitive",
+        "title": "Market & Competition",
+        "isEnabled": true
+      },
+      {
+        "name": "page_future",
+        "title": "Future Partnership",
+        "isEnabled": true
+      }
+    ],
+    "pageTitleSize": "Heading 4",
+    "pageFlow": "2",
+    "pageStyle": "2",
+    "showTitle": true,
+    "showPageNavigation": true,
+    "showPageNumberIcon": true,
+    "showHeader": false,
+    "showFooter": false
+  },
+  "translationSettings": {
+    "selectedLanguages": [],
+    "participantLanguage": "en",
+    "baseLanguage": "en",
+    "enableRuntimeLanguageSelector": true
+  },
+  "version": 1,
+  "formType": "startform",
+  "contract": {
+    "version": "v3",
+    "variablePrefix": "ps"
+  },
+  "variableContext": {
+    "variables": []
+  },
+  "translations": {
+    "en": {
+      "intro_text.text": "<h1 style='font-size: 28px; color: #006BD6;'>Nintex Global Partner Survey 2026</h1><h2 style='font-size: 18px; color: #575C61;'>Share Your Feedback. Help Strengthen Our Partnership</h2><p style='margin-top: 20px;'>At Nintex, we believe strong and trusted partnerships drive the greatest impact for our customers. This year we have focused on strengthening our partner ecosystem, refining our go to market approach, and supporting the adoption of Nintex CE and our Agentic Business Orchestration capabilities.</p><p>As we reach Nintex's mid-fiscal-year point, we want to hear from you. This survey gives you the chance to tell us what is working, where we need to improve, and how we can better support your success.</p><p>Your feedback will guide our plans for the second half of the year and influence our investments, enablement, and programs as we prepare for the next fiscal year (July 2026).</p><p><strong>It should take no more than 5\u201310 minutes to complete.</strong></p><p><em>Thank you for helping us shape the future together.</em></p>",
+      "q1.title": "Q1. What is your current Nintex partner status?",
+      "q1.options": "Premier Plus|Premier Plus\nPremier|Premier\nCertified|Certified\nRegistered|Registered\nAggregator|Aggregator",
+      "q2.title": "Q2. What is your role in your organization?",
+      "q2.options": "Consultant|Consultant\nTechnical / Presales|Technical / Presales\nSales / Sales Leadership|Sales / Sales Leadership\nMarketing / Demand Gen|Marketing / Demand Gen\nExecutive / C-Level|Executive / C-Level\nOther|Other (please specify)",
+      "q2_other.title": "Please specify your role",
+      "q3.title": "Q3. Which region do you primarily operate in?",
+      "q3.options": "Asia-Pacific|Asia-Pacific\nEMEA|EMEA\nLatin America|Latin America\nNorth America|North America\nGlobal / Multi-region|Global / Multi-region",
+      "satisfaction_header.text": "<h2 style='font-size: 20px; color: #006BD6; margin-top: 20px;'>Partnership Experience & Satisfaction</h2>",
+      "q4.title": "Q4. Overall, how satisfied are you with your experience working with Nintex?",
+      "q4.description": "1 = Very Dissatisfied, 5 = Very Satisfied",
+      "q4.options": "1|1 - Very Dissatisfied\n2|2\n3|3\n4|4\n5|5 - Very Satisfied",
+      "q5.title": "Q5. How likely are you to recommend Nintex to a customer or peer?",
+      "q5.description": "1 = Not at all likely, 10 = Extremely likely",
+      "q5.options": "1|1\n2|2\n3|3\n4|4\n5|5\n6|6\n7|7\n8|8\n9|9\n10|10",
+      "q6_header.text": "<h3 style='font-size: 16px; color: #575C61; margin-top: 15px;'>Q6. How would you rate your support and engagement from the following teams?</h3><p style='font-size: 12px; color: #898F94;'>1 = Very Dissatisfied, 5 = Very Satisfied</p>",
+      "q6a.title": "Sales Teams",
+      "q6a.options": "1|1 - Very Dissatisfied\n2|2\n3|3\n4|4\n5|5 - Very Satisfied\nN/A|N/A",
+      "q6b.title": "Partner Organization",
+      "q6b.options": "1|1 - Very Dissatisfied\n2|2\n3|3\n4|4\n5|5 - Very Satisfied\nN/A|N/A",
+      "q6c.title": "Technical Enablement",
+      "q6c.options": "1|1 - Very Dissatisfied\n2|2\n3|3\n4|4\n5|5 - Very Satisfied\nN/A|N/A",
+      "q6d.title": "Marketing Support",
+      "q6d.options": "1|1 - Very Dissatisfied\n2|2\n3|3\n4|4\n5|5 - Very Satisfied\nN/A|N/A",
+      "q6e.title": "Product Team",
+      "q6e.options": "1|1 - Very Dissatisfied\n2|2\n3|3\n4|4\n5|5 - Very Satisfied\nN/A|N/A",
+      "q7.title": "Q7. How would you rate your overall experience with the new Nintex Global Partner Program?",
+      "q7.options": "Excellent|Excellent\nGood|Good\nNeutral|Neutral\nNeeds improvement|Needs improvement\nNot familiar with it|Not familiar with it\nWould like more information|Would like more information",
+      "q8.title": "Q8. What's one change Nintex could make that would most improve your experience?",
+      "q8.description": "Optional - Please share your thoughts",
+      "q8.placeholder": "Enter your feedback here...",
+      "abo_header.text": "<h2 style='font-size: 20px; color: #006BD6; margin-top: 20px;'>Agentic Business Orchestration</h2>",
+      "q9.title": "Q9. Do you feel adequately enabled to speak to and sell Nintex's Agentic Business Orchestration vision?",
+      "q9.options": "Yes|Yes\nSomewhat|Somewhat\nNo|No",
+      "q10.title": "Q10. How confident are you in positioning the Agentic Business Orchestration platform to customers?",
+      "q10.description": "1 = Not at all confident, 5 = Extremely confident",
+      "q10.options": "1|1 - Not at all confident\n2|2\n3|3\n4|4\n5|5 - Extremely confident",
+      "q11.title": "Q11. How would you rate the competitiveness of Nintex's Agentic Business Orchestration platform (technology and pricing) vs. the market?",
+      "q11.options": "Very competitive|Very competitive\nSomewhat competitive|Somewhat competitive\nNeutral|Neutral\nNeeds improvement|Needs improvement",
+      "q12.title": "Q12. How ready are your customers for an Agentic Business Orchestration journey?",
+      "q12.description": "1 = Not ready at all, 5 = Already progressing",
+      "q12.options": "1|1 - Not ready at all\n2|2\n3|3\n4|4\n5|5 - Already progressing",
+      "q13.title": "Q13. What type of enablement would best help your team advance in this space?",
+      "q13.description": "Select all that apply",
+      "q13.options": "Sales training|Sales training\nTechnical deep dives|Technical deep dives\nCustomer-facing materials|Customer-facing materials\nUse cases & case studies|Use cases & case studies\nCompetitive positioning|Competitive positioning\nOther|Other",
+      "q13_other.title": "Please specify other enablement needs",
+      "q14.title": "Q14. How would you rate your organization's AI readiness to deliver Nintex Agentic Business Orchestration solutions?",
+      "q14.description": "1 = Not ready at all, 5 = Fully enabled",
+      "q14.options": "1|1 - Not ready at all\n2|2\n3|3\n4|4\n5|5 - Fully enabled",
+      "q15.title": "Q15. What are the biggest challenges your customers face in adopting AI-driven automation?",
+      "q15.description": "Select all that apply",
+      "q15.options": "Lack of understanding of AI value|Lack of understanding of AI value\nData readiness issues|Data readiness issues\nSkills/talent gap|Skills/talent gap\nBudget/prioritization|Budget/prioritization\nRegulatory/privacy concerns|Regulatory/privacy concerns\nOther|Other",
+      "q15_other.title": "Please specify other challenges",
+      "enablement_header.text": "<h2 style='font-size: 20px; color: #006BD6; margin-top: 20px;'>Enablement & Communication</h2>",
+      "q16.title": "Q16. How would you rate the Nintex Partner Portal experience?",
+      "q16.options": "Excellent|Excellent\nAdequate|Adequate\nNeeds improvement|Needs improvement\nPoor|Poor",
+      "q17.title": "Q17. Do you use Solution Studio?",
+      "q17.options": "Yes|Yes\nNo|No\nI don't have access|I don't have access",
+      "q18.title": "Q18. If no, what's the main reason?",
+      "q18.options": "Unaware of it|Unaware of it\nToo complex|Too complex\nNot useful|Not useful\nNot relevant to my role|Not relevant to my role\nOther|Other (please specify)",
+      "q18_other.title": "Please specify the reason",
+      "q19.title": "Q19. How would you rate the quality of communication you receive from Nintex?",
+      "q19.options": "Excellent|Excellent\nGood|Good\nInconsistent|Inconsistent\nNeeds improvement|Needs improvement",
+      "q20.title": "Q20. How frequently would you prefer meetings with your Nintex team?",
+      "q20.options": "Weekly|Weekly\nBi-weekly|Bi-weekly\nMonthly|Monthly\nQuarterly|Quarterly\nOther|Other (please specify)",
+      "q20_other.title": "Please specify your preferred frequency",
+      "q21.title": "Q21. What topics are most valuable in those meetings?",
+      "q21.description": "Select all that apply",
+      "q21.options": "Product updates / roadmap|Product updates / roadmap\nTechnical enablement|Technical enablement\nSales planning / forecasting|Sales planning / forecasting\nMarketing campaigns|Marketing campaigns\nCommercial support|Commercial support\nOther|Other",
+      "q21_other.title": "Please specify other topics",
+      "competitive_header.text": "<h2 style='font-size: 20px; color: #006BD6; margin-top: 20px;'>Market & Competition</h2>",
+      "q22.title": "Q22. Do you also partner with other automation vendors?",
+      "q22.description": "Select all that apply",
+      "q22.options": "Nintex only|Nintex only\nMicrosoft Power Automate|Microsoft Power Automate\nUiPath|UiPath\nAutomation Anywhere|Automation Anywhere\nBlue Prism|Blue Prism\nServiceNow|ServiceNow\nSAP BTP / Signavio|SAP BTP / Signavio\nOther|Other",
+      "q22_other.title": "Please specify other vendors",
+      "q23.title": "Q23. Which competitors do you most frequently encounter in your region or deals?",
+      "q23.description": "Optional",
+      "q23.placeholder": "Enter competitor names...",
+      "q24.title": "Q24. How would you rate the competitiveness of Nintex's pricing model?",
+      "q24.options": "Very competitive|Very competitive\nSomewhat competitive|Somewhat competitive\nNeutral|Neutral\nSomewhat uncompetitive|Somewhat uncompetitive\nVery uncompetitive|Very uncompetitive",
+      "q25.title": "Q25. How easy is Nintex's pricing to understand and communicate to customers?",
+      "q25.options": "Very easy|Very easy\nSomewhat easy|Somewhat easy\nNeutral|Neutral\nSomewhat hard|Somewhat hard\nVery hard|Very hard",
+      "q26.title": "Q26. How aligned is Nintex's platform and strategy with your customers' needs?",
+      "q26.options": "Very well aligned|Very well aligned\nSomewhat aligned|Somewhat aligned\nNeutral|Neutral\nMisaligned|Misaligned",
+      "future_header.text": "<h2 style='font-size: 20px; color: #006BD6; margin-top: 20px;'>Future Partnership</h2>",
+      "q27.title": "Q27. Are you planning to increase your investment in Nintex over the next 12 months?",
+      "q27.options": "Yes \u2013 significantly|Yes \u2013 significantly\nYes \u2013 moderately|Yes \u2013 moderately\nNot planning to increase|Not planning to increase\nConsidering reducing|Considering reducing",
+      "q28.title": "Q28. What could Nintex do to help you win more business?",
+      "q28.description": "Select all that apply",
+      "q28.options": "Industry-specific solutions|Industry-specific solutions\nBetter GTM alignment|Better GTM alignment\nCompetitive pricing|Competitive pricing\nMarketing support|Marketing support\nMore frequent enablement|More frequent enablement\nOther|Other",
+      "q28_other.title": "Please specify what else would help",
+      "q29.title": "Q29. Do you see Nintex as a strategic partner for the future?",
+      "q29.options": "Absolutely|Absolutely\nLikely|Likely\nUnsure|Unsure\nNot currently|Not currently",
+      "q30.title": "Q30. Any final thoughts or suggestions?",
+      "q30.description": "Optional",
+      "q30.placeholder": "Share any additional feedback...",
+      "thank_you.text": "<h2 style='font-size: 24px; color: #006BD6; text-align: center;'>Thank You!</h2><p style='text-align: center; margin-top: 20px;'>Thank you for taking the time to complete the Nintex Global Partner Survey 2026.</p><p style='text-align: center;'>Your feedback is invaluable and will directly influence our partnership strategy and investments for the coming year.</p><p style='text-align: center; margin-top: 20px;'><strong>We appreciate your partnership!</strong></p>",
+      "actionpanel1.FORMDESIGNER_CONTROL_PROP_PRINT_BUTTON_LABEL": "Print",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_SUBMIT_TEXT_TITLE": "Submit Survey",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_NEXT_TEXT_TITLE": "Next",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_PREVIOUS_TEXT_TITLE": "Previous",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_SAVE_CONTINUE_TEXT_TITLE": "Save",
+      "actionpanel1.FORMDESIGNER_ACTIONPANEL_CANCEL_TEXT_TITLE": "Cancel",
+      "page_intro.FORMDESIGNER_CONTROL_PROP_TITLE": "Introduction",
+      "page_partner_basics.FORMDESIGNER_CONTROL_PROP_TITLE": "Partner Information",
+      "page_satisfaction.FORMDESIGNER_CONTROL_PROP_TITLE": "Partnership Experience",
+      "page_agentic_abo.FORMDESIGNER_CONTROL_PROP_TITLE": "Agentic Business Orchestration",
+      "page_enablement.FORMDESIGNER_CONTROL_PROP_TITLE": "Enablement & Communication",
+      "page_competitive.FORMDESIGNER_CONTROL_PROP_TITLE": "Market & Competition",
+      "page_future.FORMDESIGNER_CONTROL_PROP_TITLE": "Future Partnership",
+      "multiPage.FORMDESIGNER_CONTROL_PROP_HEADER_TEXT": "",
+      "multiPage.FORMDESIGNER_CONTROL_PROP_FOOTER_TEXT": "",
+      "Q1. What is your current Nintex partner status?": "Q1. What is your current Nintex partner status?",
+      "Q2. What is your role in your organization?": "Q2. What is your role in your organization?",
+      "Q3. Which region do you primarily operate in?": "Q3. Which region do you primarily operate in?",
+      "Q4. Overall, how satisfied are you with your experience working with Nintex?": "Q4. Overall, how satisfied are you with your experience working with Nintex?",
+      "Q5. How likely are you to recommend Nintex to a customer or peer?": "Q5. How likely are you to recommend Nintex to a customer or peer?",
+      "Q7. How would you rate your overall experience with the new Nintex Global Partner Program?": "Q7. How would you rate your overall experience with the new Nintex Global Partner Program?",
+      "Q8. What's one change Nintex could make that would most improve your experience?": "Q8. What's one change Nintex could make that would most improve your experience?",
+      "Q9. Do you feel adequately enabled to speak to and sell Nintex's Agentic Business Orchestration vision?": "Q9. Do you feel adequately enabled to speak to and sell Nintex's Agentic Business Orchestration vision?",
+      "Q10. How confident are you in positioning the Agentic Business Orchestration platform to customers?": "Q10. How confident are you in positioning the Agentic Business Orchestration platform to customers?",
+      "Q11. How would you rate the competitiveness of Nintex's Agentic Business Orchestration platform (technology and pricing) vs. the market?": "Q11. How would you rate the competitiveness of Nintex's Agentic Business Orchestration platform (technology and pricing) vs. the market?",
+      "Q12. How ready are your customers for an Agentic Business Orchestration journey?": "Q12. How ready are your customers for an Agentic Business Orchestration journey?",
+      "Q13. What type of enablement would best help your team advance in this space?": "Q13. What type of enablement would best help your team advance in this space?",
+      "Q14. How would you rate your organization's AI readiness to deliver Nintex Agentic Business Orchestration solutions?": "Q14. How would you rate your organization's AI readiness to deliver Nintex Agentic Business Orchestration solutions?",
+      "Q15. What are the biggest challenges your customers face in adopting AI-driven automation?": "Q15. What are the biggest challenges your customers face in adopting AI-driven automation?",
+      "Q16. How would you rate the Nintex Partner Portal experience?": "Q16. How would you rate the Nintex Partner Portal experience?",
+      "Q17. Do you use Solution Studio?": "Q17. Do you use Solution Studio?",
+      "Q18. If no, what's the main reason?": "Q18. If no, what's the main reason?",
+      "Q19. How would you rate the quality of communication you receive from Nintex?": "Q19. How would you rate the quality of communication you receive from Nintex?",
+      "Q20. How frequently would you prefer meetings with your Nintex team?": "Q20. How frequently would you prefer meetings with your Nintex team?",
+      "Q21. What topics are most valuable in those meetings?": "Q21. What topics are most valuable in those meetings?",
+      "Q22. Do you also partner with other automation vendors?": "Q22. Do you also partner with other automation vendors?",
+      "Q23. Which competitors do you most frequently encounter in your region or deals?": "Q23. Which competitors do you most frequently encounter in your region or deals?",
+      "Q24. How would you rate the competitiveness of Nintex's pricing model?": "Q24. How would you rate the competitiveness of Nintex's pricing model?",
+      "Q25. How easy is Nintex's pricing to understand and communicate to customers?": "Q25. How easy is Nintex's pricing to understand and communicate to customers?",
+      "Q26. How aligned is Nintex's platform and strategy with your customers' needs?": "Q26. How aligned is Nintex's platform and strategy with your customers' needs?",
+      "Q27. Are you planning to increase your investment in Nintex over the next 12 months?": "Q27. Are you planning to increase your investment in Nintex over the next 12 months?",
+      "Q28. What could Nintex do to help you win more business?": "Q28. What could Nintex do to help you win more business?",
+      "Q29. Do you see Nintex as a strategic partner for the future?": "Q29. Do you see Nintex as a strategic partner for the future?",
+      "Q30. Any final thoughts or suggestions?": "Q30. Any final thoughts or suggestions?"
+    }
+  },
+  "plugins": {},
+  "settings": {
+    "TimeZone": "Pacific Standard Time",
+    "Region": "en-US",
+    "TimeFormat": "12H",
+    "GeneralDefaultFileUpLoadControl": "ntx-no-default-control",
+    "GeneralSetValueRulesRunOption": 0
+  },
+  "rows": [
+    {
+      "controls": [
+        {
+          "id": "nintex_logo",
+          "dataType": "string",
+          "widget": "image",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "customizeName": true,
+            "name": "Nintex Logo",
+            "title": "",
+            "url": "https://www.nintex.com/wp-content/uploads/2024/10/nintex-logo-color.svg",
+            "alignment": "0",
+            "width": 120
+          }
+        },
+        {
+          "id": "form_title",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "customizeName": true,
+            "name": "Form Title",
+            "title": "",
+            "text": "<h1 style='font-size: 28px; color: #006BD6; text-align: right;'>Nintex Global Partner Survey 2026</h1><h2 style='font-size: 18px; color: #575C61; text-align: right;'>Share Your Feedback. Help Strengthen Our Partnership</h2>",
+            "textTranslation": "intro_text.text",
+            "verticalAlignment": "1"
+          }
+        }
+      ],
+      "sizes": [
+        3,
+        9
+      ],
+      "restrictions": {},
+      "pageName": "page_intro",
+      "id": "header_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "intro_text",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "name": "Introduction Text",
+            "title": "",
+            "text": "<p style='margin-top: 20px;'>At Nintex, we believe strong and trusted partnerships drive the greatest impact for our customers. This year we have focused on strengthening our partner ecosystem, refining our go to market approach, and supporting the adoption of Nintex CE and our Agentic Business Orchestration capabilities.</p><p>As we reach Nintex's mid-fiscal-year point, we want to hear from you. This survey gives you the chance to tell us what is working, where we need to improve, and how we can better support your success.</p><p>Your feedback will guide our plans for the second half of the year and influence our investments, enablement, and programs as we prepare for the next fiscal year (July 2026).</p><p><strong>It should take no more than 5\u201310 minutes to complete.</strong></p><p><em>Thank you for helping us shape the future together.</em></p>",
+            "textTranslation": "intro_text.text",
+            "verticalAlignment": "1"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_intro",
+      "id": "intro_text_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q1",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q1",
+            "title": "Q1. What is your current Nintex partner status?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q1.options",
+            "itemsTranslation": "q1.options",
+            "connectedVariableId": "ps_q1"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_partner_basics",
+      "id": "q1_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q2",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q2",
+            "title": "Q2. What is your role in your organization?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q2.options",
+            "itemsTranslation": "q2.options",
+            "connectedVariableId": "ps_q2"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_partner_basics",
+      "id": "q2_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q2_other",
+          "dataType": "string",
+          "widget": "textbox",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q2_other",
+            "title": "Please specify your role",
+            "connectedVariableId": "ps_q2_other",
+            "placeholder": "Enter your role"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_partner_basics",
+      "id": "q2_other_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q3",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q3",
+            "title": "Q3. Which region do you primarily operate in?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q3.options",
+            "itemsTranslation": "q3.options",
+            "connectedVariableId": "ps_q3"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_partner_basics",
+      "id": "q3_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "satisfaction_header",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "name": "satisfaction_header",
+            "title": "",
+            "text": "satisfaction_header.text",
+            "textTranslation": "satisfaction_header.text",
+            "verticalAlignment": "1"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_satisfaction",
+      "id": "satisfaction_header_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q4",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q4",
+            "title": "Q4. Overall, how satisfied are you with your experience working with Nintex?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q4.options",
+            "itemsTranslation": "q4.options",
+            "connectedVariableId": "ps_q4",
+            "description": "1 = Very Dissatisfied, 5 = Very Satisfied"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_satisfaction",
+      "id": "q4_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q5",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q5",
+            "title": "Q5. How likely are you to recommend Nintex to a customer or peer?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q5.options",
+            "itemsTranslation": "q5.options",
+            "connectedVariableId": "ps_q5",
+            "description": "1 = Not at all likely, 10 = Extremely likely"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_satisfaction",
+      "id": "q5_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q6_header",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "name": "q6_header",
+            "title": "",
+            "text": "q6_header.text",
+            "textTranslation": "q6_header.text",
+            "verticalAlignment": "1"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_satisfaction",
+      "id": "q6_header_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q6a",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q6a",
+            "title": "Sales Teams",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q6a.options",
+            "itemsTranslation": "q6a.options",
+            "connectedVariableId": "ps_q6a"
+          }
+        },
+        {
+          "id": "q6b",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q6b",
+            "title": "Partner Organization",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q6b.options",
+            "itemsTranslation": "q6b.options",
+            "connectedVariableId": "ps_q6b"
+          }
+        }
+      ],
+      "sizes": [
+        6,
+        6
+      ],
+      "restrictions": {},
+      "pageName": "page_satisfaction",
+      "id": "q6ab_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q6c",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q6c",
+            "title": "Technical Enablement",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q6c.options",
+            "itemsTranslation": "q6c.options",
+            "connectedVariableId": "ps_q6c"
+          }
+        },
+        {
+          "id": "q6d",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q6d",
+            "title": "Marketing Support",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q6d.options",
+            "itemsTranslation": "q6d.options",
+            "connectedVariableId": "ps_q6d"
+          }
+        }
+      ],
+      "sizes": [
+        6,
+        6
+      ],
+      "restrictions": {},
+      "pageName": "page_satisfaction",
+      "id": "q6cd_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q6e",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q6e",
+            "title": "Product Team",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q6e.options",
+            "itemsTranslation": "q6e.options",
+            "connectedVariableId": "ps_q6e"
+          }
+        }
+      ],
+      "sizes": [
+        6
+      ],
+      "restrictions": {},
+      "pageName": "page_satisfaction",
+      "id": "q6e_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q7",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q7",
+            "title": "Q7. How would you rate your overall experience with the new Nintex Global Partner Program?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q7.options",
+            "itemsTranslation": "q7.options",
+            "connectedVariableId": "ps_q7"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_satisfaction",
+      "id": "q7_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q8",
+          "dataType": "string",
+          "widget": "multilinetext",
+          "widgetMinimumSize": 6,
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q8",
+            "title": "Q8. What's one change Nintex could make that would most improve your experience?",
+            "format": "multiline-plain",
+            "textAreaRows": "5",
+            "autoResize": true,
+            "connectedVariableId": "ps_q8",
+            "placeholder": "Enter your feedback here...",
+            "description": "Optional"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_satisfaction",
+      "id": "q8_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "abo_header",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "name": "abo_header",
+            "title": "",
+            "text": "abo_header.text",
+            "textTranslation": "abo_header.text",
+            "verticalAlignment": "1"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "abo_header_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q9",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q9",
+            "title": "Q9. Do you feel adequately enabled to speak to and sell Nintex's Agentic Business Orchestration vision?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q9.options",
+            "itemsTranslation": "q9.options",
+            "connectedVariableId": "ps_q9"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "q9_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q10",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q10",
+            "title": "Q10. How confident are you in positioning the Agentic Business Orchestration platform to customers?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q10.options",
+            "itemsTranslation": "q10.options",
+            "connectedVariableId": "ps_q10",
+            "description": "1 = Not at all confident, 5 = Extremely confident"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "q10_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q11",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q11",
+            "title": "Q11. How would you rate the competitiveness of Nintex's Agentic Business Orchestration platform (technology and pricing) vs. the market?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q11.options",
+            "itemsTranslation": "q11.options",
+            "connectedVariableId": "ps_q11"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "q11_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q12",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q12",
+            "title": "Q12. How ready are your customers for an Agentic Business Orchestration journey?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q12.options",
+            "itemsTranslation": "q12.options",
+            "connectedVariableId": "ps_q12",
+            "description": "1 = Not ready at all, 5 = Already progressing"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "q12_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q13",
+          "dataType": "array",
+          "widget": "multichoice",
+          "widgetMinimumSize": 6,
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q13",
+            "title": "Q13. What type of enablement would best help your team advance in this space?",
+            "format": "string",
+            "viewType": "0",
+            "layoutType": "0",
+            "items": "q13.options",
+            "itemsType": {
+              "type": "string"
+            },
+            "itemsTranslation": "q13.options",
+            "connectedVariableId": "ps_q13",
+            "description": "Select all that apply"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "q13_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q13_other",
+          "dataType": "string",
+          "widget": "textbox",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q13_other",
+            "title": "Please specify other enablement needs",
+            "connectedVariableId": "ps_q13_other",
+            "placeholder": "Specify other enablement needs"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "q13_other_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q14",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q14",
+            "title": "Q14. How would you rate your organization's AI readiness to deliver Nintex Agentic Business Orchestration solutions?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q14.options",
+            "itemsTranslation": "q14.options",
+            "connectedVariableId": "ps_q14",
+            "description": "1 = Not ready at all, 5 = Fully enabled"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "q14_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q15",
+          "dataType": "array",
+          "widget": "multichoice",
+          "widgetMinimumSize": 6,
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q15",
+            "title": "Q15. What are the biggest challenges your customers face in adopting AI-driven automation?",
+            "format": "string",
+            "viewType": "0",
+            "layoutType": "0",
+            "items": "q15.options",
+            "itemsType": {
+              "type": "string"
+            },
+            "itemsTranslation": "q15.options",
+            "connectedVariableId": "ps_q15",
+            "description": "Select all that apply"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "q15_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q15_other",
+          "dataType": "string",
+          "widget": "textbox",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q15_other",
+            "title": "Please specify other challenges",
+            "connectedVariableId": "ps_q15_other",
+            "placeholder": "Specify other challenges"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_agentic_abo",
+      "id": "q15_other_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "enablement_header",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "name": "enablement_header",
+            "title": "",
+            "text": "enablement_header.text",
+            "textTranslation": "enablement_header.text",
+            "verticalAlignment": "1"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "enablement_header_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q16",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q16",
+            "title": "Q16. How would you rate the Nintex Partner Portal experience?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q16.options",
+            "itemsTranslation": "q16.options",
+            "connectedVariableId": "ps_q16"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "q16_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q17",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q17",
+            "title": "Q17. Do you use Solution Studio?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q17.options",
+            "itemsTranslation": "q17.options",
+            "connectedVariableId": "ps_q17"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "q17_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q18",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q18",
+            "title": "Q18. If no, what's the main reason?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q18.options",
+            "itemsTranslation": "q18.options",
+            "connectedVariableId": "ps_q18"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "q18_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q18_other",
+          "dataType": "string",
+          "widget": "textbox",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q18_other",
+            "title": "Please specify the reason",
+            "connectedVariableId": "ps_q18_other",
+            "placeholder": "Specify the reason"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "q18_other_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q19",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q19",
+            "title": "Q19. How would you rate the quality of communication you receive from Nintex?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q19.options",
+            "itemsTranslation": "q19.options",
+            "connectedVariableId": "ps_q19"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "q19_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q20",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q20",
+            "title": "Q20. How frequently would you prefer meetings with your Nintex team?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q20.options",
+            "itemsTranslation": "q20.options",
+            "connectedVariableId": "ps_q20"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "q20_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q20_other",
+          "dataType": "string",
+          "widget": "textbox",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q20_other",
+            "title": "Please specify your preferred frequency",
+            "connectedVariableId": "ps_q20_other",
+            "placeholder": "Specify frequency"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "q20_other_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q21",
+          "dataType": "array",
+          "widget": "multichoice",
+          "widgetMinimumSize": 6,
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q21",
+            "title": "Q21. What topics are most valuable in those meetings?",
+            "format": "string",
+            "viewType": "0",
+            "layoutType": "0",
+            "items": "q21.options",
+            "itemsType": {
+              "type": "string"
+            },
+            "itemsTranslation": "q21.options",
+            "connectedVariableId": "ps_q21",
+            "description": "Select all that apply"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "q21_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q21_other",
+          "dataType": "string",
+          "widget": "textbox",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q21_other",
+            "title": "Please specify other topics",
+            "connectedVariableId": "ps_q21_other",
+            "placeholder": "Specify other topics"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_enablement",
+      "id": "q21_other_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "competitive_header",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "name": "competitive_header",
+            "title": "",
+            "text": "competitive_header.text",
+            "textTranslation": "competitive_header.text",
+            "verticalAlignment": "1"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_competitive",
+      "id": "competitive_header_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q22",
+          "dataType": "array",
+          "widget": "multichoice",
+          "widgetMinimumSize": 6,
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q22",
+            "title": "Q22. Do you also partner with other automation vendors?",
+            "format": "string",
+            "viewType": "0",
+            "layoutType": "0",
+            "items": "q22.options",
+            "itemsType": {
+              "type": "string"
+            },
+            "itemsTranslation": "q22.options",
+            "connectedVariableId": "ps_q22",
+            "description": "Select all that apply"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_competitive",
+      "id": "q22_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q22_other",
+          "dataType": "string",
+          "widget": "textbox",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q22_other",
+            "title": "Please specify other vendors",
+            "connectedVariableId": "ps_q22_other",
+            "placeholder": "Specify other vendors"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_competitive",
+      "id": "q22_other_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q23",
+          "dataType": "string",
+          "widget": "multilinetext",
+          "widgetMinimumSize": 6,
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q23",
+            "title": "Q23. Which competitors do you most frequently encounter in your region or deals?",
+            "format": "multiline-plain",
+            "textAreaRows": "5",
+            "autoResize": true,
+            "connectedVariableId": "ps_q23",
+            "placeholder": "Enter competitor names...",
+            "description": "Optional"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_competitive",
+      "id": "q23_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q24",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q24",
+            "title": "Q24. How would you rate the competitiveness of Nintex's pricing model?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q24.options",
+            "itemsTranslation": "q24.options",
+            "connectedVariableId": "ps_q24"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_competitive",
+      "id": "q24_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q25",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q25",
+            "title": "Q25. How easy is Nintex's pricing to understand and communicate to customers?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q25.options",
+            "itemsTranslation": "q25.options",
+            "connectedVariableId": "ps_q25"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_competitive",
+      "id": "q25_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q26",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q26",
+            "title": "Q26. How aligned is Nintex's platform and strategy with your customers' needs?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q26.options",
+            "itemsTranslation": "q26.options",
+            "connectedVariableId": "ps_q26"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_competitive",
+      "id": "q26_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "future_header",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "name": "future_header",
+            "title": "",
+            "text": "future_header.text",
+            "textTranslation": "future_header.text",
+            "verticalAlignment": "1"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_future",
+      "id": "future_header_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q27",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q27",
+            "title": "Q27. Are you planning to increase your investment in Nintex over the next 12 months?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q27.options",
+            "itemsTranslation": "q27.options",
+            "connectedVariableId": "ps_q27"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_future",
+      "id": "q27_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q28",
+          "dataType": "array",
+          "widget": "multichoice",
+          "widgetMinimumSize": 6,
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q28",
+            "title": "Q28. What could Nintex do to help you win more business?",
+            "format": "string",
+            "viewType": "0",
+            "layoutType": "0",
+            "items": "q28.options",
+            "itemsType": {
+              "type": "string"
+            },
+            "itemsTranslation": "q28.options",
+            "connectedVariableId": "ps_q28",
+            "description": "Select all that apply"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_future",
+      "id": "q28_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q28_other",
+          "dataType": "string",
+          "widget": "textbox",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q28_other",
+            "title": "Please specify what else would help",
+            "connectedVariableId": "ps_q28_other",
+            "placeholder": "Specify what else would help"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_future",
+      "id": "q28_other_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q29",
+          "dataType": "string",
+          "widget": "choice",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": true,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q29",
+            "title": "Q29. Do you see Nintex as a strategic partner for the future?",
+            "viewType": "0",
+            "layoutType": "0",
+            "showPleaseSelect": true,
+            "searchable": true,
+            "items": "q29.options",
+            "itemsTranslation": "q29.options",
+            "connectedVariableId": "ps_q29"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_future",
+      "id": "q29_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "q30",
+          "dataType": "string",
+          "widget": "multilinetext",
+          "widgetMinimumSize": 6,
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": true,
+            "name": "q30",
+            "title": "Q30. Any final thoughts or suggestions?",
+            "format": "multiline-plain",
+            "textAreaRows": "5",
+            "autoResize": true,
+            "connectedVariableId": "ps_q30",
+            "placeholder": "Share any additional feedback...",
+            "description": "Optional"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_future",
+      "id": "q30_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "thank_you",
+          "dataType": "string",
+          "widget": "richtext-label",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "name": "thank_you",
+            "title": "",
+            "text": "thank_you.text",
+            "textTranslation": "thank_you.text",
+            "verticalAlignment": "1"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_future",
+      "id": "thank_you_row"
+    },
+    {
+      "controls": [
+        {
+          "id": "actionpanel1",
+          "widget": "actionpanel",
+          "source": {
+            "createdBy": "user"
+          },
+          "properties": {
+            "required": false,
+            "readOnly": false,
+            "visible": true,
+            "isConnectedToVariable": false,
+            "name": "FORMDESIGNER_ACTIONPANEL_TEXT_ALT",
+            "title": "",
+            "captchaEnabled": false,
+            "showHeader": false,
+            "showSubmitButton": true,
+            "showSaveAndContinueButton": false,
+            "isCancelRedirectUrlEnabled": false,
+            "showAfterSubmitPrintButton": false,
+            "afterSubmitPrintButtonLabel": "actionpanel1.FORMDESIGNER_CONTROL_PROP_PRINT_BUTTON_LABEL",
+            "submitButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_SUBMIT_TEXT_TITLE",
+            "afterSubmitType": "0",
+            "nextButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_NEXT_TEXT_TITLE",
+            "previousButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_PREVIOUS_TEXT_TITLE",
+            "saveAndContinueButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_SAVE_CONTINUE_TEXT_TITLE",
+            "cancelButtonText": "actionpanel1.FORMDESIGNER_ACTIONPANEL_CANCEL_TEXT_TITLE"
+          }
+        }
+      ],
+      "sizes": [
+        12
+      ],
+      "restrictions": {},
+      "pageName": "page_future",
+      "id": "action_panel_row"
+    }
+  ]
+}
