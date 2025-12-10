@@ -130,3 +130,137 @@ The Nintex Partner Assessment (`form.json`) is a complex multi-page form with:
 - Integration with partner management systems
 
 When modifying forms, maintain the readiness scoring logic and ensure proper data flow to backend systems.
+
+---
+
+## Impartner PX Partner Portal Development
+
+When building pages for **Impartner PX/PRM** partner portals, use the native design system classes. Reference: `impartner-px-reference.md`
+
+### Platform Overview
+Impartner PX uses **Bootstrap 5** as its foundation with custom `impdc-*` prefixed components. For WYSIWYG content:
+1. Use Bootstrap classes for basic styling (buttons, cards, alerts, badges)
+2. Use `impdc-*` classes for Impartner-specific components
+3. Keep custom CSS minimal - leverage the platform's built-in styles
+
+### Key CSS Classes Available in PX
+
+#### Buttons
+```html
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-outline-primary">Secondary</button>
+<button class="btn btn-outline-danger">Danger</button>
+<button class="btn btn-link">Link</button>
+<!-- Sizes: btn-xs, btn-sm, btn-lg -->
+```
+
+#### Cards
+```html
+<div class="card">
+    <div class="card-body">Content</div>
+</div>
+<!-- With header: card-heading, card-heading-body -->
+<!-- Data cards: impdc-data-card, impdc-data-card-body, impdc-data-card-title -->
+```
+
+#### Alerts (Impartner Structure)
+```html
+<div class="impdc alert alert-success">
+    <div class="alert-icon"><i class="fa fa-check-circle"></i></div>
+    <div class="alert-content">
+        <div class="alert-heading">Title</div>
+        <div class="alert-body">Message</div>
+    </div>
+</div>
+<!-- Variants: alert-dismissible, alert-inline, alert-content-heading-only -->
+```
+
+#### Forms
+```html
+<!-- Simple Bootstrap (recommended for WYSIWYG) -->
+<div class="mb-3">
+    <label class="form-label">Label</label>
+    <input type="text" class="form-control">
+</div>
+<select class="form-select">...</select>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox">
+    <label class="form-check-label">Option</label>
+</div>
+```
+
+#### Badges & Tags
+```html
+<span class="badge">Default</span>
+<span class="badge bg-success">Success</span>
+<span class="impdc-tag--text impdc-tag--rounded">Tag</span>
+```
+
+#### Tables
+```html
+<table class="table">
+    <thead><tr><th class="impdc-table-sort">Column</th></tr></thead>
+    <tbody><tr><td>Data</td></tr></tbody>
+</table>
+<!-- Row actions: impdc-table-row-actions--dropdown -->
+```
+
+#### Modal Layout
+```html
+<div class="impdc-modal-layout--theme-simple">
+    <div class="impdc-modal-layout--modal-header">...</div>
+    <div class="impdc-modal-layout--modal-body">...</div>
+    <div class="impdc-modal-layout--modal-footer">...</div>
+</div>
+```
+
+### Bootstrap Utilities Available
+- **Spacing**: `mt-3`, `mb-4`, `p-3`, `px-4`, `py-2`, `gap-2`
+- **Flexbox**: `d-flex`, `justify-content-between`, `align-items-center`
+- **Grid**: `row`, `col-md-4`, `col-lg-3`, `g-4`
+- **Text**: `text-muted`, `text-center`, `fw-bold`, `fs-5`
+
+### Icons
+Impartner uses **Font Awesome**:
+```html
+<i class="fa fa-check-circle"></i>
+<i class="fa fa-info-circle"></i>
+<i class="fa fa-download"></i>
+<i class="fa fa-external-link"></i>
+<i class="fa fa-chevron-right"></i>
+```
+
+### PX Page Template Example
+```html
+<!-- Header -->
+<div class="card mb-4">
+    <div class="card-body d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">Page Title</h4>
+        <button class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+    </div>
+</div>
+
+<!-- Content Grid -->
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5>Resource</h5>
+                <p class="text-muted">Description</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">
+                    View <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+### Best Practices for PX WYSIWYG
+1. **Keep it simple**: Use Bootstrap classes when possible
+2. **Test responsiveness**: Use Bootstrap grid (`row`, `col-md-*`)
+3. **Match platform style**: Use `btn-outline-primary` for secondary actions
+4. **No custom CSS if possible**: Leverage existing platform classes
+5. **Accessible**: Include `aria-label` on icon-only buttons
+
+*Full reference: See `impartner-px-reference.md` for complete documentation*

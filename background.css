@@ -18,10 +18,10 @@
 /* Full page animation wrapper - goes at the root level */
 .page-background-animation {
   position: fixed;
-  top: 0;
+  top: 110px; /* Start below navbar to prevent bleed-through */
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 110px);
   overflow: hidden;
   z-index: 0;
   pointer-events: none !important;

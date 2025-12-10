@@ -1,0 +1,484 @@
+/* ========================================
+   Nintex PX Styles - Reusable Components
+   For use in Impartner PX WYSIWYG pages
+   ======================================== */
+
+/* ----------------------------------------
+   BASE TEXT SIZING
+   ---------------------------------------- */
+body, .impdc {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+}
+
+p {
+    font-size: 1.1rem !important;
+    line-height: 1.65 !important;
+}
+
+h1 { font-size: 2.5rem !important; }
+h2 { font-size: 2rem !important; }
+h3 { font-size: 1.75rem !important; }
+h4 { font-size: 1.5rem !important; }
+h5 { font-size: 1.25rem !important; }
+h6 { font-size: 1.1rem !important; }
+
+/* ----------------------------------------
+   PAGE HEADER BANNER
+   ---------------------------------------- */
+.nx-page-header {
+    background: linear-gradient(135deg, #0066CC 0%, #004499 50%, #FF6B00 100%);
+    padding: 2.5rem 2rem;
+    margin: -1rem -1rem 2rem -1rem;
+}
+
+.nx-page-header h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.nx-page-header .nx-subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.35rem;
+    margin-bottom: 0;
+}
+
+/* Header buttons */
+.nx-btn-outline-white {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.nx-btn-outline-white:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+/* Header quick links */
+.nx-header-link {
+    color: rgba(255,255,255,0.95);
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.nx-header-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Header button sizing */
+.nx-page-header .btn {
+    font-size: 1.05rem !important;
+    padding: 0.6rem 1.25rem !important;
+}
+
+/* ----------------------------------------
+   SECTION HEADINGS
+   ---------------------------------------- */
+.nx-section-title {
+    color: #FF6B00;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.nx-section-title-sm {
+    color: #FF6B00;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* ----------------------------------------
+   VIDEO CONTAINER
+   ---------------------------------------- */
+.nx-video-wrapper {
+    padding: 56.25% 0 0 0;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nx-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------------------------------------
+   INFO LIST (Plus icon items)
+   ---------------------------------------- */
+.nx-info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.nx-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.nx-info-icon {
+    color: #0066CC;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.nx-info-text {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------
+   CHECK LIST (Checkmark items)
+   ---------------------------------------- */
+.nx-check-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    align-items: flex-start;
+}
+
+.nx-check-item:last-child {
+    margin-bottom: 0;
+}
+
+.nx-check-icon {
+    color: #28a745;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.nx-check-text {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------
+   FEATURE CARDS (Icon + text, centered)
+   ---------------------------------------- */
+.nx-feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    height: 100%;
+}
+
+.nx-feature-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.nx-feature-icon i {
+    color: white;
+    font-size: 1.75rem;
+}
+
+.nx-feature-icon.teal { background: #17a2b8; }
+.nx-feature-icon.green { background: #28a745; }
+.nx-feature-icon.purple { background: #6f42c1; }
+.nx-feature-icon.orange { background: #FF6B00; }
+.nx-feature-icon.blue { background: #0066CC; }
+.nx-feature-icon.red { background: #dc3545; }
+
+.nx-feature-text {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------
+   RESOURCE CARDS (Clickable cards)
+   ---------------------------------------- */
+.nx-resource-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    height: 100%;
+    transition: all 0.2s ease;
+}
+
+.nx-resource-card:hover {
+    border-color: #0066CC;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.nx-resource-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.nx-resource-icon.pdf { color: #dc3545; }
+.nx-resource-icon.settings { color: #6c757d; }
+.nx-resource-icon.education { color: #FF6B00; }
+.nx-resource-icon.email { color: #17a2b8; }
+.nx-resource-icon.blue { color: #0066CC; }
+.nx-resource-icon.green { color: #28a745; }
+
+.nx-resource-title {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.nx-resource-desc {
+    color: #6c757d;
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------
+   UTILITY CLASSES
+   ---------------------------------------- */
+.nx-mb-section {
+    margin-bottom: 3rem;
+}
+
+.nx-text-body {
+    font-size: 1.15rem;
+    line-height: 1.65;
+}
+
+.nx-text-lg {
+    font-size: 1.25rem;
+    line-height: 1.65;
+}
+
+/* ----------------------------------------
+   DOWNLOAD ITEMS (For download pages)
+   ---------------------------------------- */
+.nx-download-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.nx-download-item:hover {
+    border-color: #0066CC;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.nx-download-item.nx-download-featured {
+    border-left: 4px solid #0066CC;
+    background: #f8fbff;
+}
+
+.nx-download-icon {
+    width: 48px;
+    height: 48px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #6c757d;
+    font-size: 1.25rem;
+}
+
+.nx-download-icon.blue {
+    background: #e7f1ff;
+    color: #0066CC;
+}
+
+.nx-download-icon.green {
+    background: #e6f4ea;
+    color: #28a745;
+}
+
+.nx-download-icon.orange {
+    background: #fff4e6;
+    color: #FF6B00;
+}
+
+.nx-download-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.nx-download-content h5 {
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.nx-download-content h5 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.nx-download-content h5 a:hover {
+    color: #0066CC;
+}
+
+/* ----------------------------------------
+   INFO BOX (Callout box)
+   ---------------------------------------- */
+.nx-info-box {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff4d9 100%);
+    border: 1px solid #ffd966;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.nx-info-box-icon {
+    width: 48px;
+    height: 48px;
+    background: #FF6B00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.nx-info-box h5 {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.nx-info-box p {
+    color: #555;
+    font-size: 1.15rem;
+    line-height: 1.65;
+}
+
+/* ----------------------------------------
+   ALERT INLINE (Compact alerts)
+   ---------------------------------------- */
+.alert-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 6px;
+}
+
+/* ----------------------------------------
+   BUTTON OVERRIDES (Ensure visibility in PX)
+   ---------------------------------------- */
+.btn {
+    font-size: 1rem !important;
+}
+
+.btn-outline-primary {
+    color: #0066CC !important;
+    border-color: #0066CC !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-primary:hover {
+    color: white !important;
+    background-color: #0066CC !important;
+    border-color: #0066CC !important;
+}
+
+.btn-primary {
+    color: white !important;
+    background-color: #0066CC !important;
+    border-color: #0066CC !important;
+}
+
+.btn-primary:hover {
+    color: white !important;
+    background-color: #004499 !important;
+    border-color: #004499 !important;
+}
+
+/* Header buttons - white on gradient background */
+.nx-page-header .btn-light {
+    color: #333 !important;
+    background-color: white !important;
+    border-color: white !important;
+    font-weight: 600 !important;
+}
+
+.nx-page-header .btn-light:hover {
+    color: #0066CC !important;
+    background-color: #f8f9fa !important;
+}
+
+.nx-page-header .nx-btn-outline-white,
+.nx-btn-outline-white {
+    color: white !important;
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    font-weight: 600 !important;
+}
+
+.nx-page-header .nx-btn-outline-white:hover,
+.nx-btn-outline-white:hover {
+    color: #0066CC !important;
+    background-color: white !important;
+    border-color: white !important;
+}
+
+/* Download card buttons */
+.nx-download-content .btn {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
+}
+
+.nx-download-content .btn i {
+    margin-right: 0.35rem;
+}
+
+/* ----------------------------------------
+   DOWNLOAD ITEM TEXT SIZING
+   ---------------------------------------- */
+.nx-download-content h5 {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.4rem !important;
+}
+
+.nx-download-content p {
+    font-size: 1.05rem !important;
+    line-height: 1.55 !important;
+}
+
+.nx-download-content .text-muted {
+    color: #555 !important;
+}
+
+/* Section titles */
+.nx-section-title {
+    font-size: 1.5rem !important;
+}
+
+/* Alerts in download items */
+.nx-download-content .alert {
+    font-size: 0.95rem !important;
+    padding: 0.5rem 0.85rem !important;
+}

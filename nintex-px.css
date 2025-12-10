@@ -1,0 +1,441 @@
+/* ============================================
+   NINTEX PX/PRM STYLESHEET
+   For use with Impartner PX Partner Portal
+   Version: 1.0.0
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES - Nintex Brand Colors
+   ============================================ */
+:root {
+  /* Primary Brand Colors */
+  --ntx-orange: #FF6B00;
+  --ntx-orange-hover: #E55F00;
+  --ntx-blue: #0066CC;
+  --ntx-blue-hover: #0052A3;
+  --ntx-blue-dark: #003D7A;
+  
+  /* Secondary Colors */
+  --ntx-purple: #7B2D8E;
+  --ntx-green: #28A745;
+  --ntx-red: #DC3545;
+  
+  /* Neutrals */
+  --ntx-white: #FFFFFF;
+  --ntx-gray-100: #F8F9FA;
+  --ntx-gray-200: #E9ECEF;
+  --ntx-gray-300: #DEE2E6;
+  --ntx-gray-500: #6C757D;
+  --ntx-gray-700: #495057;
+  --ntx-gray-900: #212529;
+  
+  /* Spacing */
+  --ntx-spacing-xs: 8px;
+  --ntx-spacing-sm: 12px;
+  --ntx-spacing-md: 20px;
+  --ntx-spacing-lg: 32px;
+  --ntx-spacing-xl: 48px;
+  
+  /* Border Radius */
+  --ntx-radius-sm: 4px;
+  --ntx-radius-md: 8px;
+  --ntx-radius-lg: 12px;
+  
+  /* Shadows */
+  --ntx-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --ntx-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --ntx-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  
+  /* Typography */
+  --ntx-font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ============================================
+   PAGE HEADER BAR
+   Blue gradient header with title and actions
+   ============================================ */
+.page-header-bar {
+  background: linear-gradient(135deg, var(--ntx-blue) 0%, var(--ntx-blue-dark) 100%);
+  padding: var(--ntx-spacing-lg) 0;
+  margin-bottom: var(--ntx-spacing-lg);
+}
+
+.page-header-bar .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--ntx-spacing-md);
+}
+
+/* Banner Welcome - Left side */
+.banner-welcome {
+  flex: 1;
+  min-width: 280px;
+}
+
+.banner-header {
+  font-family: var(--ntx-font-family);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ntx-white);
+  margin: 0 0 var(--ntx-spacing-xs) 0;
+}
+
+.banner-text {
+  font-family: var(--ntx-font-family);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Banner Actions - Right side */
+.banner-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--ntx-spacing-sm);
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ntx-spacing-sm);
+}
+
+/* Button Styles */
+.action-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-family: var(--ntx-font-family);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--ntx-radius-md);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.action-buttons .btn-light {
+  background: var(--ntx-white);
+  color: var(--ntx-blue);
+  border-color: var(--ntx-white);
+}
+
+.action-buttons .btn-light:hover {
+  background: var(--ntx-gray-100);
+  color: var(--ntx-blue-dark);
+  transform: translateY(-1px);
+}
+
+.action-buttons .btn-outline-light {
+  background: transparent;
+  color: var(--ntx-white);
+  border-color: var(--ntx-white);
+}
+
+.action-buttons .btn-outline-light:hover {
+  background: var(--ntx-white);
+  color: var(--ntx-blue);
+}
+
+/* Quick Links */
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ntx-spacing-sm);
+}
+
+.quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--ntx-white);
+  font-family: var(--ntx-font-family);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: var(--ntx-radius-md);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.quick-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--ntx-white);
+  text-decoration: none;
+}
+
+/* ============================================
+   MAIN CONTENT CONTAINER
+   ============================================ */
+.pricing-resources-container {
+  background: var(--ntx-white);
+  border-radius: var(--ntx-radius-lg);
+  padding: var(--ntx-spacing-lg);
+  margin-bottom: var(--ntx-spacing-lg);
+  box-shadow: var(--ntx-shadow-md);
+}
+
+/* ============================================
+   PRICING NEWS PANEL (Video sections)
+   ============================================ */
+.pricing-news-panel {
+  background: var(--ntx-gray-100);
+  border-radius: var(--ntx-radius-md);
+  padding: var(--ntx-spacing-md);
+  margin-bottom: var(--ntx-spacing-md);
+  border-left: 4px solid var(--ntx-blue);
+}
+
+.panel-title {
+  font-family: var(--ntx-font-family);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ntx-blue);
+  margin: 0 0 var(--ntx-spacing-md) 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.panel-title i {
+  color: var(--ntx-orange);
+}
+
+/* ============================================
+   PRICING RESOURCES (Content sections)
+   ============================================ */
+.pricing-resources {
+  background: var(--ntx-white);
+  border-radius: var(--ntx-radius-md);
+  padding: var(--ntx-spacing-md);
+  margin-bottom: var(--ntx-spacing-md);
+  border-left: 4px solid var(--ntx-blue);
+  box-shadow: var(--ntx-shadow-sm);
+}
+
+/* Section Title with Orange Accent */
+.resources-title {
+  font-family: var(--ntx-font-family);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ntx-gray-900);
+  margin: 0 0 var(--ntx-spacing-md) 0;
+  padding-bottom: var(--ntx-spacing-sm);
+  border-bottom: 2px solid var(--ntx-gray-200);
+}
+
+.section-title-orange {
+  position: relative;
+}
+
+.section-title-orange::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--ntx-orange);
+}
+
+/* ============================================
+   RESOURCE ROWS
+   ============================================ */
+.resource-row {
+  padding: var(--ntx-spacing-sm) 0;
+  border-bottom: 1px solid var(--ntx-gray-200);
+  transition: background-color 0.2s ease;
+}
+
+.resource-row:last-child {
+  border-bottom: none;
+}
+
+.resource-row:hover {
+  background-color: var(--ntx-gray-100);
+  margin: 0 calc(-1 * var(--ntx-spacing-sm));
+  padding-left: var(--ntx-spacing-sm);
+  padding-right: var(--ntx-spacing-sm);
+  border-radius: var(--ntx-radius-sm);
+}
+
+.resource-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ntx-spacing-sm);
+}
+
+/* Resource Icon */
+.resource-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ntx-purple);
+  color: var(--ntx-white);
+  border-radius: var(--ntx-radius-sm);
+  font-size: 0.875rem;
+}
+
+/* Icon colors based on data-category */
+.resource-row[data-category="tools"] .resource-icon {
+  background: var(--ntx-purple);
+}
+
+.resource-row[data-category="communications"] .resource-icon {
+  background: var(--ntx-blue);
+}
+
+.resource-row[data-category="security"] .resource-icon {
+  background: var(--ntx-green);
+}
+
+.resource-row[data-category="updates"] .resource-icon {
+  background: var(--ntx-orange);
+}
+
+.resource-row[data-category="training"] .resource-icon {
+  background: var(--ntx-green);
+}
+
+/* Resource Content */
+.resource-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.resource-title {
+  font-family: var(--ntx-font-family);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ntx-gray-900);
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.resource-title a {
+  color: var(--ntx-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.resource-title a:hover {
+  color: var(--ntx-orange);
+  text-decoration: underline;
+}
+
+.resource-desc {
+  font-family: var(--ntx-font-family);
+  font-size: 0.875rem;
+  color: var(--ntx-gray-700);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.resource-desc a {
+  color: var(--ntx-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resource-desc a:hover {
+  color: var(--ntx-orange);
+  text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+@media (max-width: 991px) {
+  .page-header-bar .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .banner-actions {
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .action-buttons,
+  .quick-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header-bar {
+    padding: var(--ntx-spacing-md) 0;
+  }
+  
+  .banner-header {
+    font-size: 1.5rem;
+  }
+  
+  .pricing-resources-container {
+    padding: var(--ntx-spacing-md);
+    border-radius: var(--ntx-radius-md);
+  }
+  
+  .action-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .quick-link {
+    font-size: 0.75rem;
+  }
+  
+  .resource-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.text-ntx-orange { color: var(--ntx-orange) !important; }
+.text-ntx-blue { color: var(--ntx-blue) !important; }
+.bg-ntx-orange { background-color: var(--ntx-orange) !important; }
+.bg-ntx-blue { background-color: var(--ntx-blue) !important; }
+
+/* ============================================
+   VIDEO EMBED RESPONSIVE
+   ============================================ */
+.pricing-news-panel iframe {
+  border-radius: var(--ntx-radius-sm);
+}
+
+/* ============================================
+   ROW SPACING FIXES
+   ============================================ */
+.pricing-resources-container > .row {
+  margin-bottom: var(--ntx-spacing-md);
+}
+
+.pricing-resources-container > .row:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-resources .row {
+  margin-left: calc(-1 * var(--ntx-spacing-sm));
+  margin-right: calc(-1 * var(--ntx-spacing-sm));
+}
+
+.pricing-resources .row > [class*="col-"] {
+  padding-left: var(--ntx-spacing-sm);
+  padding-right: var(--ntx-spacing-sm);
+}
