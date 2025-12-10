@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 /* ============================================
-   TOP BAR - Background Color Override
+   TOP BAR - ONLY Background Color Override
    ============================================ */
 [top-bar].top-bar,
 .top-bar {
@@ -372,13 +372,14 @@
 }
 
 /* But allow navbar buttons to use Bootstrap defaults */
-.navbar .btn,
-.top-bar .btn {
+.navbar .btn {
   padding: 6px 12px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: normal;
 }
+
+/* Top-bar buttons inherit platform defaults - no custom styling */
 
 .btn-primary {
   background-color: var(--primary-color);
