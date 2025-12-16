@@ -2003,6 +2003,16 @@ body .alert-inline .alert-link,
   color: var(--primary-color) !important;
 }
 
+/* Purple accent title - for Process Manager */
+.section-title-purple {
+  color: #8439A6 !important;
+}
+
+/* Blue accent title - for secondary content */
+.section-title-blue {
+  color: var(--secondary-color) !important;
+}
+
 /* Resources title with orange text */
 .pricing-resources .resources-title span[style*="color:#e67e22"],
 .pricing-resources .resources-title span[style*="color: #e67e22"] {

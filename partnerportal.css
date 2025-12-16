@@ -10,16 +10,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 /* ============================================
-   TOP BAR - ONLY Background Color Override
+   TOP BAR - Background color and dropdown fixes
    ============================================ */
-[top-bar].top-bar,
 .top-bar {
-  background-color: var(--anim-purple) !important; /* #8439A6 */
+  background-color: #8439A6 !important;
+  position: relative !important;
+  z-index: 1100 !important;
 }
 
-[top-nav] .navbar-brand {
-  max-width: 15rem !important;
+/* Top-bar dropdown menus - ensure visibility and clickability */
+.top-bar .dropdown-menu {
+  background-color: #fff !important;
+  border: 1px solid rgba(0,0,0,.15) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+  z-index: 1200 !important;
+  opacity: 1 !important;
+  position: absolute !important;
 }
+
+.top-bar .dropdown-menu > li > a {
+  display: block !important;
+  padding: 8px 20px !important;
+  color: #333 !important;
+  background-color: transparent !important;
+  pointer-events: auto !important;
+}
+
+.top-bar .dropdown-menu > li > a:hover,
+.top-bar .dropdown-menu > li > a:focus {
+  background-color: #f5f5f5 !important;
+  color: #262626 !important;
+}
+
+/* Ensure dropdowns are above the main nav */
+.top-bar .dropdown.open,
+.top-bar .dropdown.show {
+  z-index: 1200 !important;
+}
+
 /* ============================================
    CSS Variables - Global Design System
    ============================================ */
@@ -67,36 +96,36 @@
    ============================================ */
 
 /* Base spacing values - multiples of 8px for consistency */
---spacing-xs: 0.5rem;    /* 8px - Minimal spacing */
---spacing-sm: 1rem;      /* 16px - Small spacing */
---spacing-md: 1.5rem;    /* 24px - Medium spacing */
---spacing-lg: 2rem;      /* 32px - Large spacing */
---spacing-xl: 3rem;      /* 48px - Extra large spacing */
---spacing-xxl: 4rem;     /* 64px - Double extra large */
---spacing-xxxl: 6rem;    /* 96px - Section spacing */
+--spacing-xs: 8px;       /* Minimal spacing */
+--spacing-sm: 16px;      /* Small spacing */
+--spacing-md: 24px;      /* Medium spacing */
+--spacing-lg: 32px;      /* Large spacing */
+--spacing-xl: 48px;      /* Extra large spacing */
+--spacing-xxl: 64px;     /* Double extra large */
+--spacing-xxxl: 96px;    /* Section spacing */
 
 /* Micro spacing for fine-tuned adjustments */
---spacing-2xs: 0.25rem;  /* 4px - Micro spacing */
---spacing-3xs: 0.125rem; /* 2px - Hairline spacing */
+--spacing-2xs: 4px;      /* Micro spacing */
+--spacing-3xs: 2px;      /* Hairline spacing */
 
 
 /* ============================================
-   TYPOGRAPHY SCALE - Modular scale (1.25 ratio)
+   TYPOGRAPHY SCALE - Fixed pixel sizes for consistency
    ============================================ */
 
 /* Body text sizes */
---font-xs: 0.75rem;      /* 12px - Fine print, captions */
---font-sm: 0.875rem;     /* 14px - Small text, labels, descriptions */
---font-base: 1rem;       /* 16px - Body text (standard) */
---font-md: 1.0625rem;    /* 17px - Slightly emphasized body */
+--font-xs: 12px;         /* Fine print, captions */
+--font-sm: 14px;         /* Small text, labels, descriptions */
+--font-base: 16px;       /* Body text (standard) */
+--font-md: 17px;         /* Slightly emphasized body */
 
 /* Heading sizes - Compact hierarchy for portal UI */
---font-lg: 1.125rem;     /* 18px - H5, small headings, card titles */
---font-xl: 1.25rem;      /* 20px - H4, subheadings */
---font-xxl: 1.5rem;      /* 24px - H3, section headings */
---font-xxxl: 1.875rem;   /* 30px - H2, major headings */
---font-display: 2.25rem; /* 36px - H1, hero text */
---font-hero: 3rem;       /* 48px - Extra large displays */
+--font-lg: 18px;         /* H5, small headings, card titles */
+--font-xl: 20px;         /* H4, subheadings */
+--font-xxl: 24px;        /* H3, section headings */
+--font-xxxl: 30px;       /* H2, major headings */
+--font-display: 36px;    /* H1, hero text */
+--font-hero: 48px;       /* Extra large displays */
 
 /* Alternative naming for semantic use */
 --font-caption: var(--font-xs);
@@ -340,6 +369,135 @@
 }
 
 /* ============================================
+   LMS TRAINING CARD - Nintex University Widget
+   ============================================ */
+.lms-training-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  height: 100%;
+}
+
+.lms-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.lms-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--secondary-color), #0055AA);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lms-icon i {
+  color: white;
+  font-size: 20px;
+}
+
+.lms-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.lms-content {
+  margin-bottom: 16px;
+}
+
+.lms-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.lms-quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lms-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.lms-link::before {
+  content: '\f19d'; /* fa-graduation-cap */
+  font-family: 'Font Awesome 5 Free', 'FontAwesome';
+  font-weight: 900;
+  font-size: 14px;
+  color: var(--secondary-color);
+  flex-shrink: 0;
+}
+
+/* Different icons for different course types */
+.lms-link[href*="Sales"]::before,
+.lms-link:nth-child(1)::before {
+  content: '\f201'; /* fa-chart-line - Sales */
+}
+
+.lms-link[href*="DocGen"]::before,
+.lms-link:nth-child(2)::before {
+  content: '\f1c1'; /* fa-file-alt - DocGen */
+}
+
+.lms-link[href*="Process"]::before,
+.lms-link:nth-child(3)::before {
+  content: '\f085'; /* fa-cogs - Process Manager */
+}
+
+.lms-link[href*="Apps"]::before,
+.lms-link:nth-child(4)::before {
+  content: '\f3cd'; /* fa-mobile-alt - Apps */
+}
+
+.lms-link:hover {
+  background-color: #e8f4fc;
+  border-left-color: var(--secondary-color);
+  transform: translateX(4px);
+}
+
+.lms-footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.lms-footer .btn {
+  font-size: 14px;
+  padding: 10px 24px;
+}
+
+/* ============================================
+   ENABLEMENT JOURNEYS
+   Styles moved to dedicated journey.css file
+   ============================================ */
+
+/* ============================================
    Base Elements & Utility Classes
    ============================================ */
 /* Font family will be applied individually to specific components that need it */
@@ -359,8 +517,8 @@
   font-size: var(--font-lg);
 }
 
-/* Base Button Styling */
-.btn {
+/* Base Button Styling - exclude top-bar */
+.btn:not(.top-bar .btn) {
   padding: 0.4rem 1rem;
   border-radius: 50px;
   font-weight: 500;
@@ -2508,10 +2666,9 @@ section .container,
 
 /* Base HTML and body settings */
 html {
-  font-size: 16px !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  background-color: white !important; /* Base white background */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white; /* Base white background */
 }
 
 /* Banner white background via pseudo-element - sits BEHIND animations */
@@ -2882,16 +3039,16 @@ form:not(.search-form):not(.filter-form) textarea {
   width: 100% !important;
 }
 
-/* Preserve standard styling for search inputs and filter dropdowns */
-input[type="search"],
-.search-input,
-.filter-input,
-[class*="search"] input,
-[class*="filter"] input,
-[class*="filter"] select,
+/* Preserve standard styling for search inputs and filter dropdowns - exclude top-bar */
+input[type="search"]:not(.top-bar input),
+.search-input:not(.top-bar .search-input),
+.filter-input:not(.top-bar .filter-input),
+[class*="search"]:not(.top-bar) input,
+[class*="filter"]:not(.top-bar) input,
+[class*="filter"]:not(.top-bar) select,
 table select,
 .datatable select,
-.input-group input {
+.input-group:not(.top-bar .input-group) input {
   font-size: var(--font-sm) !important;
   padding: 8px 12px !important;
   background: white !important;
@@ -2899,8 +3056,8 @@ table select,
   border-radius: var(--border-radius-sm) !important;
 }
 
-/* Standard select dropdowns (not in forms) */
-select:not(.mktoField):not(.form-group select) {
+/* Standard select dropdowns (not in forms) - exclude top-bar */
+select:not(.mktoField):not(.form-group select):not(.top-bar select) {
   font-size: var(--font-sm) !important;
   padding: 8px 12px !important;
   background: white !important;
@@ -2911,41 +3068,41 @@ select:not(.mktoField):not(.form-group select) {
   appearance: menulist !important;
 }
 
-/* Desktop font size for inputs */
+/* Desktop font size for inputs - exclude top-bar */
 @media (min-width: 768px) {
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="number"],
-  input[type="tel"],
-  input[type="url"],
-  textarea,
-  select {
+  input[type="text"]:not(.top-bar input),
+  input[type="email"]:not(.top-bar input),
+  input[type="password"]:not(.top-bar input),
+  input[type="number"]:not(.top-bar input),
+  input[type="tel"]:not(.top-bar input),
+  input[type="url"]:not(.top-bar input),
+  textarea:not(.top-bar textarea),
+  select:not(.top-bar select) {
     font-size: var(--font-base) !important;
   }
 }
 
-/* Input hover state */
-input[type="text"]:hover,
-input[type="email"]:hover,
-input[type="password"]:hover,
-input[type="number"]:hover,
-input[type="tel"]:hover,
-input[type="url"]:hover,
-textarea:hover,
-select:hover {
+/* Input hover state - exclude top-bar */
+input[type="text"]:not(.top-bar input):hover,
+input[type="email"]:not(.top-bar input):hover,
+input[type="password"]:not(.top-bar input):hover,
+input[type="number"]:not(.top-bar input):hover,
+input[type="tel"]:not(.top-bar input):hover,
+input[type="url"]:not(.top-bar input):hover,
+textarea:not(.top-bar textarea):hover,
+select:not(.top-bar select):hover {
   border-bottom-color: var(--focus-blue, #2a34a8) !important;
 }
 
-/* Input focus state - Corporate blue underline */
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
-textarea:focus,
-select:focus {
+/* Input focus state - Corporate blue underline - exclude top-bar */
+input[type="text"]:not(.top-bar input):focus,
+input[type="email"]:not(.top-bar input):focus,
+input[type="password"]:not(.top-bar input):focus,
+input[type="number"]:not(.top-bar input):focus,
+input[type="tel"]:not(.top-bar input):focus,
+input[type="url"]:not(.top-bar input):focus,
+textarea:not(.top-bar textarea):focus,
+select:not(.top-bar select):focus {
   border-bottom-color: var(--focus-blue, #2a34a8) !important;
   box-shadow: 0 1px 0 0 var(--focus-blue, #2a34a8) !important;
   outline: none !important;
