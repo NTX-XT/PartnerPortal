@@ -352,19 +352,23 @@ div.journey-step.placeholder {
    ===================================================== */
 .step-number,
 div.step-number {
-  width: 40px !important;
-  height: 40px !important;
+  width: 32px !important;
+  height: 32px !important;
   border-radius: 50% !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-weight: 700 !important;
-  font-size: 1rem !important;
-  margin-bottom: 0.5rem !important;
+  font-size: 0.85rem !important;
+  margin-bottom: 0.4rem !important;
   color: white !important;
   background: transparent !important;
   border: none !important;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.step-number i {
+  font-size: 0.75rem !important;
 }
 
 .step-number.learning-path,
@@ -423,14 +427,46 @@ div.step-badge.certification {
 }
 
 /* =====================================================
+   NPCU SCORE BADGES
+   ===================================================== */
+.npcu-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+  padding: 0.2rem 0.5rem !important;
+  border-radius: 4px !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.3px !important;
+  margin-top: 0.5rem !important;
+}
+
+.npcu-badge.npcu-1 {
+  background: #e8f5e9 !important;
+  color: #2e7d32 !important;
+  border: 1px solid #a5d6a7 !important;
+}
+
+.npcu-badge.npcu-2 {
+  background: #fff3e0 !important;
+  color: #e65100 !important;
+  border: 1px solid #ffcc80 !important;
+}
+
+.npcu-badge i {
+  font-size: 0.6rem !important;
+}
+
+/* =====================================================
    STEP TITLES - LARGER TEXT
    ===================================================== */
 .step-title,
 h4.step-title {
-  font-size: 1.15rem !important;
-  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
   color: #333 !important;
-  margin: 0 0 0.5rem 0 !important;
+  margin: 0 0 0.35rem 0 !important;
   line-height: 1.35 !important;
   background: transparent !important;
   border: none !important;
